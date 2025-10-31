@@ -15,3 +15,7 @@ build/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+
+# Command
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
