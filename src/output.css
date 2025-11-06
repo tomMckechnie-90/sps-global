@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,11 +8,19 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-spspurple: #380e88;
+    --color-spswhite: #fefefe;
+    --color-spsaccent: #C9A02E;
+    --color-spsdark: #03040D;
+    --font-playfairdisplay: "Playfair Display", serif;
+    --font-sourcesans3: "Source Sans 3", sans-serif;
   }
 }
 @layer base {
@@ -163,6 +172,9 @@
   }
 }
 @layer utilities {
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
   }
@@ -176,13 +188,41 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  .bg-spspurple {
+    background-color: var(--color-spspurple);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .font-playfairdisplay {
+    font-family: var(--font-playfairdisplay);
+  }
+  .font-sourcesans3 {
+    font-family: var(--font-sourcesans3);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .text-spsaccent {
+    color: var(--color-spsaccent);
+  }
+  .text-spsdark {
+    color: var(--color-spsdark);
+  }
+  .text-spspurple {
+    color: var(--color-spspurple);
+  }
+  .text-spswhite {
+    color: var(--color-spswhite);
   }
   .underline {
     text-decoration-line: underline;
