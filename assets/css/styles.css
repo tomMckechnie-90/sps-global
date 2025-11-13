@@ -10,3 +10,39 @@
     --font-playfairdisplay: "Playfair Display", serif;
     --font-sourcesans3: "Source Sans 3", sans-serif;
 }
+
+.custom-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        #b38a22 0%, /* Darker on the left */
+        var(--color-spsaccent) 20%,
+        #ffe08a 50%, /* center of the line is lighter */
+        var(--color-spsaccent) 80%,
+        #b38a22 100% /* Darker on the right */
+    );
+}
+
+.custom-border::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        #b38a22 0%,
+        var(--color-spsaccent) 20%,
+        #ffe08a 50%,
+        var(--color-spsaccent) 80%,
+        #b38a22 100%
+    );
+}
