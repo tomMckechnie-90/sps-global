@@ -9,6 +9,11 @@
 
     --font-playfairdisplay: "Playfair Display", serif;
     --font-sourcesans3: "Source Sans 3", sans-serif;
+
+    --text-spsxl: 115px;
+    --text-spslg: 80px;
+    --text-spsmed: 60px;
+    --text-spssm: 30px;
 }
 
 .custom-underline::after {
