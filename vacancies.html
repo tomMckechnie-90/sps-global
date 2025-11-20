@@ -57,12 +57,12 @@
     </header>
     <main>
         <!-- Search bar -->
-        <section class="text-spswhite p-2">
-            <div class="grid grid-cols-7 justify-items-center border border-spsdark border-4 p-3">
+        <section class="text-spsdark p-2">
+            <div class="grid grid-cols-7 justify-items-center border border-spsdark bg-spswhite border-4 p-3">
                 <div>
                     <label for="cars" class="grid content-start mb-1 font-sourcesans3 text-2xl">Sector:</label>
 
-                    <select name="sector" id="sector" class="bg-spspurple border border-spsdark text-xl">
+                    <select name="sector" id="sector" class="bg-spswhite border border-spsdark text-xl">
                         <option value="executive">Executive</option>
                         <option value="private">Private</option>
                     </select>
@@ -70,7 +70,7 @@
                 <div>
                     <label for="job-title" class="grid content-start mb-1 font-sourcesans3 text-2xl">Job Title</label>
 
-                    <select name="job-title" id="job-title" class="bg-spspurple border border-spsdark text-xl">
+                    <select name="job-title" id="job-title" class="bg-spswhite border border-spsdark text-xl">
                         <option value="">Job 1</option>
                         <option value="">Job 2</option>
                         <option value="">Job 3</option>
@@ -86,7 +86,7 @@
                 <div>
                     <label for="location" class="grid content-start mb-1 font-sourcesans3 text-2xl">Location:</label>
 
-                    <select name="location" id="location" class="bg-spspurple border border-spsdark text-xl">
+                    <select name="location" id="location" class="bg-spswhite border border-spsdark text-xl">
                         <option value="">Location 1</option>
                         <option value="">Location 2</option>
                         <option value="">Location 3</option>
@@ -104,14 +104,14 @@
                         Time/Full Time:</label>
 
                     <select name="part-time-full-time" id="part-time-full-time"
-                        class="bg-spspurple border border-spsdark text-xl">
+                        class="bg-spswhite border border-spsdark text-xl">
                         <option value="part-time">Part Time</option>
                         <option value="full-time">Full Time</option>
                     </select>
                 </div>
                 <div> <label for="salary" class="grid content-start mb-1 font-sourcesans3 text-2xl">Salary:</label>
 
-                    <select name="salary" id="salary" class="bg-spspurple border border-spsdark text-xl">
+                    <select name="salary" id="salary" class="bg-spswhite border border-spsdark text-xl">
                         <option value="">Salary 1</option>
                         <option value="">Salary 2</option>
                         <option value="">Salary 3</option>
@@ -132,7 +132,7 @@
                 <div class="gird content-center">
                     <div class="mt-6 ml-14">
                         <a href="#"
-                            class="bg-spswhite px-6 py-2 font-bold text-lg text-spsdark text-center font-sourcesans3">Apply
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">Apply
                             Filters</a>
                     </div>
                     <!-- <div>
@@ -145,14 +145,189 @@
             </div>
         </section>
         <!-- Job Cards -->
-        <section class="text-spswhite p-16">
+        <section class="text-spsdark p-16 font-sourcesans3">
+            <!-- Job Grid -->
             <div class="grid grid-cols-2 gap-12">
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
-                <div class="border border-spsdark border-6 h-100 bg-spswhite"></div>
+                <!-- Card 1 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="border border-spsdark border-6 bg-spswhite p-4">
+                    <div class="flex flex-row justify-between mb-5">
+                        <h1 class="text-2xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
+                        <p class="text-lg"><span class="font-bold">Posted: </span>September</p>
+                    </div>
+                    <div class="flex flex-row justify-between mb-3 text-lg">
+                        <p><span class="font-bold">Location: Bermuda</span></p>
+                        <p class="font-bold">Full Time</p>
+                        <p><span class="font-bold">Salary: c$10k/month</span></p>
+                    </div>
+                    <div class="text-lg">
+                        <p> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
+                            experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
+                            with our client based on the island, we would love to hear from you if so. It is likely that
+                            the successful applicant will have a BSc in a related field, as well as having Chartered
+                            status or similar. A relocation package is offered along with 3 month's initial
+                            accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
+                            Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
+                            Facilities, is primarily responsible for the development, management and reporting of
+                            capital and operational projects within the Facilities Management and Estates Services
+                            Department.</p>
+                    </div>
+                    <!-- Button -->
+                    <div class="flex justify-end pt-5">
+                        <a href="#"
+                            class="bg-spsdark px-6 py-2 font-bold text-lg text-spswhite text-center font-sourcesans3">More
+                            Details</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
