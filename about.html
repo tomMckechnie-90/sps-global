@@ -55,20 +55,24 @@
         </div>
 
     </header>
+
     <main>
-        <section class="px-15 py-20">
+        <section class="px-15 py-20 space-y-16">
             <h1
-                class="text-spswhite text-spsxl font-bold font-playfairdisplay text-center text-shadow-lg text-shadow-spsdark">
+                class="text-spswhite lg:text-spsxl text-6xl font-bold font-playfairdisplay text-center text-shadow-lg text-shadow-spsdark">
                 About Us</h1>
-                <div class="custom-underline-about"></div>
-            <div class="grid grid-cols-2 gap-12 justify-items-center">
-                <!-- Paragraph -->
-                <div class="self-center">
-                    <p class="font-sourcesans3 text-4xl text-spswhite">We are a London-based
+            <div class="custom-underline-about mb-12 lg:mb-0"></div>
+
+            <!-- Row 1: Text on Left, Icon on Right (Desktop) -->
+            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
+                <!-- Text (Visually second on mobile) -->
+                <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <p class="font-sourcesans3 lg:text-4xl text-center lg:text-start text-2xl text-spswhite">We are a
+                        London-based
                         recruitment agency specializing in placing high calibre, qualified staff worldwide.</p>
                 </div>
-                <!-- Icon -->
-                <div>
+                <!-- Icon (Visually first on mobile) -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-60 h-80 text-spswhite" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
@@ -76,64 +80,102 @@
                             d="M3.67 9h16.66m-16.66 6h16.66M12 3a15.3 15.3 0 014.6 10.5A15.3 15.3 0 0112 21a15.3 15.3 0 01-4.6-7.5A15.3 15.3 0 0112 3z" />
                     </svg>
                 </div>
-                <!-- Icon -->
-                <div>
+            </div>
+
+            <!-- Row 2: Icon on Left, Text on Right (Desktop) -->
+            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
+                <!-- Icon (Visually first on mobile) -->
+                <div class="w-full lg:w-1/2 order-1 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
                     </svg>
-
                 </div>
-                <!-- Paragraph -->
-                <div class="self-center">
-                    <p class="font-sourcesans3 text-4xl text-spswhite">With offices and a network of Consultants
+                <!-- Text (Visually second on mobile) -->
+                <div class="w-full lg:w-1/2 order-2">
+                    <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">With
+                        offices and a network of Consultants
                         worldwide, including the main office in London, and more than 30 years’ UK recruitment industry
                         experience.</p>
                 </div>
-                <!-- Paragraph -->
-                <div class="self-center">
-                    <p class="font-sourcesans3 text-4xl text-spswhite">We are confident in our ability to accurately
+            </div>
+
+            <!-- Row 3: Text on Left, Icon on Right (Desktop) -->
+            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
+                <!-- Text (Visually second on mobile) -->
+                <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">We are
+                        confident in our ability to accurately
                         address your specific staffing requirements and ensure that we make the best possible match
                         between client and candidate.</p>
                 </div>
-                <!-- Icon -->
-                <div>
+                <!-- Icon (Visually first on mobile) -->
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                     </svg>
                 </div>
-                <!-- Icon -->
-                <div>
+            </div>
+
+            <!-- Row 4: Icon on Left, Text on Right (Desktop) -->
+            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
+                <!-- Icon (Visually first on mobile) -->
+                <div class="w-full lg:w-1/2 order-1 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
-
-
                 </div>
-                <!-- Paragraph -->
-                <div class="self-center">
-                    <p class="font-sourcesans3 text-4xl text-spswhite">We don’t believe in shoe-horning the wrong
+                <!-- Text (Visually second on mobile) -->
+                <div class="w-full lg:w-1/2 order-2">
+                    <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">We don’t
+                        believe in shoe-horning the wrong
                         candidate into the wrong role for the sake of filling a vacancy, which is why we focus on
                         ensuring that the expectations of the client and the candidate are compatible from the outset
                     </p>
                 </div>
             </div>
         </section>
+        <!-- CTA Banner -->
+        <section
+            class="relative flex items-center justify-center text-center lg:p-24 p-10 my-20 lg:my-40 text-spswhite">
+            <div class="absolute inset-0 z-0">
+                <img id="cta-banner" class="w-full h-full object-cover"
+                    src="assets/images/SPS purple banner with gold lines.svg" alt="SPS Purple banner with gold lines">
+            </div>
+            <div id="cta-banner-btns"
+                class="relative z-10 container mx-auto mb-8 lg:mb-10 flex flex-col lg:flex-row items-center justify-center lg:space-x-8 space-y-8 lg:space-y-0">
+                <div class="text-start">
+                    <p
+                        class="text-spswhite font-sourcesans3 py-6 text-center lg:text-start text-2xl lg:text-4xl mb:0 lg:mb-10">
+                        Looking for staff?</p>
+                    <a href="contact.html"
+                        class="bg-spswhite px-15 py-4 lg:px-20 lg:py-7 font-bold lg:text-spssm text-spsdark font-sourcesans3 lg:mr-45 mr-0 shadow-2xl shadow-spsdark">GET
+                        IN TOUCH</a>
+                </div>
+                <div>
+                    <p
+                        class="text-spswhite font-sourcesans3 py-6 lg:text-start text-center text-2xl lg:text-4xl mb:0 lg:mb-10">
+                        Looking for work?</p>
+                    <a href="vacancies.html"
+                        class="bg-spswhite px-17 py-4 lg:px-22 lg:py-7 font-bold lg:text-spssm text-spsdark font-sourcesans3 shadow-2xl shadow-spsdark">VACANCIES</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-spspurple border-t-4 border-spsaccent py-10">
-        <div class="flex flex-wrap justify-start">
-            <!-- Logo -->
-            <div class="px-10">
+    <footer class="bg-spspurple md:py-40 py-20 px-6 lg:px-12 text-center lg:text-start relative">
+        <div class="container mx-auto flex flex-wrap">
+            <!--  Col 1 Logo -->
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0 lg:px-0 px-20 md:px-60">
                 <img src="assets/images/logo_temp.webp" alt="SPS Global Recruitment Logo" class="w-60 h-60">
             </div>
-            <!-- Address/Contact -->
-            <div class="text-spswhite text-lg font-sourcesans3 pr-50">
+            <!-- Col 2 Address/Contact -->
+            <div class="w-full lg:w-1/4 text-spswhite text-lg font-sourcesans3">
                 <div class="font-bold mb-3">SIMPLY ANEGLIC LTD</div>
                 <div>3rd Floor <br>
                     45 Albemarle Street<br>
@@ -141,12 +183,12 @@
                     London, W1S 4JL
                 </div>
                 <div class="mt-8">Phone:<a href="tel:+447822012494"> +44 7822012494</a></div>
-                <div>Email:<a href="mailto:london@spsglobal.com"> london@spsglobal.com</a></div>
+                <div class="lg:mb-0 mb-8">Email:<a href="mailto:london@spsglobal.com"> london@spsglobal.com</a></div>
             </div>
-            <!-- Quick Links -->
-            <div class="text-spswhite text-lg pr-80">
+            <!-- Col 3 Quick Links -->
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0 text-spswhite text-lg">
                 <div class="font-playfairdisplay font-bold text-xl mb-3">Quick Links</div>
-                <ul class="font-sourcesans3">
+                <ul class="font-sourcesans3 space-y-2">
                     <li><a href="index.html" class="hover:underline">Home</a></li>
                     <li><a href="vacancies.html" class="hover:underline">Vacancies</a></li>
                     <li><a href="about.html" class="hover:underline">About</a></li>
@@ -154,8 +196,8 @@
                     <li><a href="contact.html" class="hover:underline">Get in touch</a></li>
                 </ul>
             </div>
-            <!-- Socials -->
-            <div class="text-spswhite text-lg">
+            <!-- Col 4 Socials -->
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0 text-spswhite text-lg">
                 <div class="font-playfairdisplay font-bold text-xl">Socials</div>
                 <!-- Custom icons will go here -->
             </div>

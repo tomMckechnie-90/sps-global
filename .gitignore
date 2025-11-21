@@ -18,4 +18,4 @@ Thumbs.db
 
 
 # Command
-npx @tailwindcss/cli -i ./assets/css/output.css -o ./src/input.css --watch
+npx tailwindcss -i ./src/input.css -o ./assets/css/output.css --watch
