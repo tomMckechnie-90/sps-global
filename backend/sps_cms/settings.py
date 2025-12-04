@@ -14,11 +14,13 @@ from pathlib import Path
 import os
 import dotenv
 
-# Load environment variables from .env file
-dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'))
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file
+dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,9 +30,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+# This will be True locally, and False in Google Cloud Run
+DEBUG = 'K_SERVICE' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'sps-api-xxxxxxxxxx-ew.a.run.app',  # Replace with your actual Cloud Run URL
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -81,12 +88,26 @@ WSGI_APPLICATION = 'sps_cms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    # Use SQLite for local development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    # Use PostgreSQL for production on Google Cloud
+    DB_PASSWORD = os.getenv('DB_PASSWORD')
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': DB_PASSWORD,
+            'HOST': '/cloudsql/sps-global-recruitment:europe-west2:sps-jobs-db',
+        }
+    }
 
 
 # Password validation
