@@ -56,76 +56,14 @@
 
     <main>
         <section class="md:p-8 p-4">
-            <div class="bg-spswhite border border-spsdark border-2 lg:px-30 px-5 shadow-2xl shadow-spsdark">
-                <div class="flex md:flex-col md:items-center flex-row md:mb-20 md:pt-15 sm:text-center text-left mb-8 pt-4">
-                    <h1 class="md:text-5xl text-3xl font-bold font-playfairdisplay">Project Mgr, Estates & Facilities Mgmt</h1>
-                    <!-- <p class="text-lg font-playfairdisplay pt-5"><span class="font-bold">Posted: </span>September</p> -->
+            <div id="job-detail-container"
+                class="bg-spswhite border border-spsdark border-2 lg:px-30 px-5 shadow-2xl shadow-spsdark text-spsdark">
+                <div
+                    class="flex md:flex-col md:items-center flex-row md:mb-20 md:pt-15 sm:text-center text-left mb-8 pt-4">
+                    <!-- Job Description will be inserted here by JavaScript. It all comes from the backend set up using the Django REST Framework -->
+                    <p>loading job details...</p>
+                    <!-- Button -->
                 </div>
-                <div class="flex flex-row justify-around items-center lg:mb-10 mb-6 md:text-xl text-sm font-sourcesans3">
-                    <p><span class="font-bold">Location: </span>Bermuda</p>
-                    <p class="font-bold">Full Time</p>
-                    <p><span class="font-bold">Salary: </span>c$10k/month</p>
-                </div>
-                <div class="md:text-xl text-sm font-sourcesans3">
-                    <p class="mb-6"> Are you a qualified and experienced (7+ years) Project Manager, ideally a graduate with
-                        experience in/around Healthcare projects? Would you consider relocation to Bermuda? Working
-                        with our client based on the island, we would love to hear from you if so. It is likely that
-                        the successful applicant will have a BSc in a related field, as well as having Chartered
-                        status or similar. A relocation package is offered along with 3 month's initial
-                        accommodation if required and an almost tax-free salary of $124 per annum. Reporting to the
-                        Director of Estates & Facilities / Principal Engineer, the Project Manager – Estates and
-                        Facilities, is primarily responsible for the development, management and reporting of
-                        capital and operational projects within the Facilities Management and Estates Services
-                        Department.</p>
-                    <p class="font-bold mb-3">
-                        Key responsibilities include:
-                    </p>
-                    <ul class="list-disc px-7 mb-6">
-                        <li>Managing Facilities Management capital and operational projects, including planning,
-                            execution and commissioning</li>
-                        <li>Managing internal resources, external consultants, contractors and other service providers
-                            to accomplish project objectives while ensuring operational efficiency</li>
-                        <li>Preparing project documentation including business cases, specifications, schedules,
-                            contracts and construction documents</li>
-                        <li>Managing all project expenditures according to financial instructions and other relevant
-                            financial controls</li>
-                        <li>Managing assigned operating and capital budgets</li>
-                        <li>Liaising with internal and external stakeholders, contractors and service providers to
-                            ensure effective service delivery</li>
-                        <li>Effectively communicates with staff and customers on project developments and impacts to
-                            service delivery</li>
-                        <li>Working with clinical professionals and other staff to ensure that the built environment can
-                            deliver high quality, effective and efficient patient care</li>
-                    </ul>
-                    <p class="font-bold mb-3">
-                        Qualifications & Registration required:
-                    </p>
-                    <ul class="list-disc px-7">
-                        <li>Bachelor’s Degree (B. Sc.) or equivalent technical qualification in Engineering,
-                            Construction Management or Quantity Surveying</li>
-                        <li>Diploma in Project Management or equivalent is essential</li>
-                        <li>Minimum of seven (7) years of relevant post-graduate experience, with three (3) years at
-                            management level and Five (5) years of Contract and Construction Management experience</li>
-                        <li>Three (3) years relevant post-Project Management qualification experience</li>
-                        <li>Chartered or Registered Building Surveyor, Architect, Engineer or Project Management
-                            desirable</li>
-                        <li>Liaising with internal and external stakeholders, contractors and service providers to
-                            ensure effective service delivery</li>
-                        <li>Effectively communicates with staff and customers on project developments and impacts to
-                            service delivery</li>
-                        <li>Experience within healthcare facilities is desirable</li>
-                    </ul>
-                </div>
-                <!-- Button -->
-                <div class="flex justify-center p-10">
-                    <a href="mailto:london@spsglobal.com"
-                        class="bg-spsdark px-10 py-4 font-bold md:text-2xl text-lg text-spswhite text-center font-sourcesans3">Apply Now</a>
-                </div>
-                <div class="flex justify-center mb-3">
-                    <a href="vacancies.html"
-                        class="bg-spswhite px-6 py-2 font-bold md:text-xl text-lg text-spsdark text-center font-sourcesans3 hover:underline">Back to Vacancies</a>
-                </div>
-            </div>
         </section>
     </main>
 
@@ -166,4 +104,6 @@
 
     </footer>
     <script src="assets/js/menu.js"></script>
+    <!-- Vacancies JS (Using APIs) -->
+    <script src="assets/js/vacancie_details.js"></script>
 </body>
