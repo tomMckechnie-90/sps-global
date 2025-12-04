@@ -34,7 +34,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'K_SERVICE' not in os.environ
 
 ALLOWED_HOSTS = [
-    'sps-api-xxxxxxxxxx-ew.a.run.app',  # Replace with your actual Cloud Run URL
+    'sps-api-170236375136.europe-west2.run.app',
     'localhost',
     '127.0.0.1',
 ]
