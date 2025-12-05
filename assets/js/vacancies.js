@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const jobsContainer = document.getElementById('jobs-grid-container');
-    const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
+    // const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
+    const apiUrl = 'https://sps-api-170236375136.europe-west2.run.app/api/jobs/';
 
     if (!jobsContainer) {
         console.error('Error: Element ID "jobs-grid-container" was not found!');
