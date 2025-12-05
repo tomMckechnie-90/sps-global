@@ -33,6 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # This will be True locally, and False in Google Cloud Run
 DEBUG = 'K_SERVICE' not in os.environ
 
+
 ALLOWED_HOSTS = [
     'sps-api-170236375136.europe-west2.run.app',
     'localhost',
@@ -157,4 +158,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
+    "https://storage.googleapis.com",
 ]
