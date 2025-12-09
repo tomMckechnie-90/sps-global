@@ -33,12 +33,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # This will be True locally, and False in Google Cloud Run
 DEBUG = 'K_SERVICE' not in os.environ
 
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
-ALLOWED_HOSTS = [
-    'sps-api-170236375136.europe-west2.run.app',
-    'localhost',
-    '127.0.0.1',
-]
+# ALLOWED_HOSTS = [
+#    'sps-api-170236375136.europe-west2.run.app',
+#    'localhost',
+#    '127.0.0.1',
+#  ]
 
 
 # Application definition
