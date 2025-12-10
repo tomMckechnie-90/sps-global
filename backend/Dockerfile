@@ -10,6 +10,10 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . .
 
+# Install dos2unix and use it to fix line endings
+RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
+RUN dos2unix /app/run.sh
+
 # Install production dependencies.
 # We use a virtualenv to isolate dependencies.
 RUN python3 -m venv /venv && \
