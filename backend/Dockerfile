@@ -20,5 +20,8 @@ COPY . .
 # If a venv folder was accidentally copied, remove it.
 RUN rm -rf venv/
 
+ENV SECRET_KEY=building_static_files
+RUN python manage.py collectstatic --noinput
+
 # This is the final, correct command for Cloud Run.
 CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 sps_cms.wsgi:application
