@@ -1,24 +1,27 @@
-FROM python:3.13 
+# Use the official lightweight Python image.
+# https://hub.docker.com/_/python
+FROM python:3.11-slim
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
 
-WORKDIR /app
-
-# Install system dependencies needed to build psycopg2 from source
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
 COPY . .
 
-# --- SAFEGUARD ---
-# If a venv folder was accidentally copied, remove it.
-RUN rm -rf venv/
+# Install production dependencies.
+# We use a virtualenv to isolate dependencies.
+RUN python3 -m venv /venv && \
+    /venv/bin/pip install --upgrade pip && \
+    /venv/bin/pip install -r requirements.txt
 
-# This is the final, correct command for Cloud Run.
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 sps_cms.wsgi:application
+# Make the run.sh script executable
+RUN chmod +x /app/run.sh
+
+# Use the virtualenv
+ENV PATH="/venv/bin:$PATH"
+
+# Run the web service on container startup. Here we use the run.sh script
+# which waits for the Cloud SQL proxy to be ready before starting Gunicorn.
+CMD ["/app/run.sh"]
