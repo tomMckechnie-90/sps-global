@@ -32,7 +32,17 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # This will be True locally, and False in Google Cloud Run
 DEBUG = 'K_SERVICE' not in os.environ
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+# This logic grabs the variable, splits it by comma, and STRIPS all whitespace/quotes.
+# It makes the app crash-proof against typos in the Google Cloud Console.
+raw_allowed_hosts = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1')
+ALLOWED_HOSTS = [host.strip().strip('"').strip("'") for host in raw_allowed_hosts.split(',') if host.strip()]
+
+# Cloud Run handles the SSL certificates so we tell Django to trust 
+# the header Google adds. This prevents infinite redirects and 400 errors.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# We trust the same hosts we allow. CSRF Trusted Origins (Required for Django 4.0+ Admin login on HTTPS)
+CSRF_TRUSTED_ORIGINS = [f'https://{host}' for host in ALLOWED_HOSTS if '.' in host]
 
 # ALLOWED_HOSTS = [
 #    'sps-api-170236375136.europe-west2.run.app',
