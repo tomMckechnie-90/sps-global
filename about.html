@@ -9,7 +9,7 @@
     <title>SPS Global Recruitment | About</title>
 </head>
 
-<body class="bg-spspurple">
+<body class="bg-spspurple text-spswhite">
     <header class="bg-spspurple px-6 py-4 flex items-center justify-between relative">
         <!-- Logo -->
         <div class="flex flex-col flex-shrink-0 items-start w-48">
@@ -20,7 +20,8 @@
             <nav class="flex-1 flex space-x-8">
                 <a href="index.html"
                     class="text-spswhite text-2xl tracking-wide font-sourcesans3 decoration-spswhite">HOME</a>
-                <a href="about.html" class="text-spswhite text-2xl font-sourcesans3 underline underline-offset-8 tracking-wide">ABOUT</a>
+                <a href="about.html"
+                    class="text-spswhite text-2xl font-sourcesans3 underline underline-offset-8 tracking-wide">ABOUT</a>
             </nav>
             <!-- Buttons -->
             <div class="flex space-x-4">
@@ -58,18 +59,45 @@
         <section class="px-15 py-20 space-y-16">
             <h1
                 class="text-spswhite lg:text-spsxl text-6xl font-bold font-playfairdisplay text-center text-shadow-lg text-shadow-spsdark">
-                About Us</h1>
+                We are here to help</h1>
             <div class="custom-underline-about mb-12 lg:mb-0"></div>
 
+            <!-- Tabs use JS to switch the text content depending on click -->
+
+            <p id="employersTab" class="hover:underline tabs">For Employers</p>
+            <p id="candidatesTab" class="hover:underline tabs">For Candidates</p>
+
+            <div id="forEmplpoyers">
+                <h2 class="font-bold text-3xl font-playfairdisplay mt-0 lg:mt-25">Family Offices and
+                    Business Organisations</h2>
+                <p>Hiring internationally is time-consuming, high-risk and often frustrating and unnecessarily costly
+                    when partners don’t truly understand your market.</p>
+                <p>For over 22 years, SPS has worked with Private FO's and leading Businesses worldwide, helping them
+                    secure senior and specialist talent quickly, discreetly and for the long term.</p>
+                <p>We specialise in accessing hidden talent, experienced professionals who are not actively job hunting
+                    but are open to the right opportunity. This gives our clients access to candidates they simply won’t
+                    find through advertising alone.</p>
+                <p>We recruit across the Middle East, Asia, Africa, the USA and Bermuda, with deep, practical knowledge
+                    of local markets, relocation realities and retention challenges. Bermuda is a particular area of
+                    expertise. We have supported employers on the island for over two decades.</p>
+            </div>
+            <div id="forCandidates">
+                <h2 class="font-bold text-3xl font-playfairdisplay mt-0 lg:mt-25">Professionals Considering Their Next Move</h2>
+                <p>If you’re an experienced professional considering an international move, we’re here to support you
+                    properly, not just place you quickly.</p>
+                <p>We work with candidates seeking roles in Bermuda, the Middle East, Asia, the USA and beyond, often in
+                    positions that are never publicly advertised.</p>
+            </div>
+
+
+
             <!-- Row 1: Text on Left, Icon on Right (Desktop) -->
-            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
-                <!-- Text (Visually second on mobile) -->
+            <!-- <div class="flex flex-col lg:flex-row items-center lg:gap-12">
                 <div class="w-full lg:w-1/2 order-2 lg:order-1">
                     <p class="font-sourcesans3 lg:text-4xl text-center lg:text-start text-2xl text-spswhite">We are a
                         London-based
                         recruitment agency specializing in placing high calibre, qualified staff worldwide.</p>
                 </div>
-                <!-- Icon (Visually first on mobile) -->
                 <div class="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-60 h-80 text-spswhite" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -78,11 +106,10 @@
                             d="M3.67 9h16.66m-16.66 6h16.66M12 3a15.3 15.3 0 014.6 10.5A15.3 15.3 0 0112 21a15.3 15.3 0 01-4.6-7.5A15.3 15.3 0 0112 3z" />
                     </svg>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Row 2: Icon on Left, Text on Right (Desktop) -->
-            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
-                <!-- Icon (Visually first on mobile) -->
+            <!-- <div class="flex flex-col lg:flex-row items-center lg:gap-12">
                 <div class="w-full lg:w-1/2 order-1 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
@@ -90,25 +117,22 @@
                             d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
                     </svg>
                 </div>
-                <!-- Text (Visually second on mobile) -->
                 <div class="w-full lg:w-1/2 order-2">
                     <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">With
                         offices and a network of Consultants
-                        worldwide, including the main office in London, and more than 30 years’ UK recruitment industry
+                        worldwide, including the main office in London, and more than 30 years' UK recruitment industry
                         experience.</p>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Row 3: Text on Left, Icon on Right (Desktop) -->
-            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
-                <!-- Text (Visually second on mobile) -->
+            <!-- <div class="flex flex-col lg:flex-row items-center lg:gap-12">
                 <div class="w-full lg:w-1/2 order-2 lg:order-1">
                     <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">We are
                         confident in our ability to accurately
                         address your specific staffing requirements and ensure that we make the best possible match
                         between client and candidate.</p>
                 </div>
-                <!-- Icon (Visually first on mobile) -->
                 <div class="w-full lg:w-1/2 order-1 lg:order-2 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
@@ -116,11 +140,10 @@
                             d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                     </svg>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Row 4: Icon on Left, Text on Right (Desktop) -->
-            <div class="flex flex-col lg:flex-row items-center lg:gap-12">
-                <!-- Icon (Visually first on mobile) -->
+            <!-- <div class="flex flex-col lg:flex-row items-center lg:gap-12">
                 <div class="w-full lg:w-1/2 order-1 flex justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-60 h-80 text-spswhite">
@@ -128,15 +151,14 @@
                             d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
                 </div>
-                <!-- Text (Visually second on mobile) -->
                 <div class="w-full lg:w-1/2 order-2">
-                    <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">We don’t
+                    <p class="font-sourcesans3 lg:text-4xl text-2xl text-center lg:text-start text-spswhite">We don't
                         believe in shoe-horning the wrong
                         candidate into the wrong role for the sake of filling a vacancy, which is why we focus on
                         ensuring that the expectations of the client and the candidate are compatible from the outset
                     </p>
                 </div>
-            </div>
+            </div> -->
         </section>
         <!-- CTA Banner -->
         <section
