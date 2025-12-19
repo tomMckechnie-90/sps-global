@@ -64,10 +64,14 @@
 
             <!-- Tabs use JS to switch the text content depending on click -->
 
-            <p id="employersTab" class="hover:underline tabs">For Employers</p>
-            <p id="candidatesTab" class="hover:underline tabs">For Candidates</p>
+            <div class="flex justify-center space-x-10 mb-8 cursor-pointer">
+                <p id="employersTab" class="text-2xl font-bold border-b-2 border-spswhite pb-2 transition-all">For
+                    Employers</p>
+                <p id="candidatesTab" class="text-2xl text-spswhite/60 pb-2 hover:text-spswhite transition-all">For
+                    Candidates</p>
+            </div>
 
-            <div id="forEmplpoyers">
+            <div id="forEmployers" class="fade-in">
                 <h2 class="font-bold text-3xl font-playfairdisplay mt-0 lg:mt-25">Family Offices and
                     Business Organisations</h2>
                 <p>Hiring internationally is time-consuming, high-risk and often frustrating and unnecessarily costly
@@ -81,8 +85,9 @@
                     of local markets, relocation realities and retention challenges. Bermuda is a particular area of
                     expertise. We have supported employers on the island for over two decades.</p>
             </div>
-            <div id="forCandidates">
-                <h2 class="font-bold text-3xl font-playfairdisplay mt-0 lg:mt-25">Professionals Considering Their Next Move</h2>
+            <div id="forCandidates" class="hidden fade-in">
+                <h2 class="font-bold text-3xl font-playfairdisplay mt-0 lg:mt-25">Professionals Considering Their Next
+                    Move</h2>
                 <p>If you’re an experienced professional considering an international move, we’re here to support you
                     properly, not just place you quickly.</p>
                 <p>We work with candidates seeking roles in Bermuda, the Middle East, Asia, the USA and beyond, often in
@@ -225,6 +230,7 @@
 
     </footer>
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/tabs.js"></script>
 </body>
 
 </html>
