@@ -1,0 +1,50 @@
+[
+{
+  "model": "jobs.job",
+  "pk": 2,
+  "fields": {
+    "title": "Tashkent- Russian-Speaking Teacher/Governess",
+    "location": "Tashkent",
+    "job_type": "Full Time",
+    "salary": "£1,200 – £1,500 a week",
+    "description": "A VIP family in Tashkent, Uzbekistan is seeking an intelligent, highly educated, and culturally refined Russian-speaking Nanny/Governess to support the holistic development of their 5-year-old son.\r\n\r\nThis role is ideal for a warm, articulate, and intellectually curious professional who is passionate about children’s education, culture, and personal growth.\r\n\r\nAbout the Role\r\n\r\nThis is not a traditional academic tutoring position.\r\n\r\nThe child already has a team of nannies managing daily care and multilingual exposure.\r\n\r\nYour role will focus on intellectual, emotional, and cultural enrichment, helping the boy develop a love for reading, creativity, and the arts.\r\n\r\nThe family seeks a native (or near-native) Russian speaker with conversational English who can inspire curiosity, expand the child’s cultural horizons, and gently guide his manners and social development.\r\n\r\nKey Responsibilities\r\n\r\n• Support the child’s holistic development through cultural, educational, and creative activities.\r\n\r\n• Introduce poems, stories, and early Russian literature; foster appreciation for theatre, music, and the arts.\r\n\r\n• Encourage reading habits and nurture imagination through intellectual play.\r\n\r\n• Promote emotional intelligence, kindness, and age-appropriate manners.\r\n\r\n• Collaborate closely with existing nannies to maintain a smooth, balanced daily routine.\r\n\r\n• Create a positive, joyful, and engaging learning environment.\r\n\r\nRequirements\r\n\r\n• Native Russian speaker (or near-native fluency).\r\n\r\n• University degree required — ideally in Early Childhood Education, or Teaching.\r\n\r\n• 10+ years of professional experience as a tutor/governess, preferably within VIP or private households.\r\n\r\n• Strong understanding of child development and creative learning methods.\r\n\r\n• Cultured, well-read, articulate, and passionate about literature, theatre, music, and art.\r\n\r\n• Intelligent, warm, emotionally stable, and excellent with children.\r\n\r\n• Energetic, active, adaptable, and enthusiastic about child development.\r\n\r\n• Conversational English for communication and travel.\r\n\r\n• EU passport preferred (not essential).\r\n\r\n• Experience in international households is a strong advantage.\r\n\r\nWorking Conditions\r\n\r\n• Full-time or rota position (to be discussed).\r\n\r\n• 5 days per week with flexibility.\r\n\r\n• Live-in accommodation provided.\r\n\r\n• Occasional travel with the family may be required.\r\n\r\n• Start date: As soon as possible.\r\n\r\nSalary\r\n\r\n£1,200–£1,500 per week, depending on experience and qualifications.",
+    "is_active": true
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 3,
+  "fields": {
+    "title": "Technical Sales Manager – Bermuda (Relocation Opportunity)",
+    "location": "Bermuda",
+    "job_type": "Full Time",
+    "salary": "£40-50k basic + commission (~USD $75-100k tax-free)",
+    "description": "Dreaming of blue skies, crystal waters, and a tax-free island lifestyle? Our client in Bermuda is seeking a Technical Sales Manager to drive growth in the building and construction sector. Combine your technical sales expertise with a unique career adventure abroad!\r\n\r\nWhat’s on offer:\r\n• Competitive package: £40-50k base + commission (~USD $75-100k, tax-free)\r\n• Career development and professional growth\r\n• Exciting work in Bermuda’s vibrant construction industry\r\n\r\nYou’ll be responsible for:\r\n• Achieving sales targets and securing product specifications\r\n• Engaging clients, architects, and contractors through demos, presentations, and events\r\n• Managing quotes, orders, and project tracking from concept to completion\r\n• Maintaining ERP/QuickBooks systems, POS, and reporting\r\n• Attending trade shows and monitoring market trends\r\n\r\nWe’re looking for someone with:\r\n• Proven technical sales experience in building products\r\n• Construction/building knowledge and ability to read drawings\r\n• Proficiency in QuickBooks/ERP systems\r\n• Excellent communication, presentation, and relationship-building skills\r\n• Bachelor’s degree in Sales, Construction, Engineering, Architecture, or equivalent experience",
+    "is_active": true
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 4,
+  "fields": {
+    "title": "Construction Superintendent (Relocation Opportunity)",
+    "location": "Bermuda",
+    "job_type": "Full Time",
+    "salary": "£90k/£100k a year",
+    "description": "London-based applicants |  Relocate to Bermuda\r\n\r\n£90-100k tax-free package (including housing allowance)\r\n\r\n 2–3 year contract | Full-time\r\n\r\n \r\n\r\nLooking for a lifestyle change? We’re seeking an experienced Construction Site Manager / Superintendent to relocate to Bermuda, where you’ll enjoy a 40-hour working week, sunshine, and virtually tax-free earnings.\r\n\r\nWhat’s on offer:\r\n\r\n£90-100k total tax-free package (inc. housing allowance)\r\nRelocation support\r\nPension & medical insurance\r\nThe role:\r\n\r\nOversee and manage building projects from start to finish\r\nEnsure quality, safety, and timely delivery\r\nLead site teams and subcontractors\r\nMentor junior staff and support professional development\r\nAbout you:\r\n\r\nProven experience as a Site Manager / Superintendent\r\nStrong leadership, problem-solving, and communication skills\r\nRelevant degree (construction management, engineering, or architecture) preferred\r\nIndustry certifications (e.g. OSHA, CCM) a bonus",
+    "is_active": true
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 5,
+  "fields": {
+    "title": "House Manager – VVIP Family, Tashkent.",
+    "location": "Tashkent",
+    "job_type": "Full Time",
+    "salary": "£7k a month",
+    "description": "Start Date: ASAP or 25th September\r\n\r\nA highly prestigious VVIP household in Tashkent is seeking an experienced House Manager to oversee and lead the daily running of a large, fully staffed private residence. This is a demanding but rewarding role for a candidate with proven experience managing high-level households and the ability to lead with authority, discretion, and professionalism.\r\n\r\nKey Responsibilities:\r\n\r\nOversee the smooth running of a large private residence.\r\nManage and coordinate a team of household staff, ensuring the highest standards are maintained.\r\nHandle all daily operations, logistics, and scheduling within the household.\r\nEnsure seamless service delivery to principals and guests.\r\nUphold strict confidentiality and professionalism at all times.\r\nRequirements:\r\n\r\nFluent in English and Russian is mandatory.\r\nExtensive experience as a House Manager in VIP or VVIP households.\r\nStrong leadership and staff management skills.\r\nHighly organised, adaptable, and able to work under pressure.\r\nFlexible approach to hours – must be available for longer or shorter days as needed.\r\nA hardworking, professional, and discreet attitude.\r\nPackage & Benefits:\r\n\r\nSalary: £7,000 per month.\r\nAccommodation: Provided separately.\r\nFlights, meals, and drinks covered whilst at work.\r\nFull-time schedule: 5 days per week, 10 hours per day (flexibility required).\r\nThis is a key leadership role within a highly important household and requires dedication, energy, and discretion. The right candidate will be rewarded with a highly competitive package and the opportunity to work in a prestigious environment.\r\n\r\nHow to Apply:\r\n\r\nPlease submit your CV and a cover letter detailing your relevant experience and availability",
+    "is_active": true
+  }
+}
+]
