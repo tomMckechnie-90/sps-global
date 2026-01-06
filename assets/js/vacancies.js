@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // const apiUrl = 'https://sps-api-170236375136.europe-west2.run.app/api/jobs/';
 
     // Use for local testing
-    // const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
+    const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
 
     // Use this for GitHub pages ngrok testing 
-    const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+    // const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
 
 
 
