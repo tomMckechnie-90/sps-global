@@ -223,6 +223,9 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .isolate {
+    isolation: isolate;
+  }
   .z-0 {
     z-index: 0;
   }
@@ -496,6 +499,12 @@
   }
   .place-self-center {
     place-self: center;
+  }
+  .place-self-end {
+    place-self: end;
+  }
+  .self-end {
+    align-self: flex-end;
   }
   .border {
     border-style: var(--tw-border-style);
