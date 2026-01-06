@@ -53,7 +53,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8080', 
     'http://127.0.0.1:8080',
     'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'http://127.0.0.1:8000',
+    'https://heteromorphic-amado-deflexed.ngrok-free'
 ]
 if os.getenv('CLOUDRUN_SERVICE_URL'):
     CSRF_TRUSTED_ORIGINS.append(os.getenv('CLOUDRUN_SERVICE_URL'))
@@ -181,8 +182,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
     "https://storage.googleapis.com",
+    "https://tommckechnie-90.github.io"
 ]
-
 # Only enforce SSL Redirects if we are truly in Production
 if IS_ON_CLOUDRUN:
     SECURE_SSL_REDIRECT = True
