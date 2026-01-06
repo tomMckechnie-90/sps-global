@@ -2,7 +2,7 @@
 Django settings for sps_cms project.
 Hybrid Settings: Auto-detects Local vs. Cloud Run.
 """
-
+from corsheaders.defaults import default_headers
 from pathlib import Path
 import os
 import sys
@@ -39,7 +39,7 @@ if raw_allowed_hosts == '*':
 else:
     ALLOWED_HOSTS = [host.strip().strip('"').strip("'") for host in raw_allowed_hosts.split(',') if host.strip()]
 
-
+ALLOWED_HOSTS.append('.ngrok-free.dev')
 # ==============================================================================
 # SECURITY HEADERS (Proxy Fix)
 # ==============================================================================
@@ -54,7 +54,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8080',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'https://heteromorphic-amado-deflexed.ngrok-free'
+    'https://heteromorphic-amado-deflexed.ngrok-free.dev',
+    'https://*.ngrok-free.dev'
 ]
 if os.getenv('CLOUDRUN_SERVICE_URL'):
     CSRF_TRUSTED_ORIGINS.append(os.getenv('CLOUDRUN_SERVICE_URL'))
@@ -183,6 +184,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "https://storage.googleapis.com",
     "https://tommckechnie-90.github.io"
+]
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "ngrok-skip-browser-warning",
 ]
 # Only enforce SSL Redirects if we are truly in Production
 if IS_ON_CLOUDRUN:
