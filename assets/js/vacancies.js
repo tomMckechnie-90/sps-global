@@ -1,15 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const jobsContainer = document.getElementById('jobs-grid-container');
-    // const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
+
     // const apiUrl = 'https://sps-api-170236375136.europe-west2.run.app/api/jobs/';
+
+    // Use for local testing
+    // const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
+
+    // Use this for GitHub pages ngrok testing 
     const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+
+
 
     if (!jobsContainer) {
         console.error('Error: Element ID "jobs-grid-container" was not found!');
         return;
     }
+    // =================================================
+    // LOCAL DEVELOPMENT
+    // =================================================
+    // fetch(apiUrl)
+    //     .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('Network response failure');
+    //         }
+    //         return response.json();
+    //     })
 
-    fetch(apiUrl)
+    // =================================================
+    // GITHUB PAGES (NGROK TESTING)
+    // =================================================
+    // Git hib pages testing
+    // comment this block out once pushed up to Github for testing locally
+    // Uncomment before pushing to Github.  
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'ngrok-skip-browser-warning': 'true',
+        }
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response failure');
