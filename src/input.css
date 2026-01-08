@@ -76,6 +76,7 @@
   }
 }
 
+
 @media (max-width: 600px) {
   .custom-underline-contact::after {
     top: 325px;
