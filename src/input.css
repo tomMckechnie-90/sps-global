@@ -42,10 +42,10 @@
 .custom-underline-about::after {
   content: '';
   position: absolute;
-  top: 410px;
+  top: 420px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 80%;
   height: 6px;
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
 }
@@ -67,18 +67,11 @@
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
 }
 
-@media (max-width: 600px) {
-  .custom-underline-about::after {
-    top: 350px;
-    width: 75%;
-    z-index: -1;
-  }
-}
 
 @media (max-width: 768px) {
   .custom-underline-about::after {
-    top: 350px;
-    width: 60%;
+    top: 254px;
+    width: 75%;
     z-index: -1;
   }
 }
