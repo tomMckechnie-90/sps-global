@@ -11,8 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // The event listener for the burger button, listens for clicks and runs the code if clicked.
         burgerButton.addEventListener('click', () => {
             console.log('Burger button clicked!');
-            // Then toggle the hidden class in the HTML, if it is clicked remove it when clicked again add hidden back to the HTML
-            mobileMenu.classList.toggle('hidden');
+
+            if (mobileMenu.classList.contains('max-h-0')){
+            mobileMenu.classList.remove('max-h-0', 'opacity-0');
+            mobileMenu.classList.add('max-h-screen', 'opacity-100');
+            } else {
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+            }
+
         });
     } else {
         // if the above elements are not found, show an error in the console
