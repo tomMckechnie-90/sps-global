@@ -18,6 +18,16 @@
   --text-spssm: 30px;
 }
 
+.smokey-bg {
+background: linear-gradient(90deg, 
+    #7B52B8 0%,   
+    #380E88 35%,  
+    #380e88 50%,  
+    #380E88 65%,  
+    #7B52B8 100%  
+);
+}
+
 .custom-underline-contact::after {
   content: '';
   position: absolute;

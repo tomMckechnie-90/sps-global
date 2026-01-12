@@ -374,9 +374,6 @@
   .aspect-\[4\/3\] {
     aspect-ratio: 4/3;
   }
-  .h-1 {
-    height: calc(var(--spacing) * 1);
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -557,9 +554,16 @@
     border-style: var(--tw-border-style);
     border-width: 3px;
   }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+  .border-spsaccent {
+    border-color: var(--color-spsaccent);
   }
   .border-spsdark {
     border-color: var(--color-spsdark);
@@ -1213,6 +1217,11 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
   .lg\:px-12 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 12);
@@ -1343,6 +1352,9 @@
       margin-bottom: calc(var(--spacing) * 0);
     }
   }
+}
+.smokey-bg {
+  background: linear-gradient(90deg, #7B52B8 0%, #380E88 35%, #380e88 50%, #380E88 65%, #7B52B8 100% );
 }
 .custom-underline-contact::after {
   content: '';
