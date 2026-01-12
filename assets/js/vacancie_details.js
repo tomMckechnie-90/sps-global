@@ -27,22 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="flex md:flex-col md:items-center flex-row md:mb-20 md:pt-15 sm:text-center text-left mb-8 pt-4">
                     <h1 class="md:text-5xl text-3xl font-bold font-playfairdisplay">${job.title}</h1>
                 </div>
-                <div class="flex flex-row justify-around items-center lg:mb-10 mb-6 md:text-xl text-sm font-sourcesans3">
+                <div class="flex flex-row justify-around items-center lg:mb-10 mb-6 md:text-xl text-sm font-sourcesans3 text-spsaccent">
                     <p><strong>Location:</strong> ${job.location}</p>
                     <p><strong>Job Type:</strong> ${job.job_type}</p>
                     <p><strong>Salary:</strong> ${job.salary}</p>
                 </div>
-                <div class="prose prose-lg text-spsdark max-w-none">
+                <div class="prose prose-lg text-spswhite max-w-none">
                     ${job.description.replace(/\n/g, '<br>')}
                 </div>
                 <div class="flex justify-center p-10">
                         <a href="mailto:london@spsglobal.com"
-                            class="bg-spsdark px-10 py-4 font-bold md:text-2xl text-lg text-spswhite text-center font-sourcesans3">Apply
+                            class="sps-accent border-2 border-spsaccent text-spsaccent px-10 py-4 font-bold md:text-2xl text-lg text-center font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">Apply
                             Now</a>
                     </div>
                     <div class="flex justify-center mb-3">
                         <a href="vacancies.html"
-                            class="bg-spswhite px-6 py-2 font-bold md:text-xl text-lg text-spsdark text-center font-sourcesans3 hover:underline">Back
+                            class="px-6 py-2 font-bold md:text-xl text-lg text-spsaccent text-center font-sourcesans3 hover:underline">Back
                             to Vacancies</a>
                     </div>
         `

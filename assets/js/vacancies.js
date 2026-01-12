@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             jobs.forEach(job => {
                 if (job.is_active) {
                     const card = document.createElement('div');
-                    card.className = 'border border-spsdark border-2 bg-spswhite p-4 shadow-xl shadow-spsdark';
+                    card.className = 'border border-spswhite border-2 smokey-bg p-4 shadow-lg shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out';
 
                     // shorten the description for the card view
                     const shortDescription = job.description.length > 200
@@ -64,18 +64,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     card.innerHTML = `
                     <div class="flex flex-row justify-between mb-5">
-                        <h1 class="md:text-2xl text-xl font-bold font-playfairdisplay">${job.title}</h1>
+                        <h1 class="md:text-2xl text-xl font-bold font-playfairdisplay text-spswhite">${job.title}</h1>
                     </div>
-                    <div class="flex flex-row justify-between mb-3 md:text-lg text-sm">
+                    <div class="flex flex-row justify-between mb-3 md:text-lg text-sm text-spsaccent">
                         <p><span class="font-bold">Location: ${job.location}</span></p>
                         <p class="font-bold">${job.job_type}</p>
                         <p><span class="font-bold">Salary: ${job.salary}</span></p>
                     </div>
-                    <div class="md:text-lg text-sm">
+                    <div class="md:text-lg text-sm text-spswhite">
                         <p>${shortDescription}</p>
                     </div>
                     <div class="flex justify-end pt-5">
-                        <a href="vacancie_details.html?id=${job.id}" class="bg-spsdark px-6 py-2 font-bold md:text-lg text-sm text-spswhite text-center font-sourcesans3">
+                        <a href="vacancie_details.html?id=${job.id}" class="text-spsaccent border-2 border-spsaccent p-2 font-bold font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">
                         More Details</a>
                     </div>
                 `;
