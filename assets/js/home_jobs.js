@@ -50,27 +50,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 const card = document.createElement('div');
 
                 // Styling: White background, rounded corners, nice shadow
-                card.className = 'bg-spswhite p-8 rounded-lg shadow-xl shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col justify-between';
+                card.className = 'smokey-bg p-8 rounded-lg shadow-xl border-2 border-spshite shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col justify-between';
 
                 // Create the HTML content for the card
                 // We keep it simpler than the main vacancies page
                 card.innerHTML = `
                 <div>
-                    <h3 class="font-playfairdisplay font-bold text-2xl text-spsdark mb-2">
+                    <h3 class="font-playfairdisplay font-bold text-2xl text-spswhite mb-2">
                         ${job.title}
                     </h3>
                     <p class="font-sourcesans3 text-lg text-spsaccent font-bold mb-4">
                         ${job.location}
                     </p>
-                    <p class="font-sourcesans3 text-spsdark mb-6 line-clamp-3">
+                    <p class="font-sourcesans3 text-spswhite mb-6 line-clamp-3">
                         ${job.description}
                     </p>
                 </div>
                 
                 <div class="text-end">
                     <a href="vacancie_details.html?id=${job.id}" 
-                       class="text-spspurple font-bold font-sourcesans3 hover:text-spsaccent transition-colors duration-300">
-                       View Role &rarr;
+                       class="text-spsaccent border-2 border-spsaccent p-2 font-bold font-sourcesans3 hover:text-spswhite transition-colors duration-300">
+                       View Role
                     </a>
                 </div>
             `;

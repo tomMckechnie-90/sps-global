@@ -371,6 +371,9 @@
   .inline-block {
     display: inline-block;
   }
+  .table {
+    display: table;
+  }
   .aspect-\[4\/3\] {
     aspect-ratio: 4/3;
   }
@@ -431,14 +434,23 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -570,6 +582,9 @@
   }
   .border-spswhite {
     border-color: var(--color-spswhite);
+  }
+  .bg-spsaccent {
+    background-color: var(--color-spsaccent);
   }
   .bg-spsdark {
     background-color: var(--color-spsdark);
@@ -807,6 +822,10 @@
       --tw-shadow-color: color-mix(in oklab, var(--color-spsdark) var(--tw-shadow-alpha), transparent);
     }
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
@@ -888,6 +907,13 @@
       }
     }
   }
+  .hover\:bg-spsaccent {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-spsaccent);
+      }
+    }
+  }
   .hover\:bg-spshover {
     &:hover {
       @media (hover: hover) {
@@ -895,10 +921,31 @@
       }
     }
   }
+  .hover\:bg-spspurple {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-spspurple);
+      }
+    }
+  }
+  .hover\:bg-transparent {
+    &:hover {
+      @media (hover: hover) {
+        background-color: transparent;
+      }
+    }
+  }
   .hover\:text-spsaccent {
     &:hover {
       @media (hover: hover) {
         color: var(--color-spsaccent);
+      }
+    }
+  }
+  .hover\:text-spsdark {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-spsdark);
       }
     }
   }
@@ -1540,6 +1587,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1668,6 +1720,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
