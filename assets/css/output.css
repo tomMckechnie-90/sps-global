@@ -443,6 +443,12 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .scale-100 {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -562,14 +568,6 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .border-3 {
-    border-style: var(--tw-border-style);
-    border-width: 3px;
-  }
-  .border-4 {
-    border-style: var(--tw-border-style);
-    border-width: 4px;
-  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
@@ -577,17 +575,8 @@
   .border-spsaccent {
     border-color: var(--color-spsaccent);
   }
-  .border-spsdark {
-    border-color: var(--color-spsdark);
-  }
   .border-spswhite {
     border-color: var(--color-spswhite);
-  }
-  .bg-spsaccent {
-    background-color: var(--color-spsaccent);
-  }
-  .bg-spsdark {
-    background-color: var(--color-spsdark);
   }
   .bg-spspurple {
     background-color: var(--color-spspurple);
@@ -767,9 +756,6 @@
   .text-spsdark {
     color: var(--color-spsdark);
   }
-  .text-spspurple {
-    color: var(--color-spspurple);
-  }
   .text-spswhite {
     color: var(--color-spswhite);
   }
@@ -865,6 +851,14 @@
     --tw-duration: 1000ms;
     transition-duration: 1000ms;
   }
+  .duration-\[7000\] {
+    --tw-duration: 7000;
+    transition-duration: 7000;
+  }
+  .duration-\[7000ms\] {
+    --tw-duration: 7000ms;
+    transition-duration: 7000ms;
+  }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
@@ -914,45 +908,10 @@
       }
     }
   }
-  .hover\:bg-spsaccent {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-spsaccent);
-      }
-    }
-  }
   .hover\:bg-spshover {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-spshover);
-      }
-    }
-  }
-  .hover\:bg-spspurple {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-spspurple);
-      }
-    }
-  }
-  .hover\:bg-transparent {
-    &:hover {
-      @media (hover: hover) {
-        background-color: transparent;
-      }
-    }
-  }
-  .hover\:text-spsaccent {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-spsaccent);
-      }
-    }
-  }
-  .hover\:text-spsdark {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-spsdark);
       }
     }
   }
@@ -1482,6 +1441,21 @@
     z-index: -1;
   }
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -1669,21 +1643,6 @@
   inherits: false;
   initial-value: 100%;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -1702,6 +1661,9 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -1745,9 +1707,6 @@
       --tw-ease: initial;
       --tw-text-shadow-color: initial;
       --tw-text-shadow-alpha: 100%;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;

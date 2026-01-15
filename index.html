@@ -169,8 +169,20 @@
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                 <!-- Card 1: Exec staff -->
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg shadow-spsdark group mb-8">
-                        <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                    <div id="exec-slider"
+                        class="relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg shadow-spsdark group mb-8">
+                        <!-- Image 1 (start) -->
+                        <img class="zoom-slider active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-100"
+                            src="assets/images/executive_staff.webp"
+                            alt="Two executives in a handshake, this image has a very calm tone and feel about it">
+
+                        <!-- Image 2 -->
+                        <img class="zoom-slider absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                            src="assets/images/executive_staff.webp"
+                            alt="Two executives in a handshake, this image has a very calm tone and feel about it">
+
+                        <!-- Image 3 -->
+                        <img class="zoom-slider absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
                             src="assets/images/executive_staff.webp"
                             alt="Two executives in a handshake, this image has a very calm tone and feel about it">
                     </div>
@@ -193,8 +205,18 @@
                 </div>
                 <!-- Card 2: Private Stuff -->
                 <div class="flex flex-col items-center text-center">
-                    <div class="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg shadow-spsdark mb-8 group">
-                        <img class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                    <div id="private-slider"
+                        class="relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg shadow-spsdark mb-8 group">
+                        <!-- Image 1 (start) -->
+                        <img class="zoom-slider active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-100"
+                            src="assets/images/private_staff.webp" alt="Maid fluffing a pillow">
+
+                        <!-- Image 2 -->
+                        <img class="zoom-slider active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                            src="assets/images/private_staff.webp" alt="Maid fluffing a pillow">
+
+                        <!-- Image 3 -->
+                         <img class="zoom-slider active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
                             src="assets/images/private_staff.webp" alt="Maid fluffing a pillow">
                     </div>
 
@@ -270,7 +292,7 @@
 
         </section>
 
-<div class="sps-divider"></div>
+        <div class="sps-divider"></div>
         <!-- CTA Banner #2 -->
         <section class="flex items-center justify-center text-center p-10 text-spswhite smokey-bg">
             <!-- <div class="absolute inset-0 z-0">

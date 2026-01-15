@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Create the card div
                 const card = document.createElement('div');
 
-                // Styling: White background, rounded corners, nice shadow
+                // Styling: Smokey background, rounded corners, nice shadow
                 card.className = 'smokey-bg p-8 rounded-lg shadow-xl border-2 border-spshite shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col justify-between';
 
                 // Create the HTML content for the card
