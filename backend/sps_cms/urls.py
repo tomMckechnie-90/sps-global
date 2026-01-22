@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from jobs.views import contact_email
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('jobs.urls')),
+    # API ENDPOINTS
+    path('api/', include('jobs.urls')),  # jobs
+    path('api/contact', contact_email, name='contact_email'),  # email
 ]

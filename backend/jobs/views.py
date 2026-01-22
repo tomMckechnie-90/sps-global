@@ -2,6 +2,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Job
 from .serializers import JobSerializer
+from django.core.mail import send_mail
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 """
 the view handles incoming web requests. We are using a special kind of view from the REST framework called a ViewSet. 
@@ -18,3 +21,51 @@ class JobViewSet(viewsets.ModelViewSet): We're creating our view and telling it 
 class JobViewSet(viewsets.ModelViewSet):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
+    
+
+@api_view(['POST'])
+def contact_email(request):
+    """
+    Receives JSON data from the frontend and sends an email
+    """
+    data = request.data
+    
+    # Get the data from the request
+    name = data.get('name', 'Anonymous')
+    sender_email = data.get('email', '')
+    message = data.get('message', '')
+    category = data.get('category', 'General')
+    
+    # Validation
+    if not sender_email or not message:
+        return Response({'error': 'Email and Message are required'}, status=400)
+    
+    # Format of the Email content
+    subject = f"New Enquiry: {category} from {name}"
+    full_body = f"""
+    You have received a new enquiry via the website.
+    
+    Name: {name}
+    Email: {sender_email}
+    Category: {category}
+    
+    Message:
+    ------------------------------------
+    {message}
+    ------------------------------------
+    """
+    
+    # Send the email
+    try:
+        send_mail(
+            subject,
+            full_body,
+            'sps.dev.dummy@gmail.com', # From
+            ['sps.dev.dummy@gmail.com'], # To (Change later from dummy)
+            fail_silently=False,
+        )
+        return Response({'success': 'Email sent successfully!'})
+
+    except Exception as e:
+    # if Gmail decides to reject the email, explain why
+        return Response({'error': str(e)}, status=500)
