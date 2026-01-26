@@ -35,6 +35,7 @@ def contact_email(request):
     sender_email = data.get('email', '')
     message = data.get('message', '')
     category = data.get('category', 'General')
+    sector = data.get('sector', 'Not Specified')
     
     # Validation
     if not sender_email or not message:
@@ -48,6 +49,7 @@ def contact_email(request):
     Name: {name}
     Email: {sender_email}
     Category: {category}
+    Sector Interest: {sector}
     
     Message:
     ------------------------------------
