@@ -10,11 +10,13 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-green-500: oklch(72.3% 0.219 149.579);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-xs: 20rem;
-    --container-sm: 24rem;
     --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
@@ -244,6 +246,9 @@
   .z-0 {
     z-index: 0;
   }
+  .z-1 {
+    z-index: 1;
+  }
   .z-10 {
     z-index: 10;
   }
@@ -289,26 +294,14 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
-  .my-12 {
-    margin-block: calc(var(--spacing) * 12);
-  }
-  .my-15 {
-    margin-block: calc(var(--spacing) * 15);
-  }
   .my-16 {
     margin-block: calc(var(--spacing) * 16);
-  }
-  .my-18 {
-    margin-block: calc(var(--spacing) * 18);
   }
   .my-20 {
     margin-block: calc(var(--spacing) * 20);
   }
   .my-26 {
     margin-block: calc(var(--spacing) * 26);
-  }
-  .my-32 {
-    margin-block: calc(var(--spacing) * 32);
   }
   .my-38 {
     margin-block: calc(var(--spacing) * 38);
@@ -385,9 +378,6 @@
   .mb-22 {
     margin-bottom: calc(var(--spacing) * 22);
   }
-  .mb-38 {
-    margin-bottom: calc(var(--spacing) * 38);
-  }
   .mb-42 {
     margin-bottom: calc(var(--spacing) * 42);
   }
@@ -421,9 +411,6 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -447,9 +434,6 @@
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -547,6 +531,9 @@
   .justify-items-center {
     justify-items: center;
   }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
@@ -577,6 +564,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-8 {
@@ -640,14 +634,17 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
   .border-spsaccent {
     border-color: var(--color-spsaccent);
   }
-  .border-spsdark {
-    border-color: var(--color-spsdark);
-  }
   .border-spswhite {
     border-color: var(--color-spswhite);
+  }
+  .bg-spsdark {
+    background-color: var(--color-spsdark);
   }
   .bg-spspurple {
     background-color: var(--color-spspurple);
@@ -836,6 +833,15 @@
   .text-gray-300 {
     color: var(--color-gray-300);
   }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
   .text-red-500 {
     color: var(--color-red-500);
   }
@@ -874,9 +880,6 @@
   }
   .opacity-0 {
     opacity: 0%;
-  }
-  .opacity-80 {
-    opacity: 80%;
   }
   .opacity-100 {
     opacity: 100%;
@@ -967,13 +970,6 @@
       --tw-text-shadow-color: color-mix(in oklab, var(--color-spsdark) var(--tw-text-shadow-alpha), transparent);
     }
   }
-  .group-hover\:text-spsaccent {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        color: var(--color-spsaccent);
-      }
-    }
-  }
   .hover\:-translate-y-1 {
     &:hover {
       @media (hover: hover) {
@@ -997,13 +993,6 @@
       }
     }
   }
-  .hover\:border-spsaccent {
-    &:hover {
-      @media (hover: hover) {
-        border-color: var(--color-spsaccent);
-      }
-    }
-  }
   .hover\:border-spswhite {
     &:hover {
       @media (hover: hover) {
@@ -1011,17 +1000,17 @@
       }
     }
   }
-  .hover\:bg-spsdark {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-spsdark);
-      }
-    }
-  }
   .hover\:bg-spshover {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-spshover);
+      }
+    }
+  }
+  .hover\:bg-spspurple {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-spspurple);
       }
     }
   }
@@ -1059,6 +1048,27 @@
         --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
+    }
+  }
+  .focus\:border-spsaccent {
+    &:focus {
+      border-color: var(--color-spsaccent);
+    }
+  }
+  .focus\:border-spspurple {
+    &:focus {
+      border-color: var(--color-spspurple);
+    }
+  }
+  .focus\:outline-spsaccent {
+    &:focus {
+      outline-color: var(--color-spsaccent);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
     }
   }
   .sm\:text-center {
@@ -1181,11 +1191,6 @@
       margin-block: calc(var(--spacing) * 40);
     }
   }
-  .lg\:my-42 {
-    @media (width >= 64rem) {
-      margin-block: calc(var(--spacing) * 42);
-    }
-  }
   .lg\:mt-0 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 0);
@@ -1209,16 +1214,6 @@
   .lg\:mt-25 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 25);
-    }
-  }
-  .lg\:mt-26 {
-    @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 26);
-    }
-  }
-  .lg\:mt-28 {
-    @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 28);
     }
   }
   .lg\:mt-30 {

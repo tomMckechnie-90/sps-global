@@ -97,7 +97,90 @@
         </section>
 
         <section id="contact-form-section" class="hidden max-w-2xl mx-auto py-10 px-6 mb-20">
-            <!-- Form will go here -->
+
+            <!-- Back Button -->
+            <button id="btn-back"
+                class="mb-8 text-spsaccent hover:text-spswhite hover:cursor-pointer font-bold flex items-center gap-2 transition-colors">
+                <span>&larr;</span> Back to options
+            </button>
+
+            <!-- The Form Container -->
+            <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg relative">
+
+                <h2 class="font-playfairdisplay text-3xl font-bold mb-2 text-spswhite">Get in Touch</h2>
+                <p class="font-sourcesans3 text-spsaccent mb-8">Tell us a little about what you need.</p>
+
+                <!-- The Form Tag -->
+                <form id="inquiry-form" class="space-y-6">
+
+                    <!-- Hidden Field: Stores the Category (Employer/Candidate) -->
+                    <!-- JS will update this value automatically -->
+                    <input type="hidden" id="category-input" name="category" value="">
+
+                    <!-- Name Input -->
+                    <div>
+                        <label for="name" class="block font-sourcesans3 font-bold text-spswhite mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="e.g. John Smith">
+                    </div>
+
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Email
+                            Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <!-- Specific Interest (Dropdown) -->
+                    <div>
+                        <label for="sector" class="block font-sourcesans3 font-bold text-spswhite mb-2">I am interested
+                            in...</label>
+                        <select id="sector" name="sector"
+                            class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
+                            <option value="Private Staff" class="smokey-bg text-spsdark">Private Household Staff
+                            </option>
+                            <option value="Executive Search" class="smokey-bg text-spsdark">Corporate / Executive Search
+                            </option>
+                            <option value="General Inquiry" class="smokey-bg text-spsdark">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div>
+                        <label for="message" class="block font-sourcesans3 font-bold text-spswhite mb-2">Your
+                            Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="Please share any specific requirements or details..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full bg-spswhite text-spsdark font-bold py-4 hover:bg-spshover hover:cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1 shadow-lg text-lg">
+                        SEND ENQUIRY
+                    </button>
+
+                </form>
+
+
+
+            </div>
+        </section>
+        <!-- Success Message (Hidden initially) -->
+        <section>
+            <div id="success-message"
+                class="hidden absolute inset-0 smokey-bg flex flex-col items-center justify-center p-8 text-center rounded-lg">
+                <div class="text-green-500 text-6xl mb-4">✓</div>
+                <h3 class="font-playfairdisplay text-3xl text-spswhite font-bold mb-2">Message Sent!</h3>
+                <p class="font-sourcesans3 text-spsaccent">Thank you. Our team will be in touch shortly.</p>
+                <a href="index.html"
+                    class="mb-8 text-spsaccent hover:text-spswhite hover:cursor-pointer font-bold flex items-center gap-2 transition-colors">
+                    <span>&larr;</span> Home
+                </a>
+            </div>
         </section>
 
         <!-- <section class="font-sourcesans3 px-10 lg:px-0">
@@ -161,6 +244,7 @@
 
     </footer>
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/contact_form.js"></script>
 </body>
 
 </html>
