@@ -57,101 +57,69 @@
 
     </header>
     <main>
-        <!-- Search bar -->
+        <!-- TAB CONTAINER -->
+        <div class="flex justify-center mb-8">
+
+            <!-- Button 1: Private Staff (This one starts turned ON/Gold) -->
+            <button id="tab-private"
+                class="w-1/2 md:w-auto px-8 py-4 font-playfairdisplay font-bold text-xl md:text-2xl border-2 border-spsdark bg-spsaccent text-spswhite hover:cursor-pointer transition-colors duration-300">
+                Private Household
+            </button>
+
+            <!-- Button 2: Executive Search (This one starts turned OFF/White) -->
+            <button id="tab-executive"
+                class="w-1/2 md:w-auto px-8 py-4 font-playfairdisplay font-bold text-xl md:text-2xl border-2 border-spsdark smokey-bg text-white hover:cursor-pointer transition-colors duration-300">
+                Executive Search
+            </button>
+
+        </div>
         <section class="text-spsaccent p-2 mb-10 xl:mb-0 xl:mt-0 mt-8">
+            <!-- FILTER BAR -->
             <div
-                class="lg:grid lg:grid-cols-7 lg:justify-items-center border border-spswhite bg-spswhite border-2 p-3 shadow-lg shadow-spsdark smokey-bg">
-                <div>
-                    <label for="sector"
-                        class="grid lg:place-self-start place-self-center mb-1 font-sourcesans3 text-2xl">Sector:</label>
+                class="lg:grid lg:grid-cols-5 lg:justify-items-center border border-spsdark smokey-bg border-2 p-3 shadow-xl shadow-spsdark gap-4">
 
-                    <select name="sector" id="sector"
-                        class="grid lg:place-self-start place-self-center border-spswhite border-2 text-spswhite text-xl">
-                        <option value="executive" class="bg-spspurple">Executive</option>
-                        <option value="private" class="bg-spspurple">Private</option>
+                <!-- 1. LOCATION FILTER -->
+                <div class="w-full">
+                    <label for="location" class="block mb-1 font-sourcesans3 text-xl font-bold">Location:</label>
+                    <select id="filter-location" class="w-full smokey-bg border border-spsdark text-lg text-spswhite p-2">
+                        <option value="" class="bg-spspurple">All Locations</option>
+                        <!-- JavaScript will insert real locations here later -->
                     </select>
                 </div>
-                <div>
-                    <label for="job-title"
-                        class="grid lg:place-self-start place-self-center mb-1 font-sourcesans3 text-2xl">Job
-                        Title</label>
 
-                    <select name="job-title" id="job-title"
-                        class="grid lg:place-self-start place-self-center text-spswhite border-2 border-spswhite text-xl">
-                            <option value="" class="bg-spspurple">Job 1</option>
-                            <option value="" class="bg-spspurple">Job 2</option>
-                            <option value="" class="bg-spspurple">Job 3</option>
-                            <option value="" class="bg-spspurple">Job 4</option>
-                            <option value="" class="bg-spspurple">Job 5</option>
-                            <option value="" class="bg-spspurple">Job 6</option>
-                            <option value="" class="bg-spspurple">Job 7</option>
-                            <option value="" class="bg-spspurple">Job 8</option>
-                            <option value="" class="bg-spspurple">Job 9</option>
-                            <option value="" class="bg-spspurple">Job 10</option>
+                <!-- 2. JOB ROLE FILTER -->
+                <div class="w-full">
+                    <label for="role" class="block mb-1 font-sourcesans3 text-xl font-bold">Job Role:</label>
+                    <select id="filter-role" class="w-full smokey-bg border border-spsdark text-lg text-spswhite p-2">
+                        <option value="" class="bg-spspurple">All Roles</option>
+                        <!-- JavaScript will insert real roles here later -->
                     </select>
                 </div>
-                <div>
-                    <label for="location"
-                        class="grid lg:place-self-start place-self-center mb-1 font-sourcesans3 text-2xl">Location:</label>
 
-                    <select name="location" id="location"
-                        class="grid lg:place-self-start place-self-center text-spswhite border-2 border-spswhite text-xl">
-                        <option value="" class="bg-spspurple">Location 1</option>
-                        <option value="" class="bg-spspurple">Location 2</option>
-                        <option value="" class="bg-spspurple">Location 3</option>
-                        <option value="" class="bg-spspurple">Location 4</option>
-                        <option value="" class="bg-spspurple">Location 5</option>
-                        <option value="" class="bg-spspurple">Location 6</option>
-                        <option value="" class="bg-spspurple">Location 7</option>
-                        <option value="" class="bg-spspurple">Location 8</option>
-                        <option value="" class="bg-spspurple">Location 9</option>
-                        <option value="" class="bg-spspurple">Location 10</option>
+                <!-- 3. JOB TYPE FILTER -->
+                <div class="w-full">
+                    <label for="type" class="block mb-1 font-sourcesans3 text-xl font-bold">Type:</label>
+                    <select id="filter-type" class="w-full smokey-bg border border-spsdark text-spswhite text-lg p-2">
+                        <option value="" class="bg-spspurple">Any Type</option>
+                        <option value="Full Time" class="bg-spspurple">Full Time</option>
+                        <option value="Part Time" class="bg-spspurple">Part Time</option>
+                        <option value="Temporary" class="bg-spspurple">Temporary</option>
                     </select>
                 </div>
-                <div>
-                    <label for="part-time-full-time"
-                        class="grid lg:place-self-start place-self-center mb-2 font-sourcesans3 text-xl">Part
-                        Time/Full Time:</label>
 
-                    <select name="part-time-full-time" id="part-time-full-time"
-                        class="grid lg:place-self-start place-self-center text-spswhite border-2 border-spswhite text-xl">
-                        <option value="part-time" class="bg-spspurple">Part Time</option>
-                        <option value="full-time" class="bg-spspurple">Full Time</option>
-                    </select>
+                <!-- 4. KEYWORD SEARCH -->
+                <div class="w-full">
+                    <label for="keyword" class="block mb-1 font-sourcesans3 text-xl font-bold">Keyword:</label>
+                    <input type="text" id="filter-keyword" placeholder="Search..."
+                        class="w-full border border-spsdark text-lg p-2 text-spswhite">
                 </div>
-                <div> <label for="salary"
-                        class="grid lg:place-self-start place-self-center lg:mb-1 mb-0 font-sourcesans3 text-2xl">Salary:</label>
 
-                    <select name="salary" id="salary"
-                        class="grid lg:place-self-start place-self-center border-2 border-spswhite text-xl text-spswhite">
-                        <option value="" class="bg-spspurple">Salary 1</option>
-                        <option value="" class="bg-spspurple">Salary 2</option>
-                        <option value="" class="bg-spspurple">Salary 3</option>
-                        <option value="" class="bg-spspurple">Salary 4</option>
-                        <option value="" class="bg-spspurple">Salary 5</option>
-                        <option value="" class="bg-spspurple">Salary 6</option>
-                        <option value="" class="bg-spspurple">Salary 7</option>
-                        <option value="" class="bg-spspurple">Salary 8</option>
-                        <option value="" class="bg-spspurple">Salary 9</option>
-                        <option value="" class="bg-spspurple">Salary 10</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="cars"
-                        class="grid lg:place-self-start place-self-center mb-1 font-sourcesans3 text-2xl">Keyword:</label>
-                    <input type="text" id="keyword" name="keyword"
-                        class="grid lg:place-self-start place-self-center border border-spswhite text-xl border-2">
-                </div>
-                <!-- Buttons -->
-                <div class="grid lg:place-self-end place-self-center mt-6 lg:mt-0">
-                    <a href="#"
-                        class="whitespace-nowrap inline-block px-4 py-2 font-bold text-lg text-spsaccent border-2 border-spsaccent text-center font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">Apply
-                        Filters</a>
-                    <!-- <div>
-                        <a href="#" class="bg-spswhite px-2 py-1 font-bold text-lg text-spsdark font-sourcesans3">Reset
-                            Filters</a>
-                    </div> -->
-
+                <!-- 5. ACTION BUTTONS -->
+                <div class="w-full flex items-end">
+                    <button id="btn-filter"
+                        class="w-full border-spsaccent border text-spswhite font-bold text-lg py-2 hover:bg-spsaccent hover:cursor-pointer transition-colors">
+                        Update Results
+                    </button>
                 </div>
 
             </div>
