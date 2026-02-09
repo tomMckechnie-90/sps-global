@@ -130,23 +130,26 @@ WSGI_APPLICATION = 'sps_cms.wsgi.application'
 # DATABASE (The Switch)
 # ==============================================================================
 
-if IS_ON_CLOUDRUN:
-    # --- PRODUCTION (Cloud Run) ---
-    # Connects to Google Cloud SQL (Postgres)
-    DB_PASSWORD = os.getenv('DB_PASSWORD')
+# ==============================================================================
+# DATABASE (The Fail-Safe Logic)
+# ==============================================================================
+
+# Check if DB_HOST exists. If it does, we MUST be trying to connect to Cloud SQL.
+if os.getenv('DB_HOST'):
+    # --- PRODUCTION (Cloud Run / Postgres) ---
+    print(" --> DETECTED DB_HOST: USING POSTGRES", file=sys.stderr)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'PASSWORD': DB_PASSWORD,
-            'HOST': '/cloudsql/sps-global-recruitment:europe-west2:sps-jobs-db', 
+            'NAME': os.getenv('DB_NAME'),
+            'USER': os.getenv('DB_USER'),
+            'PASSWORD': os.getenv('DB_PASSWORD'),
+            'HOST': os.getenv('DB_HOST'),
         }
     }
 else:
-    # --- LOCAL (Laptop) ---
-    # Connects to your local db.sqlite3 file
-    print(" --> USING LOCAL SQLITE DATABASE", file=sys.stderr)
+    # --- LOCAL (SQLite) ---
+    print(" --> NO DB_HOST FOUND: USING LOCAL SQLITE", file=sys.stderr)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
