@@ -28,7 +28,16 @@ class Job(models.Model):
     salary = models.CharField(max_length=100, blank=True)
     description = models.TextField()
     is_active = models.BooleanField(default=True)
-    
+
+    SECTOR_CHOICES = [
+        ('Private', 'Private Household'),
+        ('Executive', 'Executive Search'),
+    ]
+    sector = models.CharField(
+        max_length=20,
+        choices=SECTOR_CHOICES,
+        default='Private')
+
     def __str__(self):
         return self.title
 
