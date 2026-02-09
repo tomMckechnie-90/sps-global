@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fallback-change-me-in-prod
 # DETECT ENVIRONMENT
 # Cloud Run automatically sets 'K_SERVICE'.
 # If it is missing, we assume we are on your Local Machine.
-IS_ON_CLOUDRUN = 'K_SERVICE' in os.environ
+IS_ON_CLOUDRUN = 'K_SERVICE' in os.environ or 'CLOUD_RUN_JOB' in os.environ
 
 # DEBUG Logic:
 # Local Machine -> DEBUG is True
