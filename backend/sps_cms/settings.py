@@ -29,7 +29,14 @@ IS_ON_CLOUDRUN = 'K_SERVICE' in os.environ or 'CLOUD_RUN_JOB' in os.environ
 # DEBUG Logic:
 # Local Machine -> DEBUG is True
 # Cloud Run     -> DEBUG is False
-DEBUG = not IS_ON_CLOUDRUN
+# DEBUG = not IS_ON_CLOUDRUN
+
+# Use the environment variable if it exists, otherwise default to the "Safe" logic
+raw_debug = os.getenv('DEBUG')
+if raw_debug is not None:
+    DEBUG = raw_debug.lower() == 'true'
+else:
+    DEBUG = not IS_ON_CLOUDRUN
 
 # ALLOWED HOSTS
 # If we are local, allow localhost. If on Cloud, allow the wildcard or specific env var.
