@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnPrivate = document.getElementById('tab-private');
     const btnExecutive = document.getElementById('tab-executive');
 
+    // -------------------------------------------------
+    // GRAB FILTER INPUTS
+    // -------------------------------------------------
+    const filterLocation = document.getElementById('filter-location');
+    const filterRole = document.getElementById('filter-role');
+    const filterType = document.getElementById('filter-type');
+    const filterKeyword = document.getElementById('filter-keyword');
+    const btnFilter = document.getElementById('btn-filter');
+
     // =================================================
     // THE CARD FACTORY (Your Design)
     // =================================================
@@ -69,6 +78,43 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =================================================
+    // THE SMART DROPDOWNS (New Feature!)
+    // =================================================
+    function populateDropdowns(jobs) {
+        console.log('Building dropdowns based on', jobs.length, 'jobs');
+
+        // Sets to hold unique values removes duplicates
+        const locations = new Set();
+        const roles = new Set();
+
+        jobs.forEach(job => {
+            if (job.location) locations.add(job.location);
+            if (job.title) roles.add(job.title);
+        });
+
+        // Helper function to fill a <select> element
+        const fillSelect = (selectElement, items) => {
+
+            if (!selectElement) return;
+            const firstOption = selectElement.firstElementChild;
+            selectElement.innerHTML = '';
+            if (firstOption) selectElement.appendChild(firstOption);
+
+            // Add new options
+            items.sort().forEach(item => {
+                const option = document.createElement('option');
+                option.value = item;
+                option.textContent = item;
+                selectElement.appendChild(option);
+            });
+        };
+        // populate the options
+        fillSelect(filterLocation, Array.from(locations));
+        fillSelect(filterRole, Array.from(roles));
+    }
+
+
+    // =================================================
     // TAB LOGIC (The Switch)
     // =================================================
     function switchTab(selectedTab) {
@@ -91,6 +137,14 @@ document.addEventListener('DOMContentLoaded', function () {
             btnPrivate.classList.add('smokey-bg');
             btnPrivate.classList.remove('bg-spsaccent');
         }
+
+        // Reset the filter when switching tabs
+        filterLocation.value = "";
+        filterRole.value = "";
+        filterType.value = "";
+        filterKeyword.value = "";
+
+
         filterJobs();
     }
 
@@ -101,9 +155,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function filterJobs() {
         console.log('Filtering jobs for:', currentTab);
-        // TODO: In the next step, we will actually filter the list here.
-        // For now, we just verify the flow works by rendering everything.
-        renderJobs(allJobs);
+        let tabFilteredJobs = allJobs.filter(job => {
+            const jobSector = job.sector || 'Private'; // default is private
+            return jobSector === currentTab;
+        });
+
+        // REBUILD DROPDOWNS based on the Tab results
+        // (do this BEFORE applying specific dropdown filters, 
+        // so the user sees all available options for this Tab)
+        // Note: In a real app, you might want to do this only on tab switch, 
+        // but doing it here ensures it's always up to date.
+        // We only populate if the filters are empty to avoid resetting user selection while typing
+        if (filterLocation.value === "" && filterRole.value === "") {
+            populateDropdowns(tabFilteredJobs);
+        }
+
+        // Filter by user inputs
+        let finalFilteredJobs = tabFilteredJobs.filter(job => {
+            // Location
+            if (filterLocation.value && job.location !== filterLocation.value) return false;
+            // Role
+            if (filterRole.value && job.title !== filterRole.value) return false;
+            // Type
+            if (filterType.value && job.job_type !== filterType.value) return false;
+
+            // Keyword 
+            if (filterKeyword && filterKeyword.value) {
+
+                const keyword = filterKeyword.value.toLowerCase();
+
+                const titleMatch = job.title.toLowerCase().includes(keyword);
+                const descMatch = job.description.toLowerCase().includes(keyword);
+                if (!titleMatch && !descMatch) return false;
+            }
+            return true;
+        });
+
+        renderJobs(finalFilteredJobs);
     }
 
     // =================================================
@@ -112,6 +200,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnPrivate && btnExecutive) {
         btnPrivate.addEventListener('click', () => switchTab('Private'));
         btnExecutive.addEventListener('click', () => switchTab('Executive'));
+    }
+
+    if (btnFilter) {
+        btnFilter.addEventListener('click', filterJobs);
     }
 
     // =================================================
@@ -124,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 🟢 REMOTE (Uncomment for GitHub)
     const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
 
+    if (!jobsContainer) return;
     // =================================================
     // 4. FETCH THE JOBS
     // =================================================
