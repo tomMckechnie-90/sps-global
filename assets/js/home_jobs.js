@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 🟢 OPTION 2: GITHUB PAGES (NGROK TESTING)
     // (Uncomment for GitHub Pages testing)
     // =================================================
-    const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+    // const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+
+    const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/jobs/';
 
     if (!container) {
         console.error('Error: Could not find "latest-jobs-container" in HTML');

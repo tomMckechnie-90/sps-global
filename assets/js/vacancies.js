@@ -214,7 +214,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // const apiUrl = 'http://127.0.0.1:8000/api/jobs/';
 
     // 🟢 REMOTE (Uncomment for GitHub)
-    const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+    // const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/jobs/';
+
+    // =================================================
+    // 🟢 PRODUCTION (Google Cloud Run)
+    const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/jobs/';
 
     if (!jobsContainer) return;
     // =================================================

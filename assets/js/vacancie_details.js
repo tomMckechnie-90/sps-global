@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    const apiUrl = `http://127.0.0.1:8000/api/jobs/${jobId}/`;
+    // const apiUrl = `http://127.0.0.1:8000/api/jobs/${jobId}/`;
+
+    // =================================================
+    // 🟢 PRODUCTION (Google Cloud Run)
+    const apiUrl = `https://sps-backend-service-170236375136.europe-west2.run.app/api/jobs/${jobId}/`;
 
     fetch(apiUrl)
         .then(response => {

@@ -3,12 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // =================================================
     // 🔴 OPTION 1: LOCAL DEVELOPMENT (Uncomment for local)
-    const apiUrl = 'http://127.0.0.1:8000/api/contact';
+    // const apiUrl = 'http://127.0.0.1:8000/api/contact';
 
     // =================================================
     // 🟢 OPTION 2: GITHUB PAGES / NGROK (Uncomment for remote)
     // Replace with your current ngrok URL
     // const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/contact';
+
+    const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/contact/';
 
     // GRAB THE HTML ELEMENTS 
     // The candidate and employer buttons
