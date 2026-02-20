@@ -38,8 +38,12 @@ class Job(models.Model):
         choices=SECTOR_CHOICES,
         default='Private')
 
+
     def __str__(self):
         return self.title
+    
+    class Meta: 
+        ordering = ['-id']
 
 
 
