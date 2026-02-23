@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const card = document.createElement('div');
 
                 // Styling: Smokey background, rounded corners, nice shadow
-                card.className = 'smokey-bg p-8 rounded-lg shadow-xl border-2 border-spshite shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out flex flex-col justify-between';
+                card.className = 'smokey-bg p-8 rounded-lg shadow-sm shadow-black/15 hover:shadow-lg border-2 border-spshite hover:-translate-y-1 transition-transform duration-300 ease-in-out flex flex-col justify-between';
 
                 // Create the HTML content for the card
                 // We keep it simpler than the main vacancies page

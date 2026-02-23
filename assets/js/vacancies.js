@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (job.is_active) {
                 const card = document.createElement('div');
                 // YOUR EXACT STYLING
-                card.className = 'border border-spswhite border-2 smokey-bg p-4 shadow-lg shadow-spsdark hover:-translate-y-2 transition-transform duration-300 ease-in-out';
+                card.className = 'border border-spswhite border-2 smokey-bg p-4 shadow-sm shadow-black/15 hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out';
 
                 // Shorten description
                 const shortDescription = job.description.length > 200
