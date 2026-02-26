@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Replace with your current ngrok URL
     // const apiUrl = 'https://heteromorphic-amado-deflexed.ngrok-free.dev/api/contact';
 
-    const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/contact/';
+    const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/contact';
 
     // GRAB THE HTML ELEMENTS 
     // The candidate and employer buttons
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'ngrok-skip-browser-warning': 'true',
+                    
                 },
                 body: JSON.stringify(data)
             })
