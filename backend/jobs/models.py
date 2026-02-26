@@ -1,4 +1,6 @@
 from django.db import models
+import random 
+import string
 
 """ 
 A model is the blueprint for the information you want to save in your database. This will tell Django what information 
@@ -37,13 +39,27 @@ class Job(models.Model):
         max_length=20,
         choices=SECTOR_CHOICES,
         default='Private')
-
+    
+    contact_email = models.EmailField(default="london@simplyprivatestaff.com")
+    reference_number = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.title
     
     class Meta: 
         ordering = ['-id']
+    
+    # This intercepts the "Save" button right before it hits the database.
+
+    def save(self, *args, **kwargs):
+        # If the job does not include a ref number
+        if not self.reference_number:
+            # generate a random 6 uppercase letters and numbers
+            random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+            # Stick "SPS" on the front of it
+            self.reference_number = f"SPS-{random_string}"
+
+            super().save(*args, **kwargs)
 
 
 
