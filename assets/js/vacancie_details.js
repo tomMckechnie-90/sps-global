@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     ${job.description.replace(/\n/g, '<br>')}
                 </div>
                 <div class="flex justify-center p-10">
-                        <a href="mailto:london@spsglobal.com"
-                            class="sps-accent border-2 border-spsaccent text-spsaccent px-10 py-4 font-bold md:text-2xl text-lg text-center font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">Apply
-                            Now</a>
+                        <a href="mailto:${job.contact_email}?subject=Application for Job Ref: ${job.reference_number}"
+                        class="sps-accent border-2 border-spsaccent text-spsaccent px-10 py-4 font-bold md:text-2xl text-lg text-center font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">Apply
+                        Now</a>
                     </div>
                     <div class="flex justify-center mb-3">
                         <a href="vacancies.html"
