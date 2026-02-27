@@ -7,6 +7,8 @@ class JobAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'reference_number', 'location', 'is_active')
 
+    search_fields = ('title', 'reference_number', 'location')
+
 
 
 
