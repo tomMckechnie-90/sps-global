@@ -23,8 +23,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(job => {
+            // Dynamic SEO Injection starts
             // Update the page title in the tab
-            document.title = `SPS Global Recruitment | ${job.title}`;
+            const seoTitle = job.meta_title ? job.meta_title : `SPS Global Recruitment | ${job.title}`;
+            document.title = seoTitle
+
+            // Update the Meta Description
+            let metaDescriptionTag = document.querySelector('meta[name="description"]');
+
+            if (!metaDescriptionTag) {
+                metaDescriptionTag = document.createElement('meta');
+                metaDescriptionTag.name = "description";
+                document.head.appendChild(metaDescriptionTag);
+            }
+
+            if (job.meta_description) {
+                metaDescriptionTag.content = job.meta_description;
+            } else {
+                // Fallback: Strip HTML tags and grab the first 150 chars
+                const plainTextDesc = job.description.replace(/<[^>]*>?/gm, '');
+                metaDescriptionTag.content = plainTextDesc.substring(0, 150) + '...';
+            }
+
 
             // Inject the job details written to the database to vacancie_details.html
             jobDetailContainer.innerHTML = `
@@ -51,4 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
         `
         })
+        .catch(error => {
+            console.error('Error:', error);
+            jobDetailContainer.innerHTML = '<p class="text-red-500">Error loading job details. Please try again later.</p>';
+        });
 })
