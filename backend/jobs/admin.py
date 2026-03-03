@@ -4,8 +4,8 @@ from .models import Job   # Imported SPS globals job blueprint from models.py
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
     # this protects the reference number so it cannot be changed manually
-    list_display = ('title', 'reference_number', 'location', 'is_active')
-    list_filter = ('sector', 'is_active')
+    list_display = ('title', 'reference_number', 'location', 'is_live')
+    list_filter = ('sector', 'is_live')
     search_fields = ('title', 'reference_number', 'location')
     readonly_fields = ('reference_number',)
 
@@ -18,7 +18,7 @@ class JobAdmin(admin.ModelAdmin):
             'description': 'Use these fields to target specific Candidate keywords (e.g., "Radiography jobs abroad").'
         }),
         ('Admin Data', {
-            'fields': ('contact_email', 'is_active', 'reference_number')
+            'fields': ('contact_email', 'is_live', 'reference_number')
         }),
     )
 

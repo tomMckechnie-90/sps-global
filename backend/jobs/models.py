@@ -29,7 +29,7 @@ class Job(models.Model):
     job_type = models.CharField(max_length=50, default='Full Time')
     salary = models.CharField(max_length=100, blank=True)
     description = models.TextField()
-    is_active = models.BooleanField(default=True)
+    is_live = models.BooleanField(default=True)
 
     SECTOR_CHOICES = [
         ('Private', 'Private Household'),
@@ -76,4 +76,4 @@ class Job(models.Model):
             super().save(*args, **kwargs)
 
 
-
+## comment for migration
