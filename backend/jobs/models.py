@@ -43,6 +43,20 @@ class Job(models.Model):
     contact_email = models.EmailField(default="london@simplyprivatestaff.com")
     reference_number = models.CharField(max_length=20, blank=True, null=True)
 
+    # SEO Meta Fields
+    meta_title = models.CharField (
+        max_length=60,
+        blank=True,
+        null=True,
+        help_text="SEO Title (e.g., 'Palliative Care Nursing Jobs in Bermuda'). Max 60 chars. Overrides default title."
+    )
+    meta_description = models.CharField(
+        max_length=160,
+        blank=True,
+        null=True,
+        help_text="SEO Description to attract users. Max 160 chars."
+    )
+
     def __str__(self):
         return self.title
     
