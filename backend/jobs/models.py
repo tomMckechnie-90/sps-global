@@ -73,7 +73,7 @@ class Job(models.Model):
             # Stick "SPS" on the front of it
             self.reference_number = f"SPS-{random_string}"
 
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
 
 ## comment for migration
