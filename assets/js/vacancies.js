@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 3. Loop through and build cards
         jobsToRender.forEach(job => {
-            if (job.is_active) {
+            if (job.is_live) {
                 const card = document.createElement('div');
                 // YOUR EXACT STYLING
                 card.className = 'border border-spswhite border-2 smokey-bg p-4 shadow-sm shadow-black/15 hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 ease-in-out';
