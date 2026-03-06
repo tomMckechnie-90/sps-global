@@ -7,7 +7,6 @@ class JobAdmin(admin.ModelAdmin):
     list_display = ('title', 'reference_number', 'location', 'is_live')
     list_filter = ('sector', 'is_live')
     search_fields = ('title', 'reference_number', 'location')
-    readonly_fields = ('reference_number',)
 
     fieldsets = (
         ('Core Job Details', {
