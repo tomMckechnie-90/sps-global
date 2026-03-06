@@ -65,7 +65,7 @@ def contact_email(request):
             subject=subject,
             body=full_body,
             from_email='sps.dev.dummy@gmail.com', # From
-            to=['thomas@regmawebdesign.co.uk'], # To (Change later from dummy)
+            to=['tommckehnie@hotmail.co.uk'], # To (Change later from dummy)
             reply_to=[sender_email]
         )
 
