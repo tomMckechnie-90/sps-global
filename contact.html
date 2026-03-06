@@ -133,7 +133,7 @@
                 <p class="font-sourcesans3 text-spsaccent mb-8">Tell us a little about what you need.</p>
 
                 <!-- The Form Tag -->
-                <form id="inquiry-form" class="space-y-6">
+                <form id="inquiry-form" class="space-y-6" enctype="multipart/form-data">
 
                     <!-- Hidden Field: Stores the Category (Employer/Candidate) -->
                     <!-- JS will update this value automatically -->
@@ -177,6 +177,16 @@
                         <textarea id="message" name="message" rows="5" required
                             class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
                             placeholder="Please share any specific requirements or details..."></textarea>
+                    </div>
+
+                    <!-- File Upload Input -->
+                    <div>
+                        <label id="attachment-label" for="attachment" class="block font-sourcesans3 font-bold text-spswhite mb-2">
+                            Attach Document
+                        </label>
+                        <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx" required
+                            class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
+                        <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX</p>
                     </div>
 
                     <!-- Submit Button -->

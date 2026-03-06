@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoryInput = document.getElementById('category-input');
     const successMessage = document.getElementById('success-message');
 
+    const attachmentLabel = document.getElementById('attachment-label');
+
     // DEFINE THE FUNCTION THAT SWITCHES BETWEEN USER SELECTIONS
     function showForm(category) {
         console.log('User selected:', category);
@@ -32,6 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (categoryInput) {
             // Save the choice so we send it to the backend later
             categoryInput.value = category;
+        }
+
+        if (attachmentLabel) {
+            if (category === 'Employer') {
+                attachmentLabel.innerText = 'Attach Job Description';
+            } else if (category === 'Candidate') {
+                attachmentLabel.innerText = 'Attach CV';
+            }
         }
 
 
@@ -88,11 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Send the gathered data to Django (API)
             fetch(apiUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    
-                },
-                body: JSON.stringify(data)
+                body: formData
             })
                 .then(response => {
                     if (!response.ok) {
