@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Job
 from .serializers import JobSerializer
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
@@ -36,7 +36,9 @@ def contact_email(request):
     message = data.get('message', '')
     category = data.get('category', 'General')
     sector = data.get('sector', 'Not Specified')
-    
+
+    # Extract the file
+    uploaded_file = request.FILES.get('attachment')
     # Validation
     if not sender_email or not message:
         return Response({'error': 'Email and Message are required'}, status=400)
@@ -59,13 +61,18 @@ def contact_email(request):
     
     # Send the email
     try:
-        send_mail(
-            subject,
-            full_body,
-            'sps.dev.dummy@gmail.com', # From
-            ['sps.dev.dummy@gmail.com'], # To (Change later from dummy)
-            fail_silently=False,
+        email = EmailMessage(
+            subject=subject,
+            body=full_body,
+            from_email='sps.dev.dummy@gmail.com', # From
+            to=['thomas@regmawebdesign.co.uk'], # To (Change later from dummy)
+            reply_to=[sender_email]
         )
+
+        if uploaded_file:
+            email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+        
+        email.send(fail_silently=False)
         return Response({'success': 'Email sent successfully!'})
 
     except Exception as e:
