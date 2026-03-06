@@ -39,7 +39,7 @@ class Job(models.Model):
         default='Private')
     
     contact_email = models.EmailField(default="london@simplyprivatestaff.com")
-    reference_number = models.CharField(max_length=40, blank=True, null=True)
+    reference_number = models.CharField(max_length=40, blank=True, default=False)
 
     # SEO Meta Fields
     meta_title = models.CharField (
