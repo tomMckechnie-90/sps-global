@@ -30,8 +30,8 @@ class Job(models.Model):
     is_live = models.BooleanField(default=True)
 
     SECTOR_CHOICES = [
-        ('Private', 'Private Household'),
-        ('Executive', 'Executive Search'),
+        ('Private', 'Private Jobs'),
+        ('Executive', 'Executive Jobs'),
     ]
     sector = models.CharField(
         max_length=20,
