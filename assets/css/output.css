@@ -232,8 +232,14 @@
   .static {
     position: static;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
   }
   .top-full {
     top: 100%;
@@ -255,6 +261,12 @@
   }
   .z-12 {
     z-index: 12;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .z-100 {
+    z-index: 100;
   }
   .col-span-2 {
     grid-column: span 2 / span 2;
@@ -650,34 +662,10 @@
   .bg-spspurple {
     background-color: var(--color-spspurple);
   }
-  .bg-spspurple\/10 {
-    background-color: color-mix(in srgb, #380e88 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-spspurple) 10%, transparent);
-    }
-  }
   .bg-spspurple\/15 {
     background-color: color-mix(in srgb, #380e88 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-spspurple) 15%, transparent);
-    }
-  }
-  .bg-spspurple\/30 {
-    background-color: color-mix(in srgb, #380e88 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-spspurple) 30%, transparent);
-    }
-  }
-  .bg-spspurple\/40 {
-    background-color: color-mix(in srgb, #380e88 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-spspurple) 40%, transparent);
-    }
-  }
-  .bg-spspurple\/60 {
-    background-color: color-mix(in srgb, #380e88 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-spspurple) 60%, transparent);
     }
   }
   .bg-spswhite {
@@ -1548,6 +1536,16 @@
       padding-block: calc(var(--spacing) * 7);
     }
   }
+  .lg\:py-10 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:py-12 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 12);
+    }
+  }
   .lg\:py-20 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 20);
@@ -1673,6 +1671,16 @@
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
+  height: 6px;
+  background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
+}
+.sps-nav-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  top: 190px;
   height: 6px;
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
 }
