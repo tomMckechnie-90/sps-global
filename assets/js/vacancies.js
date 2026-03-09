@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // This says which button is currently "ON".
     // Default is 'Private' because that is the first button.
-    let currentTab = 'Private';
+    let currentTab = 'Executive';
 
     // GRAB HTML ELEMENTS
     const jobsContainer = document.getElementById('jobs-grid-container');
