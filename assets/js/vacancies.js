@@ -125,17 +125,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (selectedTab === 'Private') {
 
             btnPrivate.classList.add('bg-spsaccent');
+            btnPrivate.classList.add('text-spspurple');
             btnPrivate.classList.remove('smokey-bg');
+            btnPrivate.classList.remove('text-spswhite');
 
 
             btnExecutive.classList.add('smokey-bg');
             btnExecutive.classList.remove('bg-spsaccent');
+            btnExecutive.classList.add('text-spswhite');
         } else {
             btnExecutive.classList.add('bg-spsaccent');
+            btnExecutive.classList.add('text-spspurple');
             btnExecutive.classList.remove('smokey-bg');
+            btnExecutive.classList.remove('text-spswhite');
 
             btnPrivate.classList.add('smokey-bg');
             btnPrivate.classList.remove('bg-spsaccent');
+            btnPrivate.classList.add('text-spswhite')
         }
 
         // Reset the filter when switching tabs
