@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Job
 from .serializers import JobSerializer
+from django.conf import settings
 from django.core.mail import EmailMessage
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -64,8 +65,8 @@ def contact_email(request):
         email = EmailMessage(
             subject=subject,
             body=full_body,
-            from_email='sps.test.regma@gmail.com', # From
-            to=['sps.test.regma@gmail.com'], # To (Change later from dummy)
+            from_email=settings.DEFAULT_FROM_EMAIL, # From
+            to=[settings.TARGET_RECIPIENT_EMAIL], # To (Change later from dummy)
             reply_to=[sender_email]
         )
 
