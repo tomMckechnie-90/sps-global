@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>${shortDescription}</p>
                     </div>
                     <div class="flex justify-end pt-5">
-                        <a href="vacancie_details.html?id=${job.id}" class="text-spsaccent border-2 border-spsaccent p-2 font-bold font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">
+                        <a href="vacancie_details?id=${job.id}" class="text-spsaccent border-2 border-spsaccent p-2 font-bold font-sourcesans3 hover:text-spswhite hover:border-spswhite transition-colors duration-300">
                         More Details</a>
                     </div>
                 `;
