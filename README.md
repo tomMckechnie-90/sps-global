@@ -5,7 +5,7 @@
 
 Welcome to the SPS Global Search technical documentation. This manual is designed to serve both incoming developers responsible for maintaining the codebase and non-technical stakeholders requiring a clear understanding of the platform's infrastructure.
 
-This document outlines the day-to-day maintenance, architectural decisions, and the comprehensive file structure of the SPS Global Headless CMS platform. It specifically excludes one-time deployment events (such as the initial domain migrations) to focus entirely on the sustainable, long-term operation of the site.
+This document outlines the day-to-day maintenance, architectural decisions, and the comprehensive file structure of the SPS Global Headless CMS platform.
 
 ## Architectural Deep Dive: The Headless Model
 
