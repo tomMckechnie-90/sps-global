@@ -39,7 +39,6 @@ vacancie_details.html: The dynamic template page that populates specific job dat
 
 contact.html: The dynamic contact form supporting multi-part file uploads (CVs and JDs).
 
-privacy.html: Static legal documentation.
 
 /assets/
 
