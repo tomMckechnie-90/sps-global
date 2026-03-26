@@ -128,171 +128,33 @@
 
         </section>
         <div class="sps-divider"></div>
-        <!-- SPS standard / candidate reg form  -->
-<!-- SPS standard / candidate reg form  -->
-        <section class="lg:py-14 lg:px-10 p-3 grid lg:grid-cols-2 gap-12 grid-cols-1 text-spswhite lg:my-0 my-26">
-            
-            <!-- Col 1: Candidate Registration Form -->
-            <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg relative">
-                <h2 class="lg:text-spsmed text-4xl font-playfairdisplay font-bold mb-6 text-shadow-lg text-shadow-spsdark">
-                    Register for Work
-                </h2>
-                
-                <form id="candidate-registration-form" class="space-y-6" enctype="multipart/form-data">
-                    
-                    <!-- Hidden Field: Tracks where the form was submitted from -->
-                    <input type="hidden" name="source_page" id="source_page" value="Home Page">
+        <!-- Why choose SPS global Recruitment  -->
+        <section class="lg:p-36 p-3 text-spswhite lg:my-0 my-26">
+            <h2
+                class="lg:text-spsmed text-4xl font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
+                The SPS Standard</h2>
 
-                    <!-- Personal Info Section -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="reg_first_name" class="block font-sourcesans3 font-bold text-spswhite mb-2">First Name</label>
-                            <input type="text" id="reg_first_name" name="first_name" required
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
-                        </div>
-                        <div>
-                            <label for="reg_last_name" class="block font-sourcesans3 font-bold text-spswhite mb-2">Last Name</label>
-                            <input type="text" id="reg_last_name" name="last_name" required
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
-                        </div>
-                    </div>
+            <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
+                Uncompromising Quality
+            </p>
+            <!-- col 2 paragraph -->
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="reg_email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Email Address</label>
-                            <input type="email" id="reg_email" name="email" required
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
-                        </div>
-                        <div>
-                            <label for="reg_confirm_email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Confirm Email</label>
-                            <input type="email" id="reg_confirm_email" name="confirm_email" required
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
-                            <p id="email_match_msg" class="text-xs mt-1 hidden"></p> <!-- JS will handle red/green text here -->
-                        </div>
-                    </div>
-
-                    <!-- Geography Section -->
-                    <div>
-                        <label for="reg_nationality" class="block font-sourcesans3 font-bold text-spswhite mb-2">Nationality</label>
-                        <!-- We will attach the JS plugin to this select later -->
-                        <select id="reg_nationality" name="nationality" required
-                            class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                            <option value="" disabled selected>Select Nationality...</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="US">United States</option>
-                            <!-- Full list will be injected or handled by plugin -->
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="reg_current_country" class="block font-sourcesans3 font-bold text-spswhite mb-2">Current Country</label>
-                            <select id="reg_current_country" name="current_country" required
-                                class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                                <option value="" disabled selected>Select Country...</option>
-                                <option value="UK">United Kingdom</option>
-                                <option value="US">United States</option>
-                                <!-- Full list will be injected or handled by plugin -->
-                            </select>
-                        </div>
-                        <div>
-                            <label for="reg_current_city" class="block font-sourcesans3 font-bold text-spswhite mb-2">Current City</label>
-                            <input type="text" id="reg_current_city" name="current_city" required
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                                placeholder="e.g. London">
-                        </div>
-                    </div>
-
-                    <!-- Professional Info Section -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="reg_preferred_location" class="block font-sourcesans3 font-bold text-spswhite mb-2">Preferred Location</label>
-                            <select id="reg_preferred_location" name="preferred_location" required
-                                class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                                <option value="" disabled selected>Select Region...</option>
-                                <option value="Bermuda">Bermuda</option>
-                                <option value="Europe">Europe</option>
-                                <option value="Middle East">Middle East</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <!-- Hidden text field for "Other" -->
-                        <div id="location_other_container" class="hidden">
-                            <label for="reg_location_other" class="block font-sourcesans3 font-bold text-spswhite mb-2">Specify Location</label>
-                            <input type="text" id="reg_location_other" name="location_other"
-                                class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="reg_expertise" class="block font-sourcesans3 font-bold text-spswhite mb-2">Expertise / Job Title</label>
-                        <input type="text" id="reg_expertise" name="expertise" required maxlength="100"
-                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                            placeholder="e.g. Bilingual Private Chef (Max 100 chars)">
-                    </div>
-
-                    <!-- Bio Section with Word Counter -->
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <label for="reg_bio" class="block font-sourcesans3 font-bold text-spswhite">Short Bio</label>
-                            <span id="bio_word_counter" class="text-xs text-spsaccent font-bold">0 / 250 words</span>
-                        </div>
-                        <textarea id="reg_bio" name="bio" rows="4" required
-                            class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                            placeholder="Tell us a little about your professional background..."></textarea>
-                    </div>
-
-                    <!-- File Uploads -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="reg_cv" class="block font-sourcesans3 font-bold text-spswhite mb-2">Upload CV</label>
-                            <input type="file" id="reg_cv" name="cv_file" accept=".pdf,.doc,.docx" required
-                                class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
-                        </div>
-                        <div>
-                            <label for="reg_intro" class="block font-sourcesans3 font-bold text-spswhite mb-2">Upload Cover Letter</label>
-                            <input type="file" id="reg_intro" name="intro_file" accept=".pdf,.doc,.docx" required
-                                class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
-                        </div>
-                    </div>
-                    <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX. Max 5MB per file.</p>
-
-                    <!-- Cloudflare Turnstile Placeholder -->
-                    <div id="turnstile-widget-placeholder" class="py-2">
-                        <!-- JS will render Turnstile here -->
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" id="reg_submit_btn"
-                        class="w-full bg-spswhite text-spsdark font-bold py-4 hover:bg-spshover hover:cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1 shadow-lg text-lg">
-                        REGISTER NOW
-                    </button>
-
-                </form>
-            </div>
-
-            <!-- Col 2: The SPS Standard -->
-            <div class="flex flex-col">
-                <h2 class="lg:text-spsmed text-4xl font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
-                    The SPS Standard
-                </h2>
-
-                <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
-                    Uncompromising Quality
-                </p>
-
-                <p class="font-sourcesans3 text-lg lg:text-2xl leading-relaxed text-center mb-14">
-                    We pride ourselves on our reputation for offering a high calibre, professional and personal
-                    service to our clients, and we enjoy a high volume of repeat business as a result. We appreciate 
-                    that your time is precious, and we make every effort to respond to our clients in a timely,
-                    meticulous, and comprehensive manner, ensuring the recruitment process is as efficient and seamless 
-                    as possible. Our priority is quality over quantity, and as such, we will only ever send you the most 
-                    compatible candidate profiles, providing ongoing advice and support to both our clients and candidates 
-                    alike long after a placement has been finalized.
-                </p>
-            </div>
+            <p class="font-sourcesans3 text-lg lg:text-2xl leading-relaxed text-center mb-14">
+                We pride ourselves on our reputation for offering a high calibre, professional and personal
+                service to our clients,
+                and we enjoy a high volume of repeat business as a
+                result. We appreciate that your time is precious, and we
+                make every effort to respond to our clients in a timely,
+                meticulous, and comprehensive manner, ensuring the
+                recruitment process is as efficient and seamless as
+                possible. Our priority is quality over quantity, and as
+                such, we will only ever send you the most compatible
+                candidate profiles, providing ongoing advice and
+                support to both our clients and candidates alike long
+                after a placement has been finalized.
+            </p>
+            <div class="sps-divider"></div>
         </section>
-        <div class="sps-divider"></div>
 
 
         <!-- SPS process grid -->
