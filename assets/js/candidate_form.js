@@ -101,4 +101,57 @@ document.addEventListener('DOMContentLoaded', function () {
     if (locationDropdown && otherLocationContainer) {
         locationDropdown.addEventListener('change', toggleOtherLocation);
     }
+
+    // 4. Submit / Fetch request 
+    
+    // Replace 'candidate_registration_form' with the actual ID of your <form> tag
+    const candidateForm = document.getElementById('candidate-registration-form');
+
+    if (candidateForm) {
+        candidateForm.addEventListener('submit', async function (e) {
+            // Stop the page from refreshing immediately
+            e.preventDefault();
+
+            // Run one final check to ensure emails match before sending
+            if (emailInput.value !== confirmEmailInput.value) {
+                alert("Please ensure your emails match before submitting.");
+                return;
+            }
+
+            // Package up all inputs, text, and files automatically
+            const formData = new FormData(candidateForm);
+
+            try {
+                // Update this URL to your active local/ngrok domain
+                const response = await fetch('https://sps-backend-service-170236375136.europe-west2.run.app/api/register', {
+                    method: 'POST',
+                    body: formData,
+                    // NOTE: Never manually set 'Content-Type' to JSON here. 
+                    // By passing formData, the browser automatically sets the correct headers for file uploads.
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    console.log('Success:', data.success);
+                    // Clear the form on success
+                    candidateForm.reset();
+                    
+                    // Reset our visual counters
+                    emailMatchMsg.className = 'text-xs mt-1 hidden';
+                    bioCounter.textContent = `0 / ${maxWords} words`;
+                    bioInput.removeAttribute('maxlength');
+                    otherLocationContainer.classList.add('hidden');
+                    
+                    alert("Registration successful!");
+                } else {
+                    console.error('Backend Error:', data.error);
+                    alert("Failed to submit: " + data.error);
+                }
+            } catch (error) {
+                console.error('Network Error:', error);
+                alert("A network error occurred.");
+            }
+        });
+    }
 });

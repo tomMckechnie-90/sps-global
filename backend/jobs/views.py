@@ -79,3 +79,63 @@ def contact_email(request):
     except Exception as e:
     # if Gmail decides to reject the email, explain why
         return Response({'error': str(e)}, status=500)
+
+
+@api_view(['POST'])
+def candidate_registration_email(request):
+    """
+    Receives candidate registration data from the frontend and sends an email
+    """
+    data = request.data
+    
+    # Extract the text fields (matching your frontend HTML 'name' attributes)
+    first_name = data.get('first_name', 'Anonymous')
+    last_name = data.get('last_name', '')
+    email = data.get('email', '')
+    location = data.get('preferred_location', 'Not Specified')
+    other_location = data.get('location_other', '')
+    bio = data.get('bio', '')
+
+    # Determine the final location string based on the trapdoor
+    final_location = other_location if location == 'Other' else location
+
+    # Extract the CV file if you have a file upload field
+    cv_file = request.FILES.get('cv_attachment')
+
+    # Validation
+    if not email or not first_name:
+        return Response({'error': 'Name and Email are required'}, status=400)
+    
+    # Format of the Email content
+    subject = f"New Candidate Registration: {first_name} {last_name}"
+    full_body = f"""
+    A new candidate has registered via the website.
+    
+    Name: {first_name} {last_name}
+    Email: {email}
+    Preferred Location: {final_location}
+    
+    Bio:
+    ------------------------------------
+    {bio}
+    ------------------------------------
+    """
+    
+    # Send the email
+    try:
+        email_msg = EmailMessage(
+            subject=subject,
+            body=full_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[settings.TARGET_RECIPIENT_EMAIL],
+            reply_to=[email]
+        )
+
+        if cv_file:
+            email_msg.attach(cv_file.name, cv_file.read(), cv_file.content_type)
+        
+        email_msg.send(fail_silently=False)
+        return Response({'success': 'Registration sent successfully!'})
+
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
