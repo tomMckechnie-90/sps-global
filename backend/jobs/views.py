@@ -31,20 +31,42 @@ def contact_email(request):
     """
     data = request.data
     
-    # Get the data from the request
-    name = data.get('name', 'Anonymous')
-    sender_email = data.get('email', '')
-    message = data.get('message', '')
-    category = data.get('category', 'General')
-    sector = data.get('sector', 'Not Specified')
+    # -------------------------------------------------------------------------
+    # 1. THE TEXT TRUNCATION PATCH
+    # -------------------------------------------------------------------------
+    name = str(data.get('name', 'Anonymous'))[:100]
+    sender_email = str(data.get('email', ''))[:254]
+    category = str(data.get('category', 'General'))[:100]
+    sector = str(data.get('sector', 'Not Specified'))[:100]
+    # Cap the message at 2000 characters to prevent massive text injections
+    message = str(data.get('message', ''))[:2000] 
 
-    # Extract the file
-    uploaded_file = request.FILES.get('attachment')
-    # Validation
+    # Basic missing data validation
     if not sender_email or not message:
         return Response({'error': 'Email and Message are required'}, status=400)
+
+    # -------------------------------------------------------------------------
+    # 2. THE FILE BOMB & TYPE PATCH
+    # -------------------------------------------------------------------------
+    uploaded_file = request.FILES.get('attachment')
     
-    # Format of the Email content
+    MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 Megabytes in bytes
+    ALLOWED_TYPES = [
+        'application/pdf', 
+        'application/msword', 
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ]
+
+    if uploaded_file:
+        if uploaded_file.size > MAX_FILE_SIZE:
+            return Response({'error': f"Error: {uploaded_file.name} exceeds the 5MB security limit."}, status=400)
+        
+        if uploaded_file.content_type not in ALLOWED_TYPES:
+            return Response({'error': f"Error: {uploaded_file.name} is not a permitted file type. Only PDF and Word documents are allowed."}, status=400)
+    
+    # -------------------------------------------------------------------------
+    # 3. FORMAT AND SEND THE SECURED DATA
+    # -------------------------------------------------------------------------
     subject = f"New Enquiry: {category} from {name}"
     full_body = f"""
     You have received a new enquiry via the website.
@@ -60,25 +82,24 @@ def contact_email(request):
     ------------------------------------
     """
     
-    # Send the email
     try:
-        email = EmailMessage(
+        email_msg = EmailMessage(
             subject=subject,
             body=full_body,
             from_email=settings.DEFAULT_FROM_EMAIL, # From
-            to=[settings.TARGET_RECIPIENT_EMAIL], # To (Change later from dummy)
+            to=[settings.TARGET_RECIPIENT_EMAIL], # To 
             reply_to=[sender_email]
         )
 
         if uploaded_file:
-            email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+            email_msg.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
         
-        email.send(fail_silently=False)
+        email_msg.send(fail_silently=False)
         return Response({'success': 'Email sent successfully!'})
 
     except Exception as e:
-    # if Gmail decides to reject the email, explain why
-        return Response({'error': str(e)}, status=500)
+        # Sanitize error output so we do not expose server architecture to the frontend
+        return Response({'error': 'An internal server error occurred while sending the email.'}, status=500)
 
 
 @api_view(['POST'])
