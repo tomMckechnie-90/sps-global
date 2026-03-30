@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // The sections that need to be shown or hidden
     const choiceSection = document.getElementById('contact-choice');
     const formSection = document.getElementById('contact-form-section');
+    const candidateFormSection = document.getElementById('candidate-form-section');
+    const btnCandidateBack = document.getElementById('btn-candidate-back');
     const form = document.getElementById('inquiry-form');
+    const candidateForm = document.getElementById('candidate-registration-form');
     const categoryInput = document.getElementById('category-input');
     const successMessage = document.getElementById('success-message');
 
@@ -46,20 +49,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        // Visual switch: hide buttons then show the form using simple fade-out/in logic by toggling 'hidden'
         choiceSection.classList.add('hidden');
-        formSection.classList.remove('hidden');
 
-        // add a slight scroll to make sure the form comes into view (UX decision)
-        formSection.scrollIntoView({ behavior: 'smooth' });
+        // Show the correct form based on the button clicked
+        if (category === 'Employer') {
+            formSection.classList.remove('hidden');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        } else if (category === 'Candidate') {
+            candidateFormSection.classList.remove('hidden');
+            candidateFormSection.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     function hideForm() {
         formSection.classList.add('hidden');
+        candidateFormSection.classList.add('hidden');
         choiceSection.classList.remove('hidden');
 
-        // Reset the form (clear it)
+        // Reset the forms (clear them)
         if (form) form.reset();
+        if (candidateForm) candidateForm.reset();
 
         // Hide the success message if it was shown
         // if (successMessage) successMessage.classList.add('hidden');
@@ -75,6 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (btnBack) {
         btnBack.addEventListener('click', hideForm);
+    }
+
+    if (btnCandidateBack) {
+        btnCandidateBack.addEventListener('click', hideForm);
     }
 
     // EVENT LISTENER FOR FORM SUBMIT
