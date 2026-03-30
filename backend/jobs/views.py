@@ -88,37 +88,66 @@ def candidate_registration_email(request):
     """
     data = request.data
     
-    # 1. Extract EVERY text field matching the HTML 'name' attributes
-    first_name = data.get('first_name', 'Anonymous')
-    last_name = data.get('last_name', '')
-    email = data.get('email', '')
+    # -------------------------------------------------------------------------
+    # 1. THE TEXT TRUNCATION PATCH
+    # We force string conversions and slice them to safe lengths to prevent memory spikes
+    # -------------------------------------------------------------------------
+    first_name = str(data.get('first_name', 'Anonymous'))[:100]
+    last_name = str(data.get('last_name', ''))[:100]
+    email = str(data.get('email', ''))[:254] # 254 is the max length of a valid email
     
-    # Geography
-    nationality = data.get('nationality', 'Not specified')
-    current_country = data.get('current_country', 'Not specified')
-    current_city = data.get('current_city', 'Not specified')
-    location = data.get('preferred_location', 'Not specified')
-    other_location = data.get('location_other', '')
+    nationality = str(data.get('nationality', 'Not specified'))[:100]
+    current_country = str(data.get('current_country', 'Not specified'))[:100]
+    current_city = str(data.get('current_city', 'Not specified'))[:100]
+    location = str(data.get('preferred_location', 'Not specified'))[:100]
+    other_location = str(data.get('location_other', ''))[:100]
     
-    # Professional
-    expertise = data.get('expertise', 'Not specified')
-    bio = data.get('bio', '')
+    expertise = str(data.get('expertise', 'Not specified'))[:150]
+    # The bio is limited to roughly 300 words (approx 2000 characters)
+    bio = str(data.get('bio', ''))[:2000] 
     
-    # Tracking
-    source_page = data.get('source_page', 'Unknown')
-
-    # Determine the final location string based on the trapdoor
+    source_page = str(data.get('source_page', 'Unknown'))[:100]
     final_location = other_location if location == 'Other' else location
 
-    # 2. Extract BOTH files exactly as named in HTML
+    # -------------------------------------------------------------------------
+    # 2. THE FILE BOMB & TYPE PATCH
+    # -------------------------------------------------------------------------
     cv_file = request.FILES.get('cv_file')
     intro_file = request.FILES.get('intro_file')
 
-    # Validation
+    MAX_FILE_SIZE = 5 * 1024 * 1024  # 5 Megabytes in bytes
+    ALLOWED_TYPES = [
+        'application/pdf', 
+        'application/msword', 
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ]
+
+    def validate_file(file_obj):
+        """Helper function to securely check files before reading them"""
+        if not file_obj:
+            return None # No file is fine, we just skip it
+        if file_obj.size > MAX_FILE_SIZE:
+            return f"Error: {file_obj.name} exceeds the 5MB security limit."
+        if file_obj.content_type not in ALLOWED_TYPES:
+            return f"Error: {file_obj.name} is not a permitted file type. Only PDF and Word documents are allowed."
+        return None
+
+    # Run the security checks on both files
+    cv_error = validate_file(cv_file)
+    if cv_error:
+        return Response({'error': cv_error}, status=400)
+        
+    intro_error = validate_file(intro_file)
+    if intro_error:
+        return Response({'error': intro_error}, status=400)
+
+    # Basic missing data validation
     if not email or not first_name:
         return Response({'error': 'Name and Email are required'}, status=400)
     
-    # 3. Format the Email content to include everything beautifully
+    # -------------------------------------------------------------------------
+    # 3. FORMAT AND SEND THE SECURED DATA
+    # -------------------------------------------------------------------------
     subject = f"New Candidate Registration: {first_name} {last_name} ({expertise})"
     full_body = f"""
     A new candidate has registered via the website.
@@ -141,7 +170,6 @@ def candidate_registration_email(request):
     ------------------------------------
     """
     
-    # Send the email
     try:
         email_msg = EmailMessage(
             subject=subject,
@@ -151,7 +179,6 @@ def candidate_registration_email(request):
             reply_to=[email]
         )
 
-        # 4. Attach the files if they exist
         if cv_file:
             email_msg.attach(cv_file.name, cv_file.read(), cv_file.content_type)
             
@@ -162,4 +189,4 @@ def candidate_registration_email(request):
         return Response({'success': 'Registration sent successfully!'})
 
     except Exception as e:
-        return Response({'error': str(e)}, status=500)
+        return Response({'error': 'An internal server error occurred while sending the email.'}, status=500)
