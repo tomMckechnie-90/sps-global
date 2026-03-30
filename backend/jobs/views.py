@@ -88,35 +88,55 @@ def candidate_registration_email(request):
     """
     data = request.data
     
-    # Extract the text fields (matching your frontend HTML 'name' attributes)
+    # 1. Extract EVERY text field matching the HTML 'name' attributes
     first_name = data.get('first_name', 'Anonymous')
     last_name = data.get('last_name', '')
     email = data.get('email', '')
-    location = data.get('preferred_location', 'Not Specified')
+    
+    # Geography
+    nationality = data.get('nationality', 'Not specified')
+    current_country = data.get('current_country', 'Not specified')
+    current_city = data.get('current_city', 'Not specified')
+    location = data.get('preferred_location', 'Not specified')
     other_location = data.get('location_other', '')
+    
+    # Professional
+    expertise = data.get('expertise', 'Not specified')
     bio = data.get('bio', '')
+    
+    # Tracking
+    source_page = data.get('source_page', 'Unknown')
 
     # Determine the final location string based on the trapdoor
     final_location = other_location if location == 'Other' else location
 
-    # Extract the CV file if you have a file upload field
-    cv_file = request.FILES.get('cv_attachment')
+    # 2. Extract BOTH files exactly as named in HTML
+    cv_file = request.FILES.get('cv_file')
+    intro_file = request.FILES.get('intro_file')
 
     # Validation
     if not email or not first_name:
         return Response({'error': 'Name and Email are required'}, status=400)
     
-    # Format of the Email content
-    subject = f"New Candidate Registration: {first_name} {last_name}"
+    # 3. Format the Email content to include everything beautifully
+    subject = f"New Candidate Registration: {first_name} {last_name} ({expertise})"
     full_body = f"""
     A new candidate has registered via the website.
     
+    --- PERSONAL INFO ---
     Name: {first_name} {last_name}
     Email: {email}
-    Preferred Location: {final_location}
+    Source Page: {source_page}
     
-    Bio:
-    ------------------------------------
+    --- GEOGRAPHY ---
+    Nationality: {nationality}
+    Current Location: {current_city}, {current_country}
+    Preferred Placement: {final_location}
+    
+    --- PROFESSIONAL ---
+    Expertise: {expertise}
+    
+    --- BIO ---
     {bio}
     ------------------------------------
     """
@@ -131,8 +151,12 @@ def candidate_registration_email(request):
             reply_to=[email]
         )
 
+        # 4. Attach the files if they exist
         if cv_file:
             email_msg.attach(cv_file.name, cv_file.read(), cv_file.content_type)
+            
+        if intro_file:
+            email_msg.attach(intro_file.name, intro_file.read(), intro_file.content_type)
         
         email_msg.send(fail_silently=False)
         return Response({'success': 'Registration sent successfully!'})
