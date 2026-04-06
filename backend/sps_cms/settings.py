@@ -6,13 +6,18 @@ from corsheaders.defaults import default_headers
 from pathlib import Path
 import os
 import sys
-import dotenv
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from .env file (for local dev)
-dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
+load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
+# dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
+
+# GRAB THE CLOUDFLARE SECRET KEY (blank string if none is found)
+TURNSTILE_SECRET_KEY = os.environ.get('TURNSTILE_SECRET_KEY', '')
+
 
 # ==============================================================================
 # CORE SECURITY & ENVIRONMENT CHECKS

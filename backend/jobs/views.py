@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Job
@@ -108,6 +109,42 @@ def candidate_registration_email(request):
     Receives candidate registration data from the frontend and sends an email
     """
     data = request.data
+
+    # ==========================================================================
+    # THE CLOUDFLARE TURNSTILE CHECK
+    # ==========================================================================
+
+    # Get the secret key from cloudflare that the JS FormData sent over
+    turnstile_token = data.get('cf-turnstile-response', '')
+
+    # If there is not a token, a bot has bypassed the HTML. Bounce them instantly.
+    if not turnstile_token:
+        return Response ({'error': 'Security check failed. No Turnstile token provided.'}, status=400)
+    
+    # Get the secret key from the settings.py
+    TURNSTILE_SECRET = settings.TURNSTILE_SECRET_KEY
+
+    # Package up the token and secret kay to send back over to cloudflare
+    cloudflare_data = {
+        'secret': TURNSTILE_SECRET,
+        'response': turnstile_token
+    }
+
+    try:
+        # Make the call to cloudflare's secure API
+        cloudflare_response = requests.post(
+            'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+            data=cloudflare_data
+        )
+        outcome = cloudflare_response.json()
+
+        # If outcome is false, the token is fake or expired.
+        if outcome.get('success') is False:
+            return Response({'error': 'Bot activity detected by Cloudflare Turnstile.'}, status=403)
+    except Exception as e:
+        # If the cloudflare server is down, handle it here.
+        return Response({'error': 'Could not reach security verification servers.'}, status=500)
+
     
     # -------------------------------------------------------------------------
     # 1. THE TEXT TRUNCATION PATCH

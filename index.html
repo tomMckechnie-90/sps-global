@@ -27,6 +27,8 @@
     <meta property="og:description"
         content="SPS Global Search. International Recruitment Partner: Connecting World Class Talent with Global Employers worldwide. VIP Households, Family Offices, Healthcare, Finance, Insurance, Legal, Education, Construction & Hospitality sectors.">
     <meta property="og:image" content="https://www.spsglobalsearch.co.uk/assets/images/logos/logo.png">
+    <!-- Cloudflare Turnstile API -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body class="bg-spspurple">
@@ -444,8 +446,8 @@
                             <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX. Max 5MB per file.
                             </p>
 
-                            <!-- Cloudflare Turnstile Placeholder -->
-                            <div id="turnstile-widget-placeholder" class="py-2">
+                            <!-- Cloudflare Turnstile -->
+                            <div id="turnstile-widget" class="py-2 cf-turnstile" data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP">
                                 <!-- JS will render Turnstile here -->
                             </div>
 
