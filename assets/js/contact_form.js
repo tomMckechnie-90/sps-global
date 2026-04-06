@@ -95,6 +95,27 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); // Stope the page from refreshing (default behavior)
 
+            // ==========================================
+            //  THE FRONTEND FILE SIZE CHECK
+            // ==========================================
+
+            // Grab the file input element
+            const fileInput = document.getElementById('attachment');
+
+            // Check if the user actually attached a file
+            if (fileInput.isDefaultNamespace.length > 0) {
+
+                // Get the size of the first file in bytes
+                const filesSize = fileInput.files[0].size;
+                const maxSizeInBytes = 5 * 1024 * 1024;
+
+                // The bounce logic
+                if (filesSize > maxSizeInBytes) {
+                    alert('Your file is too large! Please ensure it is under 5MB.');
+                    return;
+                }
+            }
+
             // Change the button text to indicate loading, enhances UI/UX
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerText;

@@ -112,6 +112,30 @@ document.addEventListener('DOMContentLoaded', function () {
             // Stop the page from refreshing immediately
             e.preventDefault();
 
+            // ==========================================
+            // THE FRONTEND FILE SIZE CHECK (DUAL FILES)
+            // ==========================================
+
+            const maxSizeInBytes = 5 * 1024 * 1024;
+
+            // Check the CV file
+            const cvInput = document.getElementById('cv_file');
+            if (cvInput && cvInput.files.length > 0) {
+                if (cvInput.files[0].size > maxSizeInBytes) {
+                    alert('Your CV file is too large! Please keep it under 5MB.');
+                    return;
+                }
+            }
+
+            // Check the cover letter 
+            const introInput = document.getElementById('intro_file');
+            if (introInput && introInput.files.length > 0) {
+                if (introInput.files[0].size > maxSizeInBytes) {
+                    alert('Your Cover letter is too large! Please keep it under 5MB.');
+                    return;
+                }
+            }
+
             // Run one final check to ensure emails match before sending
             if (emailInput.value !== confirmEmailInput.value) {
                 alert("Please ensure your emails match before submitting.");
