@@ -346,28 +346,22 @@
                             <!-- Geography Section -->
                             <div>
                                 <label for="reg_nationality"
-                                    class="block font-sourcesans3 font-bold text-spswhite mb-2">Nationality</label>
-                                <!-- We will attach the JS plugin to this select later -->
+                                    class="block font-sourcesans3 font-bold text-spswhite mb-2">
+                                    Nationality
+                                </label>
                                 <select id="reg_nationality" name="nationality" required
-                                    class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                                    <option value="" disabled selected>Select Nationality...</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="US">United States</option>
-                                    <!-- Full list will be injected or handled by plugin -->
+                                    class="auto-countries w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
                                 </select>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="reg_current_country"
-                                        class="block font-sourcesans3 font-bold text-spswhite mb-2">Current
-                                        Country</label>
+                                        class="block font-sourcesans3 font-bold text-spswhite mb-2">
+                                        Current Country
+                                    </label>
                                     <select id="reg_current_country" name="current_country" required
-                                        class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                                        <option value="" disabled selected>Select Country...</option>
-                                        <option value="UK">United Kingdom</option>
-                                        <option value="US">United States</option>
-                                        <!-- Full list will be injected or handled by plugin -->
+                                        class="auto-countries w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
                                     </select>
                                 </div>
                                 <div>
@@ -447,7 +441,8 @@
                             </p>
 
                             <!-- Cloudflare Turnstile -->
-                            <div id="turnstile-widget" class="py-2 cf-turnstile" data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP">
+                            <div id="turnstile-widget" class="py-2 cf-turnstile"
+                                data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP">
                                 <!-- JS will render Turnstile here -->
                             </div>
 
@@ -612,6 +607,7 @@
     <script src="assets/js/zoom_slide.js"></script>
     <script src="assets/js/contact_form.js"></script>
     <script src="assets/js/candidate_form.js"></script>
+    <script src="assets/js/countires.js"></script>
 </body>
 
 </html>
