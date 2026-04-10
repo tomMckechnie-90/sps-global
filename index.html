@@ -36,7 +36,7 @@
         <!-- Logo -->
         <div class="flex flex-col flex-shrink-0 items-start w-48">
             <a href="/">
-                <img src="assets/images/logos/1.svg" alt="SPS Global Executive Recruitment Logo" class="w-40 h-auto">
+                <img src="assets/images/logos/1.svg" alt="SPS Global Executive Recruitment Logo" class="w-28 h-auto">
             </a>
         </div>
         <!-- Desktop Nav and buttons that will be hidden on mobile devices -->
@@ -282,16 +282,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Latest Jobs -->
-            <div class="lg:mt-32 lg:mb-22">
-                <h2
-                    class="text-6xl mb-4 mt-4 font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
-                    Latest Jobs</h2>
-                <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
-                    Exclusive Global Placements
-                </p>
-            </div>
-            <div class="lg:grid lg:grid-cols-2 lg:gap-12 grid grid-row gap-6">
+            <!-- Reg form and Latest Jobs -->
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 grid grid-row gap-6 lg:mt-32 lg:mb-22">
                 <!-- Col 1 Reg Form -->
                 <div>
 
@@ -299,7 +291,7 @@
                     <!-- Col 1: Candidate Registration Form -->
                     <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg relative">
                         <h2
-                            class="lg:text-spsmed text-4xl font-playfairdisplay font-bold mb-6 text-shadow-lg text-shadow-spsdark">
+                            class="lg:text-5xl text-4xl font-playfairdisplay font-bold mb-6 text-shadow-lg text-shadow-spsdark">
                             Register for Work
                         </h2>
 
@@ -455,22 +447,24 @@
                         </form>
                     </div>
                 </div>
-                <!-- Col 2 Latest Jobs Slider -->
-                <div class="flex flex-col justify-center w-full h-full relative">
-                    <!-- The Window (Hides everything outside its borders) -->
-                    <div class="overflow-hidden w-full relative h-full min-h-[400px]">
-                        <!-- The Track (Moves left and right) -->
-                        <div id="latest-jobs-track"
-                            class="flex w-full h-full transition-transform duration-700 ease-in-out absolute top-0 left-0">
-                            <!-- JS will inject jobs here -->
-                        </div>
+                <!-- Col 2 Latest Jobs -->
+                <div class="flex flex-col justify-center w-full w-full mt-10">
+                                <!-- Latest Jobs -->
+            <div>
+                <h2
+                    class="lg:text-6xl text-5xl mb-4 mt-4 font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
+                    Latest Jobs</h2>
+                <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
+                    Exclusive Global Placements
+                </p>
+            </div>
+
+                    <div id="latest-jobs-container" class="flex flex-col gap-6 w-full">
                     </div>
 
-                    <!-- Optional: Dots Indicator -->
-                    <div id="job-slider-dots" class="flex justify-center mt-6 space-x-3">
-                        <!-- JS will inject dots here -->
-                    </div>
                 </div>
+
+            </div>
             </div>
             <!-- Testimonial Slider -->
             <div id="testimonial-slider" class="relative max-w-4xl mx-auto px-4 lg:mb-42 my-38">
