@@ -15,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <!-- Primary Meta Tags -->
     <title>Executive Staff & Private Household Staff Agency London | SPS Global</title>
+    <link rel="preload" as="image" href="assets/images/beach_hero-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
     <meta name="title" content="Executive Staff & Private Household Staff Agency London | SPS Global">
     <meta name="description"
         content="SPS Global Search. International Recruitment Partner: Connecting World Class Talent with Global Employers worldwide. VIP Households, Family Offices, Healthcare, Finance, Insurance, Legal, Education, Construction & Hospitality sectors.">
@@ -87,9 +88,14 @@
         <section class="relative flex items-center justify-center text-center lg:px-6 lg:py-36 py-14 px-4">
             <!-- Image and Overlay -->
             <div class="absolute inset-0 z-0">
-                <img id="home-hero" class="w-full h-full object-cover" src="assets/images/beach_hero.webp"
-                    alt="SPS Global - private household staff recruitment and executive staff agency" fetchpriority="high" decoding="sync">
-                <div class="absolute inset-0 bg-spspurple/15"></div> <!-- Purple Overlay -->
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/beach_hero-mobile.webp">
+
+                    <img id="home-hero" class="w-full h-full object-cover" src="assets/images/beach_hero.webp"
+                        alt="SPS Global - private household staff recruitment and executive staff agency"
+                        fetchpriority="high">
+                </picture>
+                <div class="absolute inset-0 bg-spspurple/15"></div>
             </div>
 
             <!-- Text Content -->
@@ -449,15 +455,15 @@
                 </div>
                 <!-- Col 2 Latest Jobs -->
                 <div class="flex flex-col justify-center w-full w-full mt-10">
-                                <!-- Latest Jobs -->
-            <div>
-                <h2
-                    class="lg:text-6xl text-5xl mb-4 mt-4 font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
-                    Latest Jobs</h2>
-                <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
-                    Exclusive Global Placements
-                </p>
-            </div>
+                    <!-- Latest Jobs -->
+                    <div>
+                        <h2
+                            class="lg:text-6xl text-5xl mb-4 mt-4 font-playfairdisplay font-bold text-center text-shadow-lg text-shadow-spsdark">
+                            Latest Jobs</h2>
+                        <p class="font-playfairdisplay text-sm lg:text-xl text-gray-300 italic text-center mt-2 mb-12">
+                            Exclusive Global Placements
+                        </p>
+                    </div>
 
                     <div id="latest-jobs-container" class="flex flex-col gap-6 w-full">
                     </div>
