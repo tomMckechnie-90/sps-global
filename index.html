@@ -234,9 +234,15 @@
                         </picture>
 
                         <!-- Image 3 -->
-                        <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
-                            src="assets/images/executive staff slider/medical.webp"
-                            alt="Medical professionals - Medical Staffing Agency UK">
+                        <picture>
+                            <source media="(max-width: 768px)"
+                                srcset="assets/images/executive staff slider/medical-mobile.webp">
+
+                            <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                                src="assets/images/executive staff slider/medical.webp"
+                                alt="Medical professionals - Medical Staffing Agency UK" loading="lazy"
+                                decoding="async">
+                        </picture>
                     </div>
 
                     <h3
