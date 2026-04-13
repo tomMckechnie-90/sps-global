@@ -247,4 +247,6 @@ def candidate_registration_email(request):
         return Response({'success': 'Registration sent successfully!'})
 
     except Exception as e:
+        # Print the actual error to your terminal/logs so the dev can debug!
+        print(f"RESEND EMAIL ERROR: {e}") 
         return Response({'error': 'An internal server error occurred while sending the email.'}, status=500)
