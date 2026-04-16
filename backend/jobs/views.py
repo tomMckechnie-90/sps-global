@@ -233,7 +233,7 @@ def candidate_registration_email(request):
             subject=subject,
             body=full_body,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            to=[settings.TARGET_RECIPIENT_EMAIL],
+            to=settings.TARGET_RECIPIENT_EMAIL,
             reply_to=[email]
         )
 
