@@ -68,7 +68,9 @@
     </header>
 
     <main>
+        <!-- Hero -->
         <section class="flex flex-col lg:flex-row min-h-screen">
+
             <div class="flex flex-col justify-center w-full lg:w-1/2 p-10 lg:p-24 z-10">
                 <h1 class="text-5xl lg:text-7xl font-playfairdisplay font-bold text-spswhite leading-tight mb-6">
                     Elevate Your Career.<br>Upgrade Your Lifestyle.
@@ -77,33 +79,72 @@
                     Connecting top-tier talent with elite financial and corporate roles across Bermuda.
                 </p>
                 <div>
-                    <a href="vacancies.html"
+                    <a href="#register"
                         class="inline-block bg-spswhite px-10 py-4 font-bold text-lg text-spsdark font-sourcesans3 shadow-lg hover:bg-spshover transition-all">
-                        Explore Bermuda Roles
+                        Register for work in Bermuda
                     </a>
                 </div>
             </div>
 
-            <div class="w-full lg:w-1/2 h-[50vh] lg:h-auto relative">
-                <img src="assets/images/burmada-page/Bda2_desktop.webp" alt="Bermuda Executive Lifestyle"
-                    class="absolute inset-0 w-full h-full object-cover">
+            <div id="bermuda-hero-slider" class="w-full lg:w-1/2 h-[50vh] lg:h-auto relative overflow-hidden">
+
+                <img class="zoom-slide active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-110 opacity-100"
+                    src="assets/images/burmada-page/berumda_sunset-desktop.webp"
+                    alt="Bermuda Sunset - Photo by KINO @ https://www.shotbykino.com/ via https://unsplash.com/photos/white-and-blue-sky-over-the-beach-apdbXDriykI">
+
+                <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                    src="assets/images/burmada-page/Bda_Hamilton-desktop.webp" alt="Bermuda Hamilton Harbour">
+
+                    <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                    src="assets/images/burmada-page/front_street_bermuda(kino@unsplash)-desktop.webp" alt="Bermuda front street - Photo by KINO @ https://www.shotbykino.com/ via https://unsplash.com/photos/city-buildings-near-body-of-water-under-blue-sky-during-daytime-0a17lg30MtY">
+
+                <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                    src="assets/images/burmada-page/bda27_desktop.webp" alt="Bermuda beach">
+
+                <img class="zoom-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-100 opacity-0"
+                    src="assets/images/burmada-page/Bda2_desktop.webp" alt="Bermuda Island View">
+
+
+
             </div>
         </section>
         <div class="sps-divider"></div>
-
-        <div class="sps-divider mt-20"></div>
+        <section>
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 aspect-video">
+                    <video class="w-full h-full object-cover" autoplay loop muted playsinline controls>
+                        <source src="assets/videos/burmuda_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="w-full lg:w-1/2 text-spswhite px-12">
+                    <h2 class="text-4xl font-playfairdisplay font-bold mb-6">
+                        A World-Class Hub for Global Talent
+                    </h2>
+                    <p class="text-lg lg:text-xl font-sourcesans3 leading-relaxed mb-4">
+                        Bermuda is more than a picturesque island; it is a premier jurisdiction for global business. For
+                        decades, it has stood as a powerhouse in the reinsurance, legal, and financial sectors.
+                    </p>
+                    <p class="text-lg lg:text-xl font-sourcesans3 leading-relaxed">
+                        Professionals relocating here find themselves engaged in complex, high-stakes international
+                        work, all while enjoying an unparalleled standard of living.
+                    </p>
+                </div>
+            </div>
+        </section>
         <!-- Form -->
-        <section class="py-24 px-6 mt-20">
+        <section id="register" class="py-24 px-6 mt-20">
             <div class="max-w-4xl mx-auto p-12 lg:p-16">
 
-                <h1 class="font-playfairdisplay text-5xl lg:text-6xl text-spswhite text-center font-bold mb-20 text-shadow-lg text-shadow-spsdark">
+                <h1
+                    class="font-playfairdisplay text-5xl lg:text-6xl text-spswhite text-center font-bold mb-20 text-shadow-lg text-shadow-spsdark">
                     Ready to Upgrade Your Lifestyle?
                 </h1>
 
                 <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg relative">
 
-                    <h2 class="font-playfairdisplay text-3xl font-bold mb-2 text-spswhite">Candidate Registration</h2>
-                    <p class="font-sourcesans3 text-spsaccent mb-8">Join our exclusive network.</p>
+                    <h2 class="font-playfairdisplay text-3xl font-bold mb-2 text-spswhite">Bermuda Registration</h2>
+                    <p class="font-sourcesans3 text-spsaccent mb-8">Register to work on the beautiful island of Bermuda.</p>
 
                     <form id="candidate-registration-form" class="space-y-6" enctype="multipart/form-data">
 
@@ -315,6 +356,8 @@
 
         </div>
     </footer>
+
+    <script src="assets/js/zoom_slide.js"></script>
 </body>
 
 </html>
