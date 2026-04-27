@@ -17,5 +17,8 @@ build/
 Thumbs.db
 
 
-# Command
+# Commands
+# Tailwind CSS build command
 npx tailwindcss -i ./src/input.css -o ./assets/css/output.css --watch
+# Python virtual environment
+venv/Scripts/activate
