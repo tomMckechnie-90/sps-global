@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         track.appendChild(track.firstElementChild);
         track.appendChild(track.firstElementChild);
+        track.appendChild(track.firstElementChild);
 
         track.style.transform = 'translateX(0)';
 
