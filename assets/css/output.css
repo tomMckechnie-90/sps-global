@@ -487,9 +487,6 @@
   .flex-1 {
     flex: 1;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -971,10 +968,6 @@
     --tw-duration: 1000ms;
     transition-duration: 1000ms;
   }
-  .duration-5000 {
-    --tw-duration: 5000ms;
-    transition-duration: 5000ms;
-  }
   .duration-\[7000ms\] {
     --tw-duration: 7000ms;
     transition-duration: 7000ms;
@@ -1416,11 +1409,6 @@
   .lg\:grid-cols-5 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-  }
-  .lg\:grid-rows-3 {
-    @media (width >= 64rem) {
-      grid-template-rows: repeat(3, minmax(0, 1fr));
     }
   }
   .lg\:flex-row {

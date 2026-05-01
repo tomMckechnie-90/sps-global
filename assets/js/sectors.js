@@ -3,22 +3,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById('slider-track');
     const slideIntervalTime = 3000;
 
-    let currentIndex = 0;
-
-    const totalSlides = 6;
 
     function moveSlider() {
-        currentIndex = currentIndex + 2;
-
-        // If there are no slides left, reset index.
-        if (currentIndex => totalSlides) {
-            currentIndex = 0;
-        }
-
-        track.style.transform = `translateX(-${currentIndex * 50}%)`;
+        track.style.transform = 'translateX(-100%)'
+        
+        setTimeout(function(){
+            sliderTrack();
+        }, 500);
     }
+
+    function sliderTrack() {
+        track.style.transition = 'none';
+
+        track.appendChild(track.firstElementChild);
+        track.appendChild(track.firstElementChild);
+
+        track.style.transform = 'translateX(0)';
+
+        setTimeout(function() {
+            track.style.transition = 'transform 500ms ease-in-out';
+        }, 20);
+    }
+
     setInterval(moveSlider, slideIntervalTime);
 });
-
 
 
