@@ -14,63 +14,26 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <!-- Primary Meta Tags -->
     <title>Executive Staff & Private Household Staff Agency London | Bermuda</title>
+    <!-- <style>
+        body {
+            border: 2px solid red;
+        }
+
+        * {
+            border: 1px solid red;
+        }
+    </style> -->
+    <!-- Cloudflare Turnstile API -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body class="bg-spspurple">
-    <header class="bg-spspurple px-6 py-4 flex items-center justify-between sticky top-0 z-50 w-full shadow-lg">
-        <!-- Logo -->
-        <div class="flex flex-col flex-shrink-0 items-start w-48">
-            <a href="/">
-                <img src="assets/images/logos/1.svg" alt="SPS Global Executive Recruitment Logo" class="w-28 h-auto">
-            </a>
-        </div>
-        <!-- Desktop Nav and buttons that will be hidden on mobile devices -->
-        <div class="hidden lg:flex flex-1 items-center justify-end space-x-4">
-            <nav class="flex-1 flex space-x-8">
-                <a href="/"
-                    class="text-spswhite text-2xl tracking-wide underline underline-offset-8 font-sourcesans3 decoration-spswhite transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">HOME</a>
-                <a href="about"
-                    class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">ABOUT</a>
-            </nav>
-            <!-- Buttons -->
-            <div class="flex space-x-4">
-                <a href="vacancies"
-                    class="bg-spswhite px-8 py-3 font-bold text-lg text-spsdark font-sourcesans3 shadow-sm shadow-black/15 hover:shadow-lg hover:bg-spshover transition-all duration-300 ease-in-out hover:-translate-y-1">VACANCIES</a>
-                <a href="contact"
-                    class="bg-spswhite px-8 py-3 font-bold text-lg text-spsdark font-sourcesans3 shadow-sm shadow-black/15 hover:shadow-lg hover:bg-spshover transition-all duration-300 ease-in-out hover:-translate-y-1">GET
-                    IN
-                    TOUCH</a>
-            </div>
-        </div>
-        <div class="sps-nav-divider"></div>
 
-        <!-- Burger Icon for mobile devices -->
-        <div class="lg:hidden">
-            <button id="burger-button" class="text-spswhite">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M3 6C3 5.44772 3.44772 5 4 5H20C20.5523 5 21 5.44772 21 6C21 6.55228 20.5523 7 20 7H4C3.44772 7 3 6.55228 3 6ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 18C9 17.4477 9.44772 17 10 17H14C14.5523 17 15 17.4477 15 18C15 18.5523 14.5523 19 14 19H10C9.44772 19 9 18.5523 9 18Z" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Menu for Mobile (hidden on desktop) -->
-        <div id="mobile-menu"
-            class="absolute z-12 top-full left-0 right-0 bg-spspurple overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
-            <nav class="flex flex-col items-center p-4 space-y-4">
-                <a href="index.html" class="text-spswhite text-2xl font-sourcesans3">HOME</a>
-                <a href="about.html" class="text-spswhite text-2xl font-sourcesans3">ABOUT</a>
-                <a href="vacancies.html" class="text-spswhite text-2xl font-sourcesans3">VACANCIES</a>
-                <a href="contact.html" class="text-spswhite text-2xl font-sourcesans3">GET IN TOUCH</a>
-            </nav>
-        </div>
-
-    </header>
 
     <main>
         <!-- Hero -->
         <section
-            class="relative flex items-center justify-center text-center lg:px-6 lg:py-48 py-14 px-4 overflow-hidden">
+            class="relative flex items-center justify-center text-center lg:px-6 lg:py-32 py-14 px-10 overflow-hidden">
             <!-- Image and Overlay -->
             <div id="bermuda-hero-slider" class="inset-0 z-0">
                 <img class="zoom-slide active-slide absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-110 opacity-100"
@@ -93,13 +56,13 @@
             </div>
 
             <!-- Text Content -->
-            <div id="home-hero-content" class="relative space-y-6 z-10 container text-spswhite mx-auto">
+            <div class="relative space-y-6 z-10 container text-spswhite mx-auto">
                 <h1
-                    class="text-5xl lg:text-7xl font-playfairdisplay font-bold  leading-tight text-shadow-lg text-shadow-spsdark">
+                    class="text-4xl lg:text-7xl font-playfairdisplay font-bold  leading-tight text-shadow-lg text-shadow-spsdark">
                     Mastering the Bermuda Market
                 </h1>
 
-                <p class="font-sourcesans3 font-semibold lg:text-2xl text-xl">Navigating Bermuda’s specialist market
+                <p class="font-sourcesans3 font-semibold lg:text-2xl text-lg">Navigating Bermuda’s specialist market
                     means facing a small, fiercely competitive talent pool. For
                     business-critical roles, you already know a purely local search often falls short. That’s where our
                     expertise becomes your strategic advantage.
@@ -112,24 +75,23 @@
 
 
         </section>
-
         <!-- Approach -->
-        <section class="py-24 px-12 text-spswhite">
+        <section class="lg:py-24 lg:px-12 px-0 py-12 text-spswhite">
 
-            <div class="grid grid-cols-2 gap-8 text-spswhite">
+            <div class="lg:grid lg:grid-cols-2 gap-8 flex flex-col-reverse text-spswhite">
                 <div>
-                    <img src="assets/images/burmada-page/approach-desktop.webp" alt="">
+                    <img src="assets/images/burmada-page/approach-desktop.webp">
                 </div>
-                <div class="text-spswhite space-y-6 place-content-center">
-                    <h2 class="text-5xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">A Different
+                <div class="text-spswhite lg:space-y-6 space-y-12 place-content-center lg:text-start text-center lg:px-0 px-8">
+                    <h2 class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">A Different
                         Approach</h2>
-                    <p class="text-3xl font-semibold font-sourcesans3">We've lived in Bermuda, but also have 25+ years
+                    <p class="lg:text-3xl text-xl font-semibold font-sourcesans3">We've lived in Bermuda, but also have 25+ years
                         international
                         search
                         experience from UK/EU for roles worldwide including Bermuda. We are on the island every few
                         weeks.
                     </p>
-                    <p class="font-sourcesans3 text-xl">Traditional job postings aren't enough for a highly competitive,
+                    <p class="font-sourcesans3 lg:text-xl text-lg">Traditional job postings aren't enough for a highly competitive,
                         specialist market like Bermuda.
                         Instead of waiting for active applicants to come to us, we proactively map the global talent
                         pool. We pinpoint world-class professionals who possess the exact skills and cultural fit your
@@ -139,10 +101,60 @@
                 </div>
             </div>
         </section>
-
         <div class="sps-divider-small"></div>
+        <!-- Retention -->
+        <section class="lg:py-24 lg:px-12 px-0 py-12 text-spswhite">
 
-        <div class="sps-divider-small"></div>
+            <div class="lg:grid lg:grid-cols-2 gap-8 flex flex-col-reverse text-spswhite">
+                <div class="text-spswhite lg:space-y-6 space-y-12 place-content-center lg:text-start text-center lg:px-0 px-8">
+                    <h2 class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">Why Clients
+                        Retain Us</h2>
+                    <p class="font-sourcesans3 lg:text-xl text-lg lg:pb-0 pb-10">Securing executive leadership in Bermuda’s specialized market
+                        requires a bespoke, precision-driven methodology. We operate as a highly discreet extension of
+                        your business, dedicating our focus entirely to your strategic search rather than high-volume
+                        processing. Given the highly connected nature of the local business community, we guarantee
+                        absolute confidentiality. We prioritize enduring partnerships over transactional placements,
+                        meticulously evaluating a candidate’s long-term corporate and cultural fit. Respecting your
+                        time, we never simply forward unvetted CVs. Instead, we deliver intelligently curated shortlists
+                        of rigorously assessed professionals who are technically elite and genuinely ready to embrace
+                        the complete Bermuda experience.</p>
+                </div>
+                <div>
+                    <img src="assets/images/burmada-page/bermuda_waterfront-desktop.webp" alt="">
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Honest Insight, Precision Search (hero) -->
+        <section class="relative flex items-center justify-center text-center lg:px-6 py-20 px-4 overflow-hidden">
+            <!-- Image and Overlay -->
+            <div class="inset-0 z-0">
+                <img class="absolute inset-0 w-full h-full object-cover transition-all duration-[7000ms] ease-in-out scale-110 opacity-100"
+                    src="assets/images/burmada-page/bermuda-bay-aerial-desktop.webp"
+                    alt="Bermuda Sunset - Photo by KINO @ https://www.shotbykino.com/ via https://unsplash.com/photos/white-and-blue-sky-over-the-beach-apdbXDriykI">
+                <div class="absolute inset-0 bg-spspurple/50"></div>
+            </div>
+
+            <!-- Text Content -->
+            <div id="home-hero-content" class="relative space-y-6 z-10 container text-spswhite mx-auto">
+                <h2
+                    class="text-3xl lg:text-5xl font-playfairdisplay font-bold  leading-tight text-shadow-lg text-shadow-spsdark">
+                    Honest Insight, Precision Search
+                </h2>
+
+                <p class="font-sourcesans3 font-semibold lg:text-2xl text-lg">When a hire truly matters, it is worth
+                    executing perfectly. For your most critical vacancies, launching a retained search is the definitive
+                    path forward, ensuring our undivided attention. Navigating Bermuda’s specialized talent landscape
+                    requires deep expertise; if you need a clear market view, speak directly with us, as this is our
+                    arena. If you are ever unsure whether a pivotal role can be filled with local talent, rely on us for
+                    an honest, entirely objective evaluation.</p>
+
+            </div>
+
+
+        </section>
         <!-- Built for Bermuda Hiring -->
         <section class="lg:px-6 px-4 text-spswhite overflow-hidden">
 
@@ -150,13 +162,13 @@
             <div class="py-8 sm:py-16 lg:py-24">
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="mb-12 text-center sm:mb-16 lg:mb-24 space-y-6">
-                        <h2 class="text-5xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">
+                        <h2 class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">
                             Built for Bermuda Hiring
                         </h2>
-                        <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">We understand the
+                        <p class="lg:text-2xl text-lg font-sourcesans3 text-center">We understand the
                             hiring process and pain-points
                         </p>
-                        <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">
+                        <p class="lg:text-2xl text-lg font-sourcesans3 text-center">
                             We identify personality- fit and who will stay longer-term, we explain challenges such as
                             housing and cost-of-living, humidity, hurricanes etc. We eliminate potential issues before
                             you invest time and money and present you with CV's and personalities who will succeed.
@@ -166,7 +178,7 @@
 
 
 
-                    <h2 class="text-4xl font-playfairdisplay font-bold text-shadow-lg text-center text-shadow-spsdark">
+                    <h2 class="lg:text-4xl text-2xl font-playfairdisplay font-bold text-shadow-lg text-center text-shadow-spsdark">
                         Discuss Your Bermuda Strategy
                     </h2>
                     <!-- Team Members -->
@@ -330,17 +342,20 @@
                             </div>
                         </div> -->
                     </div>
+
                 </div>
             </div>
         </section>
+
         <div class="sps-divider-small"></div>
+
         <!-- Sectors -->
-        <section class="py-24 px-12 text-spswhite">
-            <div class="space-y-12 mb-12">
-                <h2 class="text-5xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark text-center">
+        <section class="lg:py-24 py-12 text-spswhite">
+            <div class="space-y-12 lg:mb-12 mb-20 lg:px-0 px-4">
+                <h2 class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark text-center">
                     Sectors
                     We Cover</h2>
-                <p class="text-2xl font-sourcesans3 text-center">We help local employers secure high quality, off-island
+                <p class="lg:text-2xl text-lg font-sourcesans3 text-center">We help local employers secure high quality, off-island
                     (and some
                     on-island) talent across:
                 </p>
@@ -350,8 +365,8 @@
                     <!-- Finance and Insurance -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
-                        <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Finance and
+                        <div class="absolute inset-0 lg:top-34 top-28 z-10">
+                            <p class="lg:text-2xl text-xl font-sourcesans3 custom-underline-bermuda text-center">Finance and
                                 Insurance
                             </p>
                         </div>
@@ -359,15 +374,15 @@
                         <div>
                             <img src="assets/images/burmada-page/sectors/scott-graham-5fNmWej4tAA-unsplash-finance-desktop.webp"
                                 alt="">
-                            <div class="absolute inset-0 bg-spspurple/30"></div>
+                            <div class="absolute inset-0 bg-spspurple/50"></div>
                         </div>
 
                     </div>
                     <!-- Legal and Compliance -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
-                        <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Legal and
+                        <div class="absolute inset-0 lg:top-34 top-28 z-10">
+                            <p class="lg:text-2xl text-xl font-sourcesans3 custom-underline-bermuda text-center">Legal and
                                 Compliance
                             </p>
                         </div>
@@ -375,14 +390,14 @@
                         <div>
                             <img src="assets/images/burmada-page/sectors/romain-dancre-doplSDELX7E-unsplash-legal-desktop.webp"
                                 alt="">
-                            <div class="absolute inset-0 bg-spspurple/30"></div>
+                            <div class="absolute inset-0 bg-spspurple/50"></div>
                         </div>
                     </div>
                     <!-- Fintech and Technology -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
-                        <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Fintech and
+                        <div class="absolute inset-0 lg:top-34 top-28 z-10">
+                            <p class="lg:text-2xl text-xl font-sourcesans3 custom-underline-bermuda text-center">Fintech and
                                 Technology
                             </p>
                         </div>
@@ -390,14 +405,14 @@
                         <div>
                             <img src="assets/images/burmada-page/sectors/marvin-meyer-SYTO3xs06fU-unsplash-tech-desktop.webp"
                                 alt="">
-                            <div class="absolute inset-0 bg-spspurple/30"></div>
+                            <div class="absolute inset-0 bg-spspurple/50"></div>
                         </div>
                     </div>
                     <!-- Medical and Healthcare -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
-                        <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Medical and
+                        <div class="absolute inset-0 lg:top-34 top-28 z-10">
+                            <p class="lg:text-2xl text-xl font-sourcesans3 custom-underline-bermuda text-center">Medical and
                                 Healthcare
                             </p>
                         </div>
@@ -405,14 +420,14 @@
                         <div>
                             <img src="assets/images/burmada-page/sectors/marcelo-leal-k7ll1hpdhFA-unsplash-medical-desktop.webp"
                                 alt="">
-                            <div class="absolute inset-0 bg-spspurple/30"></div>
+                            <div class="absolute inset-0 bg-spspurple/50"></div>
                         </div>
                     </div>
                     <!-- Private Households and Hospitality -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
-                        <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Private Households
+                        <div class="absolute inset-0 lg:top-34 top-28 z-10">
+                            <p class="lg:text-2xl text-lg font-sourcesans3 custom-underline-bermuda text-center">Private Households
                                 and
                                 Hospitality
                             </p>
@@ -421,14 +436,14 @@
                         <div>
                             <img src="assets/images/burmada-page/sectors/victor-furtuna-11ztK5BN7Pw-unsplash-hospitality-desktop.webp"
                                 alt="">
-                            <div class="absolute inset-0 bg-spspurple/30"></div>
+                            <div class="absolute inset-0 bg-spspurple/50"></div>
                         </div>
                     </div>
                     <!-- Construction and Engineering -->
                     <div class="w-full lg:w-1/3 flex-shrink-0 relative">
                         <!-- Text wrapper -->
                         <div class="absolute inset-0 lg:top-34 top-20 z-10">
-                            <p class="text-2xl font-sourcesans3 custom-underline-bermuda text-center">Construction and
+                            <p class="lg:text-2xl text-xl font-sourcesans3 custom-underline-bermuda text-center">Construction and
                                 Engineering
                             </p>
                         </div>
@@ -441,43 +456,52 @@
                     </div>
                 </div>
             </div>
+
+
         </section>
 
-        <div class="sps-divider-small py-24"></div>
-        <!-- video and form hero -->
-        <section class="bg-spspurple">
-            <h3
-                class="font-playfairdisplay text-4xl lg:text-5xl text-spswhite text-center font-bold mb-24 text-shadow-lg text-shadow-spsdark">
-                Ready to Upgrade Your Lifestyle
-            </h3>
-            <div class="flex flex-col lg:flex-row items-start">
-                <div class="w-full lg:w-1/2">
-                    <!-- text wrapper  -->
-                    <div class="space-y-6 text-spswhite text-center mb-24">
-                        <h3
-                            class="font-playfairdisplay text-2xl lg:text-4xl font-bold  text-shadow-lg text-shadow-spsdark">
-                            The Bermuda Opportunity</h3>
-                        <p class="font-sourcesans3 text-2xl p-4">
-                            Relocating to Bermuda offers top-tier professionals an unparalleled opportunity to elevate
-                            their careers while immersing themselves in a vibrant community. The island presents a
-                            unique cultural blend paired with a world-class, highly competitive business environment.
-                            Imagine trading your traditional commute for crystal-clear waters and famous pink sand
-                            beaches. Living here is a deeply rewarding lifestyle, with downtime spent exploring historic
-                            shipwrecks or experiencing local traditions like Gombey dancing and lively street festivals.
-                            We guide you through the realities of relocation, ensuring you thrive in a community
-                            balancing high-level professional growth with an unmatched quality of life.</p>
-                    </div>
+        <div class="sps-divider-small"></div>
 
+        <!-- Video section -->
+        <section class="lg:py-24 lg:px-12 py-12 text-spswhite">
+
+            <div class="lg:grid lg:grid-cols-2 gap-8 flex flex-col-reverse text-spswhite lg:text-start text-center">
+                <div>
                     <video class="w-full h-full aspect-video object-cover" autoplay loop muted controls playsinline>
                         <source src="assets/videos/burmuda_video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="w-full lg:w-1/2 p-4">
+                <div class="text-spswhite lg:space-y-6 space-y-12 place-content-center px-4">
+                    <h2 class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">The Bermuda
+                        Opportunity</h2>
+
+                    <p class="font-sourcesans3 text-xl">Relocating to Bermuda offers top-tier professionals an
+                        unparalleled opportunity to elevate
+                        their careers while immersing themselves in a vibrant community. The island presents a
+                        unique cultural blend paired with a world-class, highly competitive business environment.
+                        Imagine trading your traditional commute for crystal-clear waters and famous pink sand
+                        beaches. Living here is a deeply rewarding lifestyle, with downtime spent exploring historic
+                        shipwrecks or experiencing local traditions like Gombey dancing and lively street festivals.
+                        We guide you through the realities of relocation, ensuring you thrive in a community
+                        balancing high-level professional growth with an unmatched quality of life</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="sps-divider-small lg:py-24 py-12"></div>
+        <!-- Form -->
+        <section>
+            <h3
+                class="font-playfairdisplay text-3xl lg:text-5xl text-spswhite text-center font-bold lg:mb-24 mb-12 text-shadow-lg text-shadow-spsdark">
+                Ready to Upgrade Your Lifestyle
+            </h3>
+            <div class="flex flex-col lg:flex-row items-start">
+                <div class="w-full p-4">
                     <div class="w-full max-w-4xl mx-auto text-spswhite">
                         <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg">
 
-                            <h2 class="font-playfairdisplay text-3xl font-bold mb-2 text-spswhite">Bermuda Registration
+                            <h2 class="font-playfairdisplay lg:text-3xl text-xl font-bold mb-2 text-spswhite">Bermuda Registration
                             </h2>
                             <p class="font-sourcesans3 text-spsaccent mb-8">Register to work on the beautiful island of
                                 Bermuda.</p>
@@ -690,6 +714,8 @@
 
     <script src="assets/js/zoom_slide.js"></script>
     <script src="assets/js/sectors.js"></script>
+    <script src="assets/js/countires.js"></script>
+    <script src="assets/js/candidate_form.js"></script>
 </body>
 
 </html>
