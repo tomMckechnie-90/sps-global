@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+
+User-agent: *
+Disallow: /bermuda.html
+
 Sitemap: https://spsglobalsearch.com/sitemap.xml

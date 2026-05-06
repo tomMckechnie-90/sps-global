@@ -119,6 +119,32 @@ background: linear-gradient(90deg,
 }
 
 
+
+/* Bermuda Custom CSS */
+
+.custom-underline-bermuda::after {
+  content: '';
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 2px;
+  position: absolute;
+  background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
+}
+
+.sps-divider-small::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 6px;
+  background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
+}
+
+
+
 @media (max-width: 768px) {
   .custom-underline-about::after {
     top: 254px;

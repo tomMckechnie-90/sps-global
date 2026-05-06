@@ -35,4 +35,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     initSlider('exec-slider');
     initSlider('private-slider');
+    initSlider('bermuda-hero-slider');
 })
