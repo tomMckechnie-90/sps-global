@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # Local
     'jobs.apps.JobsConfig',
+    'pages'
 ]
 
 MIDDLEWARE = [
