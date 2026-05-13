@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from jobs.views import contact_email, candidate_registration_email
+ 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('api/', include('jobs.urls')),  # jobs
     path('api/contact', contact_email, name='contact_email'),
     path('api/register', candidate_registration_email, name='candidate_registration_email'),  # email
+    path('api/pages/', include('pages.urls')),
 ]
