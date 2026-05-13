@@ -29,7 +29,7 @@ class BermudaPage(models.Model):
     hiring_paragraph = models.TextField(help_text="Main paragraph for the 'Hiring' section")
 
     # Opportunity Section
-    opportunity_title = models.CharField(max_length=200, help_text="Title for 'The Bermuda Opportunity' section")
+    
     opportunity_paragraph = models.TextField(help_text="Paragraph for 'The Bermuda Opportunity' section")
 
     def __str__(self):
