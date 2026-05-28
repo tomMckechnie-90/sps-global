@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnEmployer = document.getElementById('btn-employer');
     const btnCandidate = document.getElementById('btn-candidate');
     const closeBtn = document.getElementById('close-message-btn');
+    const backBtn = document.getElementById('btn-back');
 
     // The sections that need to be shown or hidden
     const choiceSection = document.getElementById('contact-choice');
@@ -84,6 +85,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (closeBtn) {
         closeBtn.addEventListener('click', successMessage.classList.add('hidden'));
+    }
+
+    if (backBtn) {
+        backBtn.addEventListener('click', hideForm);
     }
 
     if (btnCandidateBack) {
