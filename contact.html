@@ -189,12 +189,16 @@
                     <div>
                         <label id="attachment-label" for="attachment"
                             class="block font-sourcesans3 font-bold text-spswhite mb-2">
-                            Attach Document
+                            Attach a job description
                         </label>
                         <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx" required
                             class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
                         <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX</p>
                     </div>
+
+                    <!-- Cloudflare Turnstile -->
+                                <div id="turnstile-widget" class="py-2 cf-turnstile"
+                                    data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
 
                     <!-- Submit Button -->
                     <button type="submit"
