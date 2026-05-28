@@ -37,6 +37,7 @@ def contact_email(request):
     # -------------------------------------------------------------------------
     name = str(data.get('name', 'Anonymous'))[:100]
     sender_email = str(data.get('email', ''))[:254]
+    source_page = str(data.get('source_page', 'Unknown'))[:100]
     category = str(data.get('category', 'General'))[:100]
     sector = str(data.get('sector', 'Not Specified'))[:100]
     # Cap the message at 2000 characters to prevent massive text injections
@@ -74,6 +75,7 @@ def contact_email(request):
     
     Name: {name}
     Email: {sender_email}
+    Source Page: {source_page}
     Category: {category}
     Sector Interest: {sector}
     
