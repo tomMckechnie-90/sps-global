@@ -874,6 +874,26 @@
                 </div>
             </div>
         </section>
+
+
+
+                <!-- Success Message (Hidden initially) -->
+        <div id="success-message"
+            class="hidden fixed inset-0 z-50 smokey-bg flex flex-col items-center justify-center p-8 text-center backdrop-blur-sm">
+
+            <div
+                class="bg-[var(--regma-bg-dark)] p-10 rounded-lg shadow-2xl max-w-md w-full flex flex-col items-center">
+                <div class="text-green-500 text-6xl mb-4">✓</div>
+                <h3 class="font-playfairdisplay text-3xl text-spswhite font-bold mb-2">Message Sent!</h3>
+                <p class="font-sourcesans3 text-spsaccent mb-8">Thank you. Our team will be in touch shortly.</p>
+
+                <button id="close-message-btn"
+                    class="text-spsaccent hover:text-spswhite cursor-pointer font-bold flex items-center gap-2 transition-colors">
+                    <span>✕</span> Close
+                </button>
+            </div>
+
+        </div>
     </main>
 
     <div class="sps-divider"></div>

@@ -197,8 +197,7 @@
                     </div>
 
                     <!-- Cloudflare Turnstile -->
-                                <div id="turnstile-widget" class="py-2 cf-turnstile"
-                                    data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
+                    <div id="turnstile-widget" class="py-2 cf-turnstile" data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
 
                     <!-- Submit Button -->
                     <button type="submit"
@@ -377,18 +376,22 @@
             </div>
         </section>
         <!-- Success Message (Hidden initially) -->
-        <section>
-            <div id="success-message"
-                class="hidden absolute inset-0 smokey-bg flex flex-col items-center justify-center p-8 text-center rounded-lg">
+        <div id="success-message"
+            class="hidden fixed inset-0 z-50 smokey-bg flex flex-col items-center justify-center p-8 text-center backdrop-blur-sm">
+
+            <div
+                class="bg-[var(--regma-bg-dark)] p-10 rounded-lg shadow-2xl max-w-md w-full flex flex-col items-center">
                 <div class="text-green-500 text-6xl mb-4">✓</div>
                 <h3 class="font-playfairdisplay text-3xl text-spswhite font-bold mb-2">Message Sent!</h3>
-                <p class="font-sourcesans3 text-spsaccent">Thank you. Our team will be in touch shortly.</p>
-                <a href="index.html"
-                    class="mb-8 text-spsaccent hover:text-spswhite hover:cursor-pointer font-bold flex items-center gap-2 transition-colors">
-                    <span>&larr;</span> Home
-                </a>
+                <p class="font-sourcesans3 text-spsaccent mb-8">Thank you. Our team will be in touch shortly.</p>
+
+                <button id="close-message-btn"
+                    class="text-spsaccent hover:text-spswhite cursor-pointer font-bold flex items-center gap-2 transition-colors">
+                    <span>✕</span> Close
+                </button>
             </div>
-        </section>
+
+        </div>
     </main>
 
 
@@ -421,7 +424,7 @@
                     <li><a href="vacancies" class="hover:underline">Vacancies</a></li>
                     <li><a href="about" class="hover:underline">About</a></li>
                     <li><a href="contact" class="hover:underline">Get in touch</a></li>
-                     <li><a href="bermuda" class="hover:underline">Bermuda Hiring</a></li>
+                    <li><a href="bermuda" class="hover:underline">Bermuda Hiring</a></li>
                 </ul>
             </div>
         </div>
