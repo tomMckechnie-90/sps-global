@@ -257,7 +257,7 @@
 
 
             <div class="py-8 sm:py-16 lg:py-24">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
                     <div class="mb-12 text-center sm:mb-16 lg:mb-24 space-y-6">
                         <h2 id="hiring-title"
                             class="lg:text-5xl text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark">
@@ -275,11 +275,91 @@
                     </div>
 
 
+                    <!-- Client enquiry form -->
 
-                    <h2
-                        class="lg:text-4xl text-2xl font-playfairdisplay font-bold text-shadow-lg text-center text-shadow-spsdark">
-                        Discuss Your Bermuda Strategy
-                    </h2>
+                    <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg relative max-w-5xl">
+
+                        <h2
+                            class="lg:text-4xl text-2xl mb-8 font-playfairdisplay font-bold text-shadow-lg text-center text-shadow-spsdark">
+                            Discuss Your Bermuda Strategy
+                        </h2>
+                        <p class="font-sourcesans3 text-spsaccent mb-8 text-center">Tell us a little about what you
+                            need.</p>
+
+                        <!-- The Form Tag -->
+                        <form id="inquiry-form" class="space-y-6" enctype="multipart/form-data">
+                            <input type="hidden" name="source_page" id="source_page" value="Bermuda Page - Client form">
+
+                            <!-- Name Input -->
+                            <div>
+                                <label for="name" class="block font-sourcesans3 font-bold text-spswhite mb-2">Full
+                                    Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                                    placeholder="e.g. John Smith">
+                            </div>
+
+                            <!-- Email Input -->
+                            <div>
+                                <label for="email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <!-- Specific Interest (Dropdown) -->
+                            <div>
+                                <label for="sector" class="block font-sourcesans3 font-bold text-spswhite mb-2">I am
+                                    interested
+                                    in...</label>
+                                <select id="sector" name="sector"
+                                    class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
+                                    <option value="Private Staff" class="smokey-bg text-spsdark">Private Household Staff
+                                    </option>
+                                    <option value="Executive Search" class="smokey-bg text-spsdark">Corporate /
+                                        Executive Search
+                                    </option>
+                                    <option value="General Inquiry" class="smokey-bg text-spsdark">General Inquiry
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- Message Textarea -->
+                            <div>
+                                <label for="message" class="block font-sourcesans3 font-bold text-spswhite mb-2">Your
+                                    Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                                    placeholder="Please share any specific requirements or details..."></textarea>
+                            </div>
+
+                            <!-- File Upload Input -->
+                            <div>
+                                <label id="attachment-label" for="attachment"
+                                    class="block font-sourcesans3 font-bold text-spswhite mb-2">
+                                    Attach a job description
+                                </label>
+                                <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx" required
+                                    class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
+                                <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX</p>
+                            </div>
+
+                             <!-- Cloudflare Turnstile -->
+                                <div id="turnstile-widget" class="py-2 cf-turnstile"
+                                    data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full bg-spswhite text-spsdark font-bold py-4 hover:bg-spshover hover:cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1 shadow-lg text-lg">
+                                SEND ENQUIRY
+                            </button>
+
+                        </form>
+
+
+
+                    </div>
                     <!-- Team Members -->
                     <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10 place-items-start">
                         <!-- Glyn Taylor -->
@@ -633,7 +713,7 @@
         </section>
 
         <div class="sps-divider-small lg:py-24 py-12"></div>
-        <!-- Form -->
+        <!-- Candidate Form -->
         <section id="register">
             <h3
                 class="font-playfairdisplay text-3xl lg:text-5xl text-spswhite text-center font-bold lg:mb-24 mb-12 text-shadow-lg text-shadow-spsdark">
@@ -861,6 +941,7 @@
     <script src="assets/js/sectors.js"></script>
     <script src="assets/js/countires.js"></script>
     <script src="assets/js/candidate_form.js"></script>
+    <script src="assets/js/contact_form.js"></script>
     <script src="assets/js/bermuda_content.js"></script>
     <script src="assets/js/menu.js"></script>
 </body>
