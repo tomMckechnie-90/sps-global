@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(result => {
                     console.log('Success:', result);
-
+                    alert("Enquiry sent successfully!");
                     submitBtn.innerText = originalText;
                     submitBtn.disabled = false;
                     form.reset();
