@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('reg_email');
     const confirmEmailInput = document.getElementById('reg_confirm_email');
     const emailMatchMsg = document.getElementById('email_match_msg');
+    const successMessage = document.getElementById('success-message');
+    const closeBtn = document.getElementById('close-message-btn');
 
     // Matcher function
     // This logic will compare the text in the email inputs
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         emailInput.addEventListener('input', checkEmailMatch);
         confirmEmailInput.addEventListener('input', checkEmailMatch);
     }
+
 
     // 2. The bio word counter 
 
@@ -103,9 +106,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 4. Submit / Fetch request 
-    
-    // Replace 'candidate_registration_form' with the actual ID of your <form> tag
+
     const candidateForm = document.getElementById('candidate-registration-form');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', successMessage.classList.add('hidden'));
+    }
 
     if (candidateForm) {
         candidateForm.addEventListener('submit', async function (e) {
@@ -160,14 +166,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log('Success:', data.success);
                     // Clear the form on success
                     candidateForm.reset();
-                    
+
                     // Reset our visual counters
                     emailMatchMsg.className = 'text-xs mt-1 hidden';
                     bioCounter.textContent = `0 / ${maxWords} words`;
                     bioInput.removeAttribute('maxlength');
                     otherLocationContainer.classList.add('hidden');
-                    
-                    alert("Registration successful!");
+
+
+                    successMessage.classList.remove('hidden');
+
+                    // alert("Registration successful!");
                 } else {
                     console.error('Backend Error:', data.error);
                     alert("Failed to submit: " + data.error);

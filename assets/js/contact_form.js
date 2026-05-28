@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // The candidate and employer buttons
     const btnEmployer = document.getElementById('btn-employer');
     const btnCandidate = document.getElementById('btn-candidate');
-    const btnBack = document.getElementById('btn-back');
+    const closeBtn = document.getElementById('close-message-btn');
+    const backBtn = document.getElementById('btn-back');
 
     // The sections that need to be shown or hidden
     const choiceSection = document.getElementById('contact-choice');
@@ -82,8 +83,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnCandidate) {
         btnCandidate.addEventListener('click', () => showForm('Candidate'));
     }
-    if (btnBack) {
-        btnBack.addEventListener('click', hideForm);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', successMessage.classList.add('hidden'));
+    }
+
+    if (backBtn) {
+        backBtn.addEventListener('click', hideForm);
     }
 
     if (btnCandidateBack) {
@@ -142,7 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(result => {
                     console.log('Success:', result);
-                    alert("Enquiry sent successfully!");
+                    // alert("Enquiry sent successfully!");
+                    successMessage.classList.remove('hidden');
                     submitBtn.innerText = originalText;
                     submitBtn.disabled = false;
                     form.reset();
