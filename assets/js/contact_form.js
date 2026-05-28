@@ -147,11 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(result => {
                     console.log('Success:', result);
-                    // alert("Enquiry sent successfully!");
-                    successMessage.classList.remove('hidden');
-                    submitBtn.innerText = originalText;
-                    submitBtn.disabled = false;
-                    form.reset();
+                    window.location.href = 'thank_you.html';
                 })
                 .catch(error => {
                     console.error('Error', error);
