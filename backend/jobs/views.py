@@ -88,7 +88,7 @@ def contact_email(request):
             subject=subject,
             body=full_body,
             from_email=settings.DEFAULT_FROM_EMAIL, # From
-            to=[settings.TARGET_RECIPIENT_EMAIL], # To 
+            to=settings.TARGET_RECIPIENT_EMAIL, # To 
             reply_to=[sender_email]
         )
 
@@ -99,6 +99,9 @@ def contact_email(request):
         return Response({'success': 'Email sent successfully!'})
 
     except Exception as e:
+        # Print the EXACT error to the Google Cloud Logs
+        print(f"CRASH REASON: {repr(e)}")
+
         # Sanitize error output so we do not expose server architecture to the frontend
         return Response({'error': 'An internal server error occurred while sending the email.'}, status=500)
 
