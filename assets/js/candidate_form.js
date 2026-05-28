@@ -164,19 +164,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (response.ok) {
                     console.log('Success:', data.success);
-                    // Clear the form on success
-                    candidateForm.reset();
-
-                    // Reset our visual counters
-                    emailMatchMsg.className = 'text-xs mt-1 hidden';
-                    bioCounter.textContent = `0 / ${maxWords} words`;
-                    bioInput.removeAttribute('maxlength');
-                    otherLocationContainer.classList.add('hidden');
-
-
-                    successMessage.classList.remove('hidden');
-
-                    // alert("Registration successful!");
+                    // Redirect to thank you page
+                    window.location.href = 'thank_you.html';
                 } else {
                     console.error('Backend Error:', data.error);
                     alert("Failed to submit: " + data.error);
