@@ -142,11 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(result => {
                     console.log('Success:', result);
-                    // show the success message
-                    successMessage.classList.remove('hidden');
-                    formSection.classList.add('hidden');
-
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
                     submitBtn.innerText = originalText;
                     submitBtn.disabled = false;
