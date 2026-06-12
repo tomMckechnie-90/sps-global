@@ -16,7 +16,7 @@
     <title>Bermuda Recruitment Agency | SPS Global Search</title>
     <meta name="description"
         content="Struggling with a fiercely competitive local market? As the premier Bermuda recruitment agency, our proactive executive search uncovers hidden talent by...">
-    
+
     <meta name="author" content="SPS Global">
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Bermuda Recruitment Agency | SPS Global Search">
@@ -33,6 +33,8 @@
     <meta property="og:image" content="assets/images/OG_images/WhatsApp_og_image.png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="400">
+    <!-- Cloudflare Turnstile API -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body class="bg-spspurple">
@@ -341,9 +343,9 @@
                                 <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX</p>
                             </div>
 
-                             <!-- Cloudflare Turnstile -->
-                                <div id="turnstile-widget" class="py-2 cf-turnstile"
-                                    data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
+                            <!-- Cloudflare Turnstile -->
+                            <div id="turnstile-widget" class="py-2 cf-turnstile"
+                                data-sitekey="0x4AAAAAAC1UQMOUJ-HlR_VP"></div>
 
                             <!-- Submit Button -->
                             <button type="submit"
@@ -690,10 +692,13 @@
                     <div class="w-full max-w-2xl mx-auto text-spswhite">
                         <div class="smokey-bg border border-gray-200 shadow-2xl p-8 lg:p-12 rounded-lg">
 
-                            <h2 class="font-playfairdisplay lg:text-3xl text-xl font-bold mb-8 text-spswhite text-center">Bermuda
+                            <h2
+                                class="font-playfairdisplay lg:text-3xl text-xl font-bold mb-8 text-spswhite text-center">
+                                Bermuda
                                 Registration
                             </h2>
-                            <p class="font-sourcesans3 text-spsaccent text-center mb-8">Register to work on the beautiful island of
+                            <p class="font-sourcesans3 text-spsaccent text-center mb-8">Register to work on the
+                                beautiful island of
                                 Bermuda.</p>
 
                             <form id="candidate-registration-form" class="space-y-6" enctype="multipart/form-data">
