@@ -686,9 +686,16 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-t-4 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 4px;
+  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+  .border-\[var\(--color-spsaccent\)\] {
+    border-color: var(--color-spsaccent);
   }
   .border-gray-200 {
     border-color: var(--color-gray-200);
@@ -807,6 +814,9 @@
   .py-15 {
     padding-block: calc(var(--spacing) * 15);
   }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
@@ -821,6 +831,9 @@
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
+  }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
   }
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
@@ -893,6 +906,10 @@
     --tw-leading: var(--leading-tight);
     line-height: var(--leading-tight);
   }
+  .font-\[var\(--font-playfairdisplay\)\] {
+    --tw-font-weight: var(--font-playfairdisplay);
+    font-weight: var(--font-playfairdisplay);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -915,6 +932,9 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-\[var\(--color-spswhite\)\] {
+    color: var(--color-spswhite);
   }
   .text-gray-300 {
     color: var(--color-gray-300);
@@ -1768,7 +1788,7 @@
   }
 }
 .smokey-bg {
-  background: linear-gradient(90deg, #7B52B8 0%, #380E88 35%, #380e88 50%, #380E88 65%, #7B52B8 100% );
+  background: linear-gradient(90deg, #7B52B8 0%, #380E88 35%, #380e88 50%, #380E88 65%, #7B52B8 100%);
 }
 .custom-underline-contact::after {
   content: '';
@@ -1869,6 +1889,10 @@
   width: 60%;
   height: 6px;
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
+}
+#soro-widget-container * {
+  color: white !important;
+  font-family: var(--font-sourcesans3) !important;
 }
 @media (max-width: 768px) {
   .custom-underline-about::after {
