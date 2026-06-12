@@ -19,13 +19,12 @@
 }
 
 .smokey-bg {
-background: linear-gradient(90deg, 
-    #7B52B8 0%,   
-    #380E88 35%,  
-    #380e88 50%,  
-    #380E88 65%,  
-    #7B52B8 100%  
-);
+  background: linear-gradient(90deg,
+      #7B52B8 0%,
+      #380E88 35%,
+      #380e88 50%,
+      #380E88 65%,
+      #7B52B8 100%);
 }
 
 .custom-underline-contact::after {
@@ -69,6 +68,7 @@ background: linear-gradient(90deg,
   height: 1px;
   background: var(--color-spswhite);
 }
+
 .sps-nav-divider::after {
   content: '';
   position: absolute;
@@ -79,6 +79,7 @@ background: linear-gradient(90deg,
   height: 6px;
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
 }
+
 .custom-underline-about::after {
   content: '';
   position: absolute;
@@ -143,6 +144,13 @@ background: linear-gradient(90deg,
   background: linear-gradient(to right, #b38a22 0%, var(--color-spsaccent) 20%, #ffe08a 50%, var(--color-spsaccent) 80%, #b38a22 100%);
 }
 
+
+/* Soro blog */
+
+#soro-widget-container * {
+  color: white !important;
+  font-family: var(--font-sourcesans3) !important;
+}
 
 
 @media (max-width: 768px) {
