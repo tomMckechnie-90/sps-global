@@ -1,4 +1,14 @@
 <mjml>
+
+    <mj-head>
+
+        <mj-raw>
+            <meta name="color-scheme" content="light dark">
+            <meta name="supported-color-schemes" content="light dark">
+        </mj-raw>
+
+    </mj-head>
+
     <mj-body>
         <mj-wrapper background-color="#380e88" padding="20px">
             <mj-section padding="0px">
@@ -16,7 +26,7 @@
                 <mj-column width="40%">
                 <!-- Headshot -->
                     <mj-image 
-                        src="https://www.spsglobalsearch.com/assets/images/staff/nigel_about.webp"
+                        src="https://www.spsglobalsearch.com/assets/images/email-images/nigel_email.png"
                         alt="Nigel Bartlett"
                         width="130px"
                         border-radius="50%"
