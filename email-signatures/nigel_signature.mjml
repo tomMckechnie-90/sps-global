@@ -35,7 +35,7 @@
                         src="https://www.spsglobalsearch.com/assets/images/email-images/nigel_round_photo.png"
                         alt="Nigel Bartlett"
                         width="200px"
-                        padding="0px"
+                        padding="0px 20px 0px 20px"
                         align="center"
                     />
 
@@ -45,28 +45,28 @@
                         alt="Nigel Bartlett"
                         width="200px"
                         align="center"
-                        padding="0px 0px 0px 20px"
+                        padding="0px 8px 0px 0px"
                     />
                 </mj-column>
 
-                <mj-column width="60%" padding="30px 0px 0px 0px">
-                    <mj-text align="right" color="#fefefe" font-size="28px" font-weight="bold" font-family="serif" padding="0px">
+                <mj-column width="60%" padding="36px 0px 0px 0px">
+                    <mj-text align="right" color="#fefefe" font-size="40px" font-weight="bold" font-family="serif" padding="0px">
                         Nigel Bartlett
                     </mj-text>
 
-                    <mj-text align="right" color="#fefefe" font-size="20px" font-family="serif" padding="5px 0px 20px 0px">
+                    <mj-text align="right" color="#fefefe" font-size="28px" font-family="serif" padding="5px 0px 20px 0px">
                     Senior Consultant
                     </mj-text>
 
                     <mj-spacer height="10px"/>
 
-                    <mj-text align="right" color="#fefefe" font-size="16px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
+                    <mj-text align="right" color="#fefefe" font-size="18px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
                         Connecting the best hidden talent<br>
                         with leading employers worldwide since 2003
                     </mj-text>
 
-                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-top="1px" padding-left="38px"/>
-                    <mj-text align="right" color="#fefefe" font-size="12px" letter-spacing="1px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
+                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-top="1px" padding-left="3px"/>
+                    <mj-text align="right" color="#fefefe" font-size="14px" letter-spacing="1px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
                                 Experience, Discretion, Confidentiality & Trust  
                     </mj-text>
                 </mj-column>
