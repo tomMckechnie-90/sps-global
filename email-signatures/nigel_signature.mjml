@@ -34,16 +34,17 @@
                     <mj-image 
                         src="https://www.spsglobalsearch.com/assets/images/email-images/nigel_round_photo.png"
                         alt="Nigel Bartlett"
-                        width="180px"
+                        width="200px"
                         padding="0px"
+                        align="center"
                     />
 
                     <!-- text -->
                     <mj-image 
-                        src="https://www.spsglobalsearch.com/assets/images/email-images/our_man_in_bermuda.png"
+                        src="https://www.spsglobalsearch.com/assets/images/email-images/bermuda_text.png"
                         alt="Nigel Bartlett"
-                        width="180px"
-                        height="0px"
+                        width="200px"
+                        align="center"
                         padding="0px"
                     />
                 </mj-column>
