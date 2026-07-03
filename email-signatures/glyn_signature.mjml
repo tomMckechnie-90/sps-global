@@ -46,13 +46,13 @@
                     />
                 </mj-column>
 
-                <mj-column width="60%" padding="5px 0px 0px 0px">
+                <mj-column width="60%" padding="10px 0px 0px 0px">
                     <mj-text align="right" color="#fefefe" font-size="40px" font-weight="bold" font-family="serif" padding="0px">
-                        Nigel Bartlett
+                        Glyn Taylor
                     </mj-text>
 
                     <mj-text align="right" color="#fefefe" font-size="28px" font-family="serif" padding="5px 0px 5px 0px">
-                    Senior Consultant
+                    CEO & Founder 
                     </mj-text>
 
                     <mj-spacer height="10px" />
