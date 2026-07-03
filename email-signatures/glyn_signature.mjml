@@ -13,7 +13,7 @@
     </mj-head>
     </mj-head>
 
-    <mj-body css-class="body" css-class="gmail-height-fix">
+    <mj-body>
         <mj-wrapper background-color="#380e88" padding="0px 8px 0px 8px"> 
             <mj-section padding="0px 0px 0px 20px">
 
@@ -62,7 +62,7 @@
                         with leading employers worldwide since 2003
                     </mj-text>
 
-                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-top="1px"/>
+                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-left="80px" padding-top="1px"/>
                     <mj-text align="right" color="#fefefe" font-size="8px" letter-spacing="1px" font-family="serif" padding="0px 0px 0px 0px">
                                 Experience, Discretion, Confidentiality & Trust  
                     </mj-text>
