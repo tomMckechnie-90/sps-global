@@ -7,35 +7,41 @@
             <meta name="supported-color-schemes" content="light dark">
         </mj-raw>
 
+        <mj-breakpoint width="600px" />
+
+        <mj-head>
+    </mj-head>
     </mj-head>
 
-    <mj-body>
-        <mj-wrapper background-color="#380e88" padding="20px">
+    <mj-body css-class="body" css-class="gmail-height-fix">
+        <mj-wrapper background-color="#380e88" padding="0px 8px 0px 8px"> 
             <mj-section padding="0px 0px 0px 20px">
 
                 <mj-column width="100%">
                     <mj-text color="#fefefe" font-size="13px" font-family="serif" padding="10px 0px">
                        <a href="https://www.spsglobalsearch.com" target="_blank" style="text-decoration: none; text-underline: none; color: #fefefe;">
                             www.spsglobalsearch.com
-                        </a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="mailto:nigel@spsglobalsearch.com" style="text-decoration: none; text-underline: none; color: #fefefe;">
+                        </a> | <a href="mailto:nigel@spsglobalsearch.com" style="text-decoration: none; text-underline: none; color: #fefefe;">
                             nigel@spsglobalsearch.com
-                        </a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://www.linkedin.com/in/nigelspsbermuda/" target="_blank" style="text-decoration: none;">
-                            <img src="https://www.spsglobalsearch.com/assets/images/email-images/linkedin_email.png" width="14" align="absmiddle" style="vertical-align: middle; margin-right: 4px;" alt="LinkedIn"/>
+                        </a> | <a href="https://www.linkedin.com/in/nigelspsbermuda/" target="_blank" style="text-decoration: none; color: #fefefe;">
+                            <img src="https://www.spsglobalsearch.com/assets/images/email-images/linkedin_email.png" width="12" style="vertical-align: middle;" alt="LinkedIn"/> 
+                            
                         </a>
-                    </mj-text>
+                        
+                        <a href="https://www.linkedin.com/in/nigelspsbermuda/" target="_blank" style="text-decoration: none; color: #fefefe; padding-bottom: 20px;">Connect with me</a>
+                    
                 </mj-column>
 
             </mj-section>
 
-            <mj-section padding="20px 0px 0px 0px">
-                <mj-group>
+            <mj-section padding="0px 0px 0px 0px">
                 <mj-column width="40%">
                 <!-- Headshot -->
                     <mj-image 
                         src="https://www.spsglobalsearch.com/assets/images/email-images/nigel_round_photo.png"
                         alt="Nigel Bartlett"
                         width="200px"
-                        padding="0px"
+                        padding="0px 0px 0px 0px"
                         align="center"
                     />
 
@@ -45,33 +51,31 @@
                         alt="Nigel Bartlett"
                         width="200px"
                         align="center"
-                        padding="0px 0px 0px 20px"
+                        padding="0px 0px 5px 0px"
                     />
                 </mj-column>
 
-                <mj-column width="60%" padding="30px 0px 0px 0px">
-                    <mj-text align="right" color="#fefefe" font-size="28px" font-weight="bold" font-family="serif" padding="0px">
+                <mj-column width="60%" padding="5px 0px 0px 0px">
+                    <mj-text align="right" color="#fefefe" font-size="40px" font-weight="bold" font-family="serif" padding="0px">
                         Nigel Bartlett
                     </mj-text>
 
-                    <mj-text align="right" color="#fefefe" font-size="20px" font-family="serif" padding="5px 0px 20px 0px">
+                    <mj-text align="right" color="#fefefe" font-size="28px" font-family="serif" padding="5px 0px 5px 0px">
                     Senior Consultant
                     </mj-text>
 
-                    <mj-spacer height="10px"/>
+                    <mj-spacer height="10px" />
 
-                    <mj-text align="right" color="#fefefe" font-size="16px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
+                    <mj-text align="right" color="#fefefe" font-size="12px" font-family="serif" font-weight="semibold" padding="0px 0px 5px 0px" line-height="18px" letter-spacing="1px">
                         Connecting the best hidden talent<br>
                         with leading employers worldwide since 2003
                     </mj-text>
 
-                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-top="1px" padding-left="38px"/>
-                    <mj-text align="right" color="#fefefe" font-size="12px" letter-spacing="1px" font-family="serif" padding="0px 0px 5px 0px" line-height="18px">
+                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-top="1px"/>
+                    <mj-text align="right" color="#fefefe" font-size="8px" letter-spacing="1px" font-family="serif" padding="0px 0px 0px 0px">
                                 Experience, Discretion, Confidentiality & Trust  
                     </mj-text>
                 </mj-column>
-
-                </mj-group>
 
             </mj-section>
 
