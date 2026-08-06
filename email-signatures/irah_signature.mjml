@@ -1,0 +1,75 @@
+<mjml>
+
+    <mj-head>
+
+        <mj-raw>
+            <meta name="color-scheme" content="light dark">
+            <meta name="supported-color-schemes" content="light dark">
+        </mj-raw>
+
+        <mj-breakpoint width="600px" />
+
+        <mj-head>
+    </mj-head>
+    </mj-head>
+
+    <mj-body>
+        <mj-wrapper background-color="#380e88" padding="0px 8px 0px 8px"> 
+            <mj-section padding="0px 0px 0px 20px">
+
+                <mj-column width="100%">
+                    <mj-text color="#fefefe" font-size="13px" font-family="serif" padding="10px 0px">
+                       <a href="https://www.spsglobalsearch.com" target="_blank" style="text-decoration: none; text-underline: none; color: #fefefe;">
+                            www.spsglobalsearch.com
+                        </a> | <a href="mailto:office@spsglobalsearch.com" style="text-decoration: none; text-underline: none; color: #fefefe;">
+                            office@spsglobalsearch.com
+                        </a> | <a href="https://www.linkedin.com/in/janelle-tan-chra-56a082338/" target="_blank" style="text-decoration: none; color: #fefefe;">
+                            <img src="https://www.spsglobalsearch.com/assets/images/email-images/linkedin_email.png" width="12" style="vertical-align: middle;" alt="LinkedIn"/> 
+                            
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/janelle-tan-chra-56a082338/" target="_blank" style="text-decoration: none; color: #fefefe; padding-bottom: 20px;">Connect with me</a>
+                    
+                </mj-column>
+
+            </mj-section>
+
+            <mj-section padding="0px 0px 0px 0px">
+                <mj-column width="40%">
+                <!-- Headshot -->
+                    <mj-image 
+                        src="https://www.spsglobalsearch.com/assets/images/email-images/irah_transparent_bg.png"
+                        alt="Irah Tan"
+                        width="200px"
+                        padding="0px 0px 0px 0px"
+                        align="center"
+                    />
+                </mj-column>
+
+                <mj-column width="60%" padding="10px 0px 0px 0px">
+                    <mj-text align="right" color="#fefefe" font-size="40px" font-weight="bold" font-family="serif" padding="0px">
+                        Irah Tan
+                    </mj-text>
+
+                    <mj-text align="right" color="#fefefe" font-size="28px" font-family="serif" padding="5px 0px 5px 0px">
+                    Resourcer 
+                    </mj-text>
+
+                    <mj-spacer height="10px" />
+
+                    <mj-text align="right" color="#fefefe" font-size="12px" font-family="serif" font-weight="semibold" padding="0px 0px 5px 0px" line-height="18px" letter-spacing="1px">
+                        Connecting the best hidden talent<br>
+                        with leading employers worldwide since 2003
+                    </mj-text>
+
+                    <mj-divider border-width="2px" border-color="#C9A02E" width="100%" padding-right="0px" padding-left="80px" padding-top="1px"/>
+                    <mj-text align="right" color="#fefefe" font-size="8px" letter-spacing="1px" font-family="serif" padding="0px 0px 0px 0px">
+                                Experience, Discretion, Confidentiality & Trust  
+                    </mj-text>
+                </mj-column>
+
+            </mj-section>
+
+        </mj-wrapper>
+    </mj-body>
+</mjml>
