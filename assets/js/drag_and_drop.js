@@ -89,7 +89,7 @@ function updateFileListCl() {
 
         listItemCl.classList.add('border-1', 'border-spsaccent', 'p-2', 'font-bold');
 
-        fileListCv.appendChild(listItemCl);
+        fileListCl.appendChild(listItemCl);
     }
 }
 
