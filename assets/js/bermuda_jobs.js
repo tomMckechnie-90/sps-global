@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const cardWrapper = document.createElement('div');
                 
 
-
+                cardWrapper.className = "gap-6 flex justify-between mb-10 lg:mb-0"
 
 
                 cardWrapper.innerHTML = `

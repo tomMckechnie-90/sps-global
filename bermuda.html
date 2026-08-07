@@ -683,11 +683,12 @@
                 </div>
             </div>
         </section>
+        <!-- Latest Bermuda JObs -->
         <section class="lg:py-24 lg:px-12 py-12 text-spswhite">
             <h2
                 class="lg:text-5xl lg:mb-20 mb-10 text-3xl font-playfairdisplay font-bold text-shadow-lg text-shadow-spsdark text-center">
                 Latest Bermuda Jobs</h2>
-            <div id="bermuda-jobs-container" class="grid grid-cols-2 justify-items-center gap-6">
+            <div id="bermuda-jobs-container" class="lg:grid lg:grid-cols-2 lg:justify-items-center gap-6">
             </div>
         </section>
         <div class="sps-divider-small lg:py-24 py-12"></div>
@@ -825,16 +826,30 @@
                                         <label for="reg_cv"
                                             class="block font-sourcesans3 font-bold text-spswhite mb-2">Upload
                                             CV</label>
-                                        <input type="file" id="reg_cv" name="cv_file" accept=".pdf,.doc,.docx" required
-                                            class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
+                                        <div id="drop-zone-cv"
+                                            class="border-2 border-dashed border-spswhite rounded-lg p-10 text-center cursor-pointer transition-colors">
+                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here, or click to select
+                                            </p>
+
+                                            <!-- The actual file input is hidden -->
+                                            <input type="file" id="file-input-cv" class="hidden" name="document" multiple>
+                                        </div>
+                                        <ul id="file-list-cv" class="mt-4 space-y-2 text-sm text-spsaccent"></ul>
                                     </div>
                                     <div>
                                         <label for="reg_intro"
                                             class="block font-sourcesans3 font-bold text-spswhite mb-2">Upload Cover
                                             Letter</label>
-                                        <input type="file" id="reg_intro" name="intro_file" accept=".pdf,.doc,.docx"
-                                            required
-                                            class="w-full text-spswhite file:mr-4 file:py-2 file:px-4 file:rounded-sm file:border-0 file:text-sm file:font-bold file:bg-spswhite file:text-spsdark hover:file:bg-spshover hover:file:cursor-pointer transition-colors cursor-pointer">
+
+                                        <div id="drop-zone-cl"
+                                            class="border-2 border-dashed border-spswhite rounded-lg p-10 text-center cursor-pointer transition-colors">
+                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here, or click to select
+                                            </p>
+
+                                            <!-- The actual file input is hidden -->
+                                            <input type="file" id="file-input-cl" class="hidden" name="document" multiple>
+                                        </div>
+                                        <ul id="file-list-cl" class="mt-4 space-y-2 text-sm text-spsaccent"></ul>
                                     </div>
                                 </div>
                                 <p class="text-xs text-spsaccent mt-1">Accepted formats: PDF, DOC, DOCX. Max 5MB per
@@ -928,6 +943,7 @@
     <script src="assets/js/bermuda_content.js"></script>
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/bermuda_jobs.js"></script>
+    <script src="assets/js/drag_and_drop.js"></script>
 </body>
 
 </html>
