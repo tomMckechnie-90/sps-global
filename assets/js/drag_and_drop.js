@@ -1,7 +1,7 @@
 const dropZoneCv =  document.getElementById('drop-zone-cv');
 const dropZoneCl =  document.getElementById('drop-zone-cl');
-const fileInputCv = document.getElementById('file-input-cv');
-const fileInputCl = document.getElementById('file-input-cl');
+const fileInputCv = document.getElementById('reg_cv');
+const fileInputCl = document.getElementById('reg_intro');
 const fileListCv = document.getElementById('file-list-cv');
 const fileListCl = document.getElementById('file-list-cl');
 
