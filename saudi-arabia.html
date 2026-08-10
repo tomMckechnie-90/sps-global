@@ -74,9 +74,9 @@
 
     <main>
         <!-- Hero section -->
-        <section class="lg:px-6 lg:py-23 py-14 px-4">
+        <section class="lg:px-0 lg:pl-6 px-4 lg:py-0 py-14 ">
             <div class="lg:grid lg:grid-cols-2 gap-20">
-                <div class="space-y-8 text-spswhite">
+                <div class="space-y-8 text-spswhite lg:mt-10">
                     <p class="text-sm font-playfairdisplay text-spsaccent font-semibold">Saudi Arabia Recruitment for
                         VIP Households,
                         Royal Clients,
@@ -98,11 +98,14 @@
                         <a href="#" class="bg-spswhite text-spsdark py-2 px-4 uppercase shadow-lg hover:shadow-xl shadow-spsdark hover:bg-spshover transition-all duration-300 ease-in-out hover:-translate-y-1">Register for work</a>
                     </div>
                 </div>
-                <div class="flex flex-col items-end justify-end text-spswhite">
-                    <p class="text-sm font-playfairdisplay text-spsaccent font-semibold lg:mb-4">Since 2003</p>
-                    <p class="lg:text-2xl font-playfairdisplay">International reach</p>
-                    <p class="lg:text-2xl font-playfairdisplay lg:mb-4">Personal attention</p>
-                    <div class="flex flex-row items-center lg:gap-2 text-spsaccent font-playfairdisplay">
+                <div class="relative flex flex-col items-end justify-end text-spswhite lg:pr-4 lg:pb-4">
+                    <div class="absolute inset-0 z-0">
+                        <img class="w-full h-full object-cover" src="assets/images/saudi-page/saudi-hero.webp" alt="">
+                    </div>
+                    <p class="text-sm font-playfairdisplay text-spsaccent font-semibold lg:mb-4 z-10">Since 2003</p>
+                    <p class="lg:text-2xl font-playfairdisplay z-10">International reach</p>
+                    <p class="lg:text-2xl font-playfairdisplay lg:mb-4 z-10">Personal attention</p>
+                    <div class="relative z-10 flex flex-row items-center lg:gap-2 text-spsaccent font-bold font-playfairdisplay">
                         <p class="text-sm">UK</p>
                         |
                         <p class="text-sm">Europe</p>
@@ -111,6 +114,8 @@
                         |
                         <p class="text-sm">Middle East</p>
                     </div>
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-spspurple/50"></div>
                 </div>
             </div>
             <div class="flex lg:flex-row flex-col text-spsaccent font-bold font-playfairdisplay lg:gap-8 lg:pt-10">
