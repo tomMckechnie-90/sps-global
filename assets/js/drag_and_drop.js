@@ -2,8 +2,7 @@ const dropZoneCv =  document.getElementById('drop-zone-cv');
 const dropZoneCl =  document.getElementById('drop-zone-cl');
 const fileInputCv = document.getElementById('reg_cv');
 const fileInputCl = document.getElementById('reg_intro');
-const fileListCv = document.getElementById('file-list-cv');
-const fileListCl = document.getElementById('file-list-cl');
+
 
 // Click effects for CV
 dropZoneCv.addEventListener('click', () => {
@@ -65,32 +64,34 @@ dropZoneCl.addEventListener('drop', (e) => {
 
 // File Display function for CV
 function updateFileListCv() {
-    fileInputCv.innerHTML = '';
+    const fileListCv = document.getElementById('file-list-cv');
 
-    for (const file of fileInputCv.files) {
-        const listItemCv = document.createElement('li');
+    fileListCv.innerHTML = '';
 
-        listItemCv.textContent = file.name;
+    if (fileInputCv.files.length > 0) {
+        const listItemCV = document.createElement('li');
 
-        listItemCv.classList.add('border-1', 'border-spsaccent', 'p-2', 'font-bold');
+        listItemCV.textContent = fileInputCv.files[0].name;
 
-        fileListCv.appendChild(listItemCv);
+        fileListCv.appendChild(listItemCV);
     }
 }
 
 // File Display function for Cover Letter
 function updateFileListCl() {
-    fileInputCl.innerHTML = '';
+    const fileListCl = document.getElementById('file-list-cl');
 
-    for (const file of fileInputCl.files) {
+    fileListCl.innerHTML = '';
+
+    if (fileInputCl.files.length > 0) {
         const listItemCl = document.createElement('li');
 
-        listItemCl.textContent = file.name;
-
-        listItemCl.classList.add('border-1', 'border-spsaccent', 'p-2', 'font-bold');
+        listItemCl.textContent = fileInputCl.files[0].name;
 
         fileListCl.appendChild(listItemCl);
     }
+
+
 }
 
 // Listen for change on CV
