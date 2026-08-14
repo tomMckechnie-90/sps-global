@@ -505,6 +505,12 @@
   .w-\[1px\] {
     width: 1px;
   }
+  .w-\[30px\] {
+    width: 30px;
+  }
+  .w-\[60px\] {
+    width: 60px;
+  }
   .w-\[70px\] {
     width: 70px;
   }
@@ -519,6 +525,9 @@
   }
   .w-\[160px\] {
     width: 160px;
+  }
+  .w-\[170px\] {
+    width: 170px;
   }
   .w-\[180px\] {
     width: 180px;
@@ -654,6 +663,9 @@
   }
   .justify-end {
     justify-content: flex-end;
+  }
+  .justify-start {
+    justify-content: flex-start;
   }
   .justify-items-center {
     justify-items: center;
@@ -1855,6 +1867,11 @@
   .lg\:pt-10 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:pr-3 {
+    @media (width >= 64rem) {
+      padding-right: calc(var(--spacing) * 3);
     }
   }
   .lg\:pr-4 {
