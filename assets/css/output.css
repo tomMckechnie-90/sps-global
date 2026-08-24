@@ -494,6 +494,9 @@
   .w-\[130px\] {
     width: 130px;
   }
+  .w-\[150px\] {
+    width: 150px;
+  }
   .w-\[200px\] {
     width: 200px;
   }
@@ -1484,6 +1487,16 @@
       margin-top: calc(var(--spacing) * 10);
     }
   }
+  .lg\:mt-12 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 12);
+    }
+  }
+  .lg\:mt-18 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 18);
+    }
+  }
   .lg\:mt-20 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 20);
@@ -1507,6 +1520,11 @@
   .lg\:mt-32 {
     @media (width >= 64rem) {
       margin-top: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:mt-34 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 34);
     }
   }
   .lg\:mr-45 {
