@@ -26,3 +26,8 @@ modal.addEventListener('click', (e) => {
 });
 
 // Close the modal when pressing the ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
