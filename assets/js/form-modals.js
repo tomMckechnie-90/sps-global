@@ -1,33 +1,33 @@
 const modal = document.getElementById('registration-modal');
-const openButtons = document.querySelectorAll('.open-modal-btn');
-const closeButton = document.getElementById('close-modal-btn');
+const openRegButtons = document.querySelectorAll('.open-reg-modal-btn');
+const closeRegButton = document.getElementById('close-reg-modal-btn');
 
 
 // Loop through every "Register for work" button
-openButtons.forEach(button => {
+openRegButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault(); // stop the link jump '#'
         modal.classList.remove('hidden');
     });
 });
 
-function closeModal() {
+function closeRegModal() {
     modal.classList.add('hidden');
 }
 
-closeButton.addEventListener('click', closeModal);
+closeRegButton.addEventListener('click', closeRegModal);
 
 
 // Close the modal when clicking outside the form on the background
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-        closeModal();
+        closeRegModal();
     }
 });
 
 // Close the modal when pressing the ESC key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
+        closeRegModal();
     }
 });
