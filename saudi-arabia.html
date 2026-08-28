@@ -1214,10 +1214,10 @@
                     <div>
                         <label for="send_client_confirm_email"
                             class="block font-sourcesans3 font-bold text-spswhite mb-2">Confirm Email</label>
-                        <input type="email" id="client_confirm_email" name="confirm_email" required
+                        <input type="email" id="send_client_confirm_email" name="confirm_email" required
                             class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
                         <!-- This hidden paragraph is for our Step 2 JavaScript! -->
-                        <p id="client_email_match_msg" class="text-xs mt-1 hidden"></p>
+                        <p id="send_client_email_match_msg" class="text-xs mt-1 hidden"></p>
                     </div>
                 </div>
 
@@ -1259,9 +1259,9 @@
 
                 <!-- Row 5: Specific Skills -->
                 <div class="md:px-5">
-                    <label for="client_skills" class="block font-sourcesans3 font-bold text-spswhite mb-2">Specific
+                    <label for="send_client_skills" class="block font-sourcesans3 font-bold text-spswhite mb-2">Specific
                         Skills & Experience Sought</label>
-                    <textarea id="client_skills" name="skills" rows="4" required
+                    <textarea id="send_client_skills" name="skills" rows="4" required
                         class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
                         placeholder="Tell us about the ideal candidate and their required experience..."></textarea>
                 </div>
@@ -1269,17 +1269,17 @@
                 <!-- Row 6: Additional Details (Medical & Curriculum) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5 mt-6">
                     <div>
-                        <label for="client_medical" class="block font-sourcesans3 font-bold text-spswhite mb-2">Relevant
+                        <label for="send_client_medical" class="block font-sourcesans3 font-bold text-spswhite mb-2">Relevant
                             Medical Diagnosis / Condition</label>
-                        <input type="text" id="client_medical" name="medical"
+                        <input type="text" id="send_client_medical" name="medical"
                             class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
                             placeholder="Leave blank if not applicable">
                     </div>
                     <div>
-                        <label for="client_curriculum"
+                        <label for="send_client_curriculum"
                             class="block font-sourcesans3 font-bold text-spswhite mb-2">Curriculum Studied (If at
                             school)</label>
-                        <input type="text" id="client_curriculum" name="curriculum"
+                        <input type="text" id="send_client_curriculum" name="curriculum"
                             class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
                             >
                     </div>
@@ -1317,6 +1317,7 @@
     <script src="assets/js/drag_and_drop.js"></script>
     <script src="assets/js/candidate_form.js"></script>
     <script src="assets/js/contact_form.js"></script>
+    <script src="assets/js/send_client_form.js"></script>
     <script src="assets/js/countires.js"></script>
 </body>
 
