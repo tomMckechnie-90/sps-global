@@ -1156,7 +1156,7 @@
     </div>
 
     <div id="send-client-modal"
-        class=" fixed inset-0 z-50 flex items-center justify-center bg-spspurple/50 backdrop-blur-sm">
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-spspurple/50 backdrop-blur-sm">
         <div
             class="relative w-full max-w-3xl bg-spspurple rounded-md shadow-xl max-h-[90vh] overflow-y-auto border-2 border-spswhite">
             <p
@@ -1170,55 +1170,119 @@
             </button>
 
             <!-- inquiry form form -->
-            <form id="inquiry-form" class="space-y-6" enctype="multipart/form-data">
+            <form id="send-inquiry-form" class="space-y-6" enctype="multipart/form-data">
 
                 <!-- Hidden Field: Stores the Category (Employer/Candidate) -->
                 <!-- JS will update this value automatically -->
                 <input type="hidden" name="source_page" id="source_page" value="Saudi Arabia - Client SEND form">
                 <input type="hidden" id="category-input" name="category" value="">
-                
-                <!-- Name Input -->
-                <div class="md:px-5">
-                    <label for="name" class="block font-sourcesans3 font-bold text-spswhite mb-2">Full Name</label>
-                    <input type="text" id="name" name="name" required
-                        class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                        placeholder="e.g. John Smith">
+
+                <!-- Row 1: Name and Mobile -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5">
+                    <div>
+                        <label for="send_client_name" class="block font-sourcesans3 font-bold text-spswhite mb-2">Full
+                            Name</label>
+                        <input type="text" id="send_client_name" name="name" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
+                    </div>
+                    <div>
+                        <label for="client_mobile" class="block font-sourcesans3 font-bold text-spswhite mb-2">Mobile
+                            Number</label>
+                        <div class="flex">
+                            <select id="send_client_idd" name="send_idd_code"
+                                class="w-1/2 border-2 border-gray-200 border-r-0 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-l-sm cursor-pointer bg-white">
+                                <option value="+44">🇬🇧 +44 (UK)</option>
+                                <option value="+1">🇺🇸 +1 (US)</option>
+                                <option value="+966">🇸🇦 +966 (KSA)</option>
+                                <option value="+971">🇦🇪 +971 (UAE)</option>
+                            </select>
+                            <input type="tel" id="send_client_mobile" name="mobile" required
+                                class="w-2/3 border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-r-sm"
+                                placeholder="7123 456789">
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Email Input -->
-                <div class="md:px-5">
-                    <label for="email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Email
-                        Address</label>
-                    <input type="email" id="email" name="email" required
-                        class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                        placeholder="john@example.com">
+                <!-- Row 2: Email and Confirm Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5">
+                    <div>
+                        <label for="send_client_email" class="block font-sourcesans3 font-bold text-spswhite mb-2">Email
+                            Address</label>
+                        <input type="email" id="send_client_email" name="email" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
+                    </div>
+                    <div>
+                        <label for="send_client_confirm_email"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Confirm Email</label>
+                        <input type="email" id="send_client_confirm_email" name="confirm_email" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm">
+                        <!-- This hidden paragraph is for our Step 2 JavaScript! -->
+                        <p id="send_client_email_match_msg" class="text-xs mt-1 hidden"></p>
+                    </div>
                 </div>
 
-                <!-- Specific Interest (Dropdown) -->
-                <div class="md:px-5">
-                    <label for="sector" class="block font-sourcesans3 font-bold text-spswhite mb-2">I am interested
-                        in...</label>
-                    <select id="sector" name="sector"
-                        class="w-full border-2 border-gray-200 p-3 smokey-bg text-spsaccent focus:outline-none focus:border-spsaccent transition-colors rounded-sm cursor-pointer">
-                        <option value="Private Staff" class="smokey-bg text-spsdark">Private Household Staff
-                        </option>
-                        <option value="Executive Search" class="smokey-bg text-spsdark">Corporate / Executive Search
-                        </option>
-                        <option value="Healthcare" class="smokey-bg text-spsdark">Hospitals / Healthcare
-                        </option>
-                        <option value="Family Office" class="smokey-bg text-spsdark">Family Office
-                        </option>
-                        <option value="General Inquiry" class="smokey-bg text-spsdark">General Inquiry</option>
-                    </select>
+                <!-- Row 3: Logistics (Location and Schedule) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5">
+                    <div>
+                        <label for="send_client_location"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Location of Work</label>
+                        <input type="text" id="client_location" name="location" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="e.g. London, UK">
+                    </div>
+                    <div>
+                        <label for="send_client_schedule"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Days &
+                            Hours of Work</label>
+                        <input type="text" id="send_client_schedule" name="schedule" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="e.g. Mon-Fri, 9am - 5pm">
+                    </div>
                 </div>
 
-                <!-- Message Textarea -->
+                <!-- Row 4: Timeline (Start Date and Duration) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5">
+                    <div>
+                        <label for="send_client_start_date"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Expected Start Date</label>
+                        <input type="date" id="send_client_start_date" name="start_date" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm text-spsaccent">
+                    </div>
+                    <div>
+                        <label for="send_client_duration"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Duration of Contract</label>
+                        <input type="text" id="send_client_duration" name="duration" required
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="e.g. Permanent, 6 Months">
+                    </div>
+                </div>
+
+                <!-- Row 5: Specific Skills -->
                 <div class="md:px-5">
-                    <label for="message" class="block font-sourcesans3 font-bold text-spswhite mb-2">Your
-                        Message</label>
-                    <textarea id="message" name="message" rows="5" required
+                    <label for="send_client_skills" class="block font-sourcesans3 font-bold text-spswhite mb-2">Specific
+                        Skills & Experience Sought</label>
+                    <textarea id="send_client_skills" name="skills" rows="4" required
                         class="w-full border-2 border-gray-200 p-3 text-spsaccent font-bold focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
-                        placeholder="Please share any specific requirements or details..."></textarea>
+                        placeholder="Tell us about the ideal candidate and their required experience..."></textarea>
+                </div>
+
+                <!-- Row 6: Additional Details (Medical & Curriculum) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-5 mt-6">
+                    <div>
+                        <label for="send_client_medical" class="block font-sourcesans3 font-bold text-spswhite mb-2">Relevant
+                            Medical Diagnosis / Condition</label>
+                        <input type="text" id="send_client_medical" name="medical"
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            placeholder="Leave blank if not applicable">
+                    </div>
+                    <div>
+                        <label for="send_client_curriculum"
+                            class="block font-sourcesans3 font-bold text-spswhite mb-2">Curriculum Studied (If at
+                            school)</label>
+                        <input type="text" id="send_client_curriculum" name="curriculum"
+                            class="w-full border-2 border-gray-200 text-spsaccent font-bold p-3 focus:outline-none focus:border-spsaccent transition-colors rounded-sm"
+                            >
+                    </div>
                 </div>
 
                 <!-- File Upload Input -->
@@ -1253,6 +1317,7 @@
     <script src="assets/js/drag_and_drop.js"></script>
     <script src="assets/js/candidate_form.js"></script>
     <script src="assets/js/contact_form.js"></script>
+    <script src="assets/js/send_client_form.js"></script>
     <script src="assets/js/countires.js"></script>
 </body>
 
