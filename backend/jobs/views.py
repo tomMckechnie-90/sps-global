@@ -59,9 +59,13 @@ def contact_email(request):
     medical = str(data.get('medical', 'None provided'))[:500]
     curriculum = str(data.get('curriculum', 'None provided'))[:200]
 
-    # Basic missing data validation
-    if not sender_email or not message:
-        return Response({'error': 'Email and Message are required'}, status=400)
+# Basic missing data validation
+    if not sender_email:
+        return Response({'error': 'Email is required'}, status=400)
+        
+    # Let the form pass if they filled out EITHER the old 'message' box OR the new 'skills' box
+    if not message and not skills:
+        return Response({'error': 'A message or skills description is required'}, status=400)
 
     # -------------------------------------------------------------------------
     # 2. THE FILE BOMB & TYPE PATCH
