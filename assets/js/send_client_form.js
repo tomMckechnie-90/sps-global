@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 // We send it to your existing Client API endpoint
-                const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/send-client-contact/';
+                const apiUrl = 'https://sps-backend-service-170236375136.europe-west2.run.app/api/send_client_contact_email/';
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',

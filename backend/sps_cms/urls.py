@@ -26,5 +26,5 @@ urlpatterns = [
     path('api/contact', contact_email, name='contact_email'),
     path('api/register', candidate_registration_email, name='candidate_registration_email'),  # email
     path('api/pages/', include('pages.urls')),
-    path('api/send-client-contact', send_client_contact_email, name='send_client_contact_email'),
+    path('api/send_client_contact_email/', send_client_contact_email, name='send_client_contact_email'),
 ]
