@@ -43,29 +43,10 @@ def contact_email(request):
     # Cap the message at 2000 characters to prevent massive text injections
     message = str(data.get('message', ''))[:2000] 
 
-    # --- NEW SEND CLIENT FIELDS ---
-    # We use .get() so if an old form sends a message without these, it won't crash!
-    idd_code = str(data.get('send_idd_code', ''))[:10]
-    mobile = str(data.get('mobile', ''))[:50]
-    
-    # Logistics
-    location = str(data.get('location', 'Not specified'))[:100]
-    schedule = str(data.get('schedule', 'Not specified'))[:100]
-    start_date = str(data.get('start_date', 'Not specified'))[:50]
-    duration = str(data.get('duration', 'Not specified'))[:100]
-    
-    # Specifics
-    skills = str(data.get('skills', ''))[:2000] 
-    medical = str(data.get('medical', 'None provided'))[:500]
-    curriculum = str(data.get('curriculum', 'None provided'))[:200]
 
 # Basic missing data validation
-    if not sender_email:
-        return Response({'error': 'Email is required'}, status=400)
-        
-    # Let the form pass if they filled out EITHER the old 'message' box OR the new 'skills' box
-    if not message and not skills:
-        return Response({'error': 'A message or skills description is required'}, status=400)
+    if not sender_email or not message:
+        return Response({'error': 'Email and Message are required'}, status=400)
 
     # -------------------------------------------------------------------------
     # 2. THE FILE BOMB & TYPE PATCH
@@ -97,24 +78,13 @@ def contact_email(request):
     --- CONTACT INFO ---
     Name: {name}
     Email: {sender_email}
-    Mobile: {idd_code} {mobile}
     Source Page: {source_page}
     Category: {category}
     Sector Interest: {sector}
     
-    --- LOGISTICS (If Applicable) ---
-    Location: {location}
-    Schedule: {schedule}
-    Start Date: {start_date}
-    Duration: {duration}
-    
-    --- SEND SPECIFICS (If Applicable) ---
-    Medical/Diagnosis: {medical}
-    Curriculum: {curriculum}
-    
-    --- MESSAGE / SKILLS REQUIRED ---
+    Message:
+    ------------------------------------
     {message}
-    {skills}
     ------------------------------------
     """
     
