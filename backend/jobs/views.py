@@ -258,3 +258,108 @@ def candidate_registration_email(request):
         # Print the actual error to your terminal/logs so the dev can debug!
         print(f"RESEND EMAIL ERROR: {e}") 
         return Response({'error': 'An internal server error occurred while sending the email.'}, status=500)
+
+
+
+@api_view(['POST'])
+def send_client_contact_email(request):
+    """
+    Receives data specifically from the new SEND Client form.
+    """
+    data = request.data
+    
+    
+    name = str(data.get('name', 'Anonymous'))[:100]
+    sender_email = str(data.get('email', ''))[:254]
+    source_page = str(data.get('source_page', 'SEND Client Form'))[:100]
+    
+    # Contact
+    idd_code = str(data.get('send_idd_code', ''))[:10]
+    mobile = str(data.get('mobile', ''))[:50]
+    
+    # Logistics
+    location = str(data.get('location', 'Not specified'))[:100]
+    schedule = str(data.get('schedule', 'Not specified'))[:100]
+    start_date = str(data.get('start_date', 'Not specified'))[:50]
+    duration = str(data.get('duration', 'Not specified'))[:100]
+    
+    # Specifics
+    skills = str(data.get('skills', ''))[:2000] 
+    medical = str(data.get('medical', 'None provided'))[:500]
+    curriculum = str(data.get('curriculum', 'None provided'))[:200]
+
+    
+    # This form requires 'skills' instead of a generic 'message'
+    if not sender_email or not skills:
+        return Response({'error': 'Email and Skills/Experience are required'}, status=400)
+
+    # THE CLOUDFLARE TURNSTILE CHECK
+    turnstile_token = data.get('cf-turnstile-response', '')
+    if not turnstile_token:
+        return Response({'error': 'Security check failed. No Turnstile token provided.'}, status=400)
+    
+    cloudflare_data = {
+        'secret': settings.TURNSTILE_SECRET_KEY,
+        'response': turnstile_token
+    }
+    
+    try:
+        cloudflare_response = requests.post('https://challenges.cloudflare.com/turnstile/v0/siteverify', data=cloudflare_data)
+        if cloudflare_response.json().get('success') is False:
+            return Response({'error': 'Bot activity detected.'}, status=403)
+    except Exception:
+        return Response({'error': 'Security servers unreachable.'}, status=500)
+
+    # THE FILE SAFETY CHECK
+    uploaded_file = request.FILES.get('attachment')
+    if uploaded_file:
+        if uploaded_file.size > (5 * 1024 * 1024):
+            return Response({'error': 'File exceeds 5MB limit.'}, status=400)
+        
+        allowed_types = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+        if uploaded_file.content_type not in allowed_types:
+            return Response({'error': 'Only PDF and Word documents are allowed.'}, status=400)
+
+    # FORMAT AND SEND THE EMAIL
+    subject = f"New SEND Client Enquiry from {name}"
+    full_body = f"""
+    You have received a new SEND Client enquiry!
+    
+    --- CONTACT INFO ---
+    Name: {name}
+    Email: {sender_email}
+    Mobile: {idd_code} {mobile}
+    Source Page: {source_page}
+    
+    --- LOGISTICS ---
+    Location: {location}
+    Schedule: {schedule}
+    Start Date: {start_date}
+    Duration: {duration}
+    
+    --- SPECIFICS ---
+    Medical/Diagnosis: {medical}
+    Curriculum: {curriculum}
+    
+    --- SKILLS REQUIRED ---
+    {skills}
+    """
+    
+    try:
+        email_msg = EmailMessage(
+            subject=subject,
+            body=full_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=settings.TARGET_RECIPIENT_EMAIL,
+            reply_to=[sender_email]
+        )
+        
+        if uploaded_file:
+            email_msg.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+        
+        email_msg.send(fail_silently=False)
+        return Response({'success': 'SEND Enquiry sent successfully!'})
+        
+    except Exception as e:
+        print(f"SEND CLIENT CRASH: {repr(e)}")
+        return Response({'error': 'Server error while sending.'}, status=500)
