@@ -70,6 +70,41 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// SEND Candidate modal
+const sendCandidateModal = document.getElementById('send-candidate-modal');
+const openSendCandidateButton = document.querySelectorAll('.open-send-candidate-modal');
+const closeSendCandidateButton = document.getElementById('close-send-candidate-modal-btn');
+
+
+// Loop through every "SEND support button" button
+openSendCandidateButton.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); // stop the link jump '#'
+        sendCandidateModal.classList.remove('hidden');
+    });
+});
+
+function closeSendCandidateModal() {
+    sendCandidateModal.classList.add('hidden');
+}
+
+closeSendCandidateButton.addEventListener('click', closeSendCandidateModal);
+
+
+// Close the reg modal when clicking outside the form on the background
+sendCandidateModal.addEventListener('click', (e) => {
+    if (e.target === sendCandidateModal) {
+        closeSendCandidateModal();
+    }
+});
+
+// Close the modal when pressing the ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !sendCandidateModal.classList.contains('hidden')) {
+        closeSendCandidateModal();
+    }
+});
+
 // SEND Client modal
 const sendModal = document.getElementById('send-client-modal');
 const openSendButton = document.querySelectorAll('.open-send-client-modal');
