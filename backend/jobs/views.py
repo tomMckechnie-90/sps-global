@@ -363,3 +363,118 @@ def send_client_contact_email(request):
     except Exception as e:
         print(f"SEND CLIENT CRASH: {repr(e)}")
         return Response({'error': 'Server error while sending.'}, status=500)
+
+
+
+@api_view(['POST'])
+def send_candidate_contact_email(request):
+    """
+    Receives registration data specifically from the SEND Candidate form.
+    """
+    data = request.data
+    
+    # 1. Extract and truncate text fields
+    name = str(data.get('name', 'Anonymous'))[:100]
+    sender_email = str(data.get('email', ''))[:254]
+    source_page = str(data.get('source_page', 'SEND Candidate Form'))[:100]
+    
+    # Contact info
+    idd_code = str(data.get('send_idd_code', ''))[:10]
+    mobile = str(data.get('mobile', ''))[:50]
+    
+    # Candidate specifics
+    position_sought = str(data.get('position_sought', 'Not specified'))[:150]
+    location = str(data.get('location', 'Not specified'))[:100]
+    experience_and_quals = str(data.get('experience_and_quals', ''))[:3000]
+
+    # 2. Strict validation rules
+    if not sender_email:
+        return Response({'error': 'Email address is required.'}, status=400)
+    
+    if not experience_and_quals:
+        return Response({'error': 'Experience and qualifications details are required.'}, status=400)
+
+    # 3. CLOUDFLARE TURNSTILE VERIFICATION
+    turnstile_token = data.get('cf-turnstile-response', '')
+    if not turnstile_token:
+        return Response({'error': 'Security verification failed. No token found.'}, status=400)
+    
+    turnstile_payload = {
+        'secret': settings.TURNSTILE_SECRET_KEY,
+        'response': turnstile_token
+    }
+    
+    try:
+        turnstile_res = requests.post(
+            'https://challenges.cloudflare.com/turnstile/v0/siteverify', 
+            data=turnstile_payload
+        )
+        if turnstile_res.json().get('success') is False:
+            return Response({'error': 'Bot activity detected. Submission blocked.'}, status=403)
+    except Exception:
+        return Response({'error': 'Security verification service unreachable.'}, status=500)
+
+    # 4. FILE SECURITY CHECKS (CV & OPTIONAL COVER LETTER)
+    max_file_size = 5 * 1024 * 1024  # 5MB
+    allowed_types = [
+        'application/pdf', 
+        'application/msword', 
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ]
+
+    cv_doc = request.FILES.get('cv_file')
+    intro_doc = request.FILES.get('intro_file')
+
+    # CV is required
+    if not cv_doc:
+        return Response({'error': 'A CV file is required.'}, status=400)
+
+    # Validate each uploaded file against size and MIME types
+    for doc in [cv_doc, intro_doc]:
+        if doc:
+            if doc.size > max_file_size:
+                return Response({'error': f'{doc.name} exceeds the 5MB file limit.'}, status=400)
+            if doc.content_type not in allowed_types:
+                return Response({'error': f'{doc.name} is not a valid PDF or Word document.'}, status=400)
+
+    # 5. ASSEMBLE AND SEND EMAIL
+    subject = f"New SEND Candidate Registration: {name}"
+    full_body = f"""
+    You have received a new SEND Candidate Registration.
+    
+    --- CANDIDATE DETAILS ---
+    Name: {name}
+    Email: {sender_email}
+    Mobile: {idd_code} {mobile}
+    Source Page: {source_page}
+    
+    --- PREFERENCES ---
+    Position Sought: {position_sought}
+    Preferred Location: {location}
+    
+    --- EXPERIENCE & QUALIFICATIONS ---
+    {experience_and_quals}
+    """
+
+    try:
+        email_msg = EmailMessage(
+            subject=subject,
+            body=full_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=settings.TARGET_RECIPIENT_EMAIL,
+            reply_to=[sender_email]
+        )
+
+        # Attach CV
+        email_msg.attach(cv_doc.name, cv_doc.read(), cv_doc.content_type)
+
+        # Attach Cover Letter if uploaded
+        if intro_doc:
+            email_msg.attach(intro_doc.name, intro_doc.read(), intro_doc.content_type)
+
+        email_msg.send(fail_silently=False)
+        return Response({'success': 'Candidate registered successfully!'})
+
+    except Exception as e:
+        print(f"SEND CANDIDATE CRASH: {repr(e)}")
+        return Response({'error': 'An internal error occurred while processing registration.'}, status=500)
