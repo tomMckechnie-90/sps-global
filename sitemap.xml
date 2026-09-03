@@ -30,4 +30,10 @@
       <priority>0.8</priority>
    </url>
 
+   <url>
+      <loc>https://spsglobalsearch.com/saudi-arabia</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
 </urlset>
