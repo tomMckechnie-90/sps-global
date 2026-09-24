@@ -526,6 +526,9 @@
   .w-\[100px\] {
     width: 100px;
   }
+  .w-\[120px\] {
+    width: 120px;
+  }
   .w-\[130px\] {
     width: 130px;
   }
@@ -899,6 +902,9 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
