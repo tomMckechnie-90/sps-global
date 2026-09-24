@@ -514,8 +514,14 @@
   .w-60 {
     width: calc(var(--spacing) * 60);
   }
+  .w-\[1px\] {
+    width: 1px;
+  }
   .w-\[70px\] {
     width: 70px;
+  }
+  .w-\[90px\] {
+    width: 90px;
   }
   .w-\[100px\] {
     width: 100px;
@@ -899,6 +905,9 @@
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
+  }
+  .p-16 {
+    padding: calc(var(--spacing) * 16);
   }
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
@@ -1502,6 +1511,21 @@
       width: auto;
     }
   }
+  .md\:max-w-2xl {
+    @media (width >= 48rem) {
+      max-width: var(--container-2xl);
+    }
+  }
+  .md\:max-w-4 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 4);
+    }
+  }
+  .md\:max-w-4xl {
+    @media (width >= 48rem) {
+      max-width: var(--container-4xl);
+    }
+  }
   .md\:grid-cols-2 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1522,6 +1546,11 @@
       align-items: center;
     }
   }
+  .md\:gap-6 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 6);
+    }
+  }
   .md\:space-y-0 {
     @media (width >= 48rem) {
       :where(& > :not(:last-child)) {
@@ -1531,9 +1560,19 @@
       }
     }
   }
+  .md\:p-0 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 0);
+    }
+  }
   .md\:p-8 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:p-16 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 16);
     }
   }
   .md\:px-0 {
