@@ -35,6 +35,17 @@
     <meta property="og:image:height" content="400">
     <!-- Cloudflare Turnstile API -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK22XWW6VS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QK22XWW6VS');
+    </script>
 </head>
 
 <body class="bg-spspurple">
@@ -55,11 +66,13 @@
                     class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">ABOUT</a>
                 <a href="bermuda"
                     class="text-spswhite text-2xl font-sourcesans3 underline underline-offset-8 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">BERMUDA
-                    </a>
+                </a>
                 <a href="saudi-arabia"
-                    class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">SAUDI ARABIA</a>
+                    class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">SAUDI
+                    ARABIA</a>
                 <a href="industry-insights"
-                    class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">INDUSTRY INSIGHTS</a>
+                    class="text-spswhite text-2xl font-sourcesans3 tracking-wide transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-spshover">INDUSTRY
+                    INSIGHTS</a>
             </nav>
             <!-- Buttons -->
             <div class="flex space-x-4">
@@ -830,11 +843,13 @@
                                             CV</label>
                                         <div id="drop-zone-cv"
                                             class="border-2 border-dashed border-spswhite rounded-lg p-10 text-center cursor-pointer transition-colors">
-                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here, or click to select
+                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here,
+                                                or click to select
                                             </p>
 
                                             <!-- The actual file input is hidden -->
-                                            <input type="file" id="reg_cv" class="hidden" name="cv_file" accept=".pdf,.doc,.docx required">
+                                            <input type="file" id="reg_cv" class="hidden" name="cv_file"
+                                                accept=".pdf,.doc,.docx required">
                                         </div>
                                         <ul id="file-list-cv" class="mt-4 space-y-2 text-sm text-spsaccent"></ul>
                                     </div>
@@ -845,11 +860,13 @@
 
                                         <div id="drop-zone-cl"
                                             class="border-2 border-dashed border-spswhite rounded-lg p-10 text-center cursor-pointer transition-colors">
-                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here, or click to select
+                                            <p class="text-spsaccent hover:text-spswhite">Drag and drop your file here,
+                                                or click to select
                                             </p>
 
                                             <!-- The actual file input is hidden -->
-                                            <input type="file" id="reg_intro" class="hidden" name="intro_file" accept=".pdf,.doc,.docx">
+                                            <input type="file" id="reg_intro" class="hidden" name="intro_file"
+                                                accept=".pdf,.doc,.docx">
                                         </div>
                                         <ul id="file-list-cl" class="mt-4 space-y-2 text-sm text-spsaccent"></ul>
                                     </div>

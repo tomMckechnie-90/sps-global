@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,25 +19,40 @@
     <meta property="og:image" content="assets/images/OG_images/WhatsApp_og_image.png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="400">
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK22XWW6VS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QK22XWW6VS');
+    </script>
 </head>
+
 <body class="smokey-bg min-h-screen flex items-center justify-center p-4">
 
-    <div class="border-1 border-spswhite p-10 rounded-lg shadow-2xl max-w-md w-full flex flex-col items-center text-center">
-        
+    <div
+        class="border-1 border-spswhite p-10 rounded-lg shadow-2xl max-w-md w-full flex flex-col items-center text-center">
+
         <!-- The Success Checkmark -->
         <div class="text-green-500 text-6xl mb-4">✓</div>
-        
+
         <!-- The Typography -->
         <h3 class="font-playfairdisplay text-3xl text-spswhite font-bold mb-2">Message Sent!</h3>
         <p class="font-sourcesans3 text-spsaccent mb-8">Thank you. Our team will be in touch shortly.</p>
-        
+
         <!-- The Back to Home Button -->
         <a href="/"
             class="border-2 border-spsaccent text-spsaccent hover:border-spswhite hover:text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 w-full flex justify-center items-center gap-2">
             <span>&larr;</span> Back to Home
         </a>
-        
+
     </div>
 
 </body>
+
 </html>
