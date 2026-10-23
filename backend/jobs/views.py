@@ -21,7 +21,7 @@ class JobViewSet(viewsets.ModelViewSet): We're creating our view and telling it 
 
 
 class JobViewSet(viewsets.ModelViewSet):
-    queryset = Job.objects.all()
+    queryset = Job.objects.all().order_by('-is_featured', '-id')
     serializer_class = JobSerializer
     
 

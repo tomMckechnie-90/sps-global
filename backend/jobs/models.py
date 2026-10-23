@@ -28,6 +28,7 @@ class Job(models.Model):
     salary = models.CharField(max_length=100, blank=True)
     description = models.TextField()
     is_live = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=False)
 
     SECTOR_CHOICES = [
         ('Private', 'Private Jobs'),
@@ -59,5 +60,5 @@ class Job(models.Model):
         return self.title
     
     class Meta: 
-        ordering = ['-id']
+        ordering = ['-is_featured', '-id']
 
