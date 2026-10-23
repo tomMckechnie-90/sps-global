@@ -17,7 +17,7 @@ class JobAdmin(admin.ModelAdmin):
             'description': 'Use these fields to target specific Candidate keywords (e.g., "Radiography jobs abroad").'
         }),
         ('Admin Data', {
-            'fields': ('contact_email', 'is_live', 'reference_number')
+            'fields': ('contact_email', 'is_live', 'is_featured', 'reference_number')
         }),
     )
 
