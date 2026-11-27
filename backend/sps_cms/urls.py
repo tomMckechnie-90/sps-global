@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from jobs.views import contact_email, candidate_registration_email, send_client_contact_email, send_candidate_contact_email
- 
+from pages.views import GoogleReviewsView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     path('api/pages/', include('pages.urls')),
     path('api/send-client-contact-email/', send_client_contact_email, name='send_client_contact_email'),
     path('api/send-candidate-contact-email/', send_candidate_contact_email, name='send_candidate_contact_email'),
+    path('api/reviews/', GoogleReviewsView.as_view(), name="google-reviews"),
 ]

@@ -1,48 +1,98 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Automatic testimonial slider script loaded');
+    const slidesContainer = document.getElementById('testimonial-slides-container');
+    const ratingSummary = document.getElementById('google-rating-summary');
 
-    // Grab all the elements and store them in variables 
-    const slides = document.querySelectorAll('.testimonial-slide');
+    const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+    const API_URL = isLocal
+        ? 'http://127.0.0.1:8000/api/reviews/'
+        : 'https://sps-backend-service-170236375136.europe-west2.run.app/api/reviews/';
 
-    // Timer Settings
-    const slideIntervalTime = 5000;
-    const fadeTime = 1000;
+    let slides = document.querySelectorAll('.testimonial-slide');
 
-    // Start at the first slide
-    let currentSlideIndex = 0;
+    function startSlider() {
+        if (slides.length <= 1) return;
 
-    // Animation function
-    function nextSlide() {
-        // Identify the activeSlide
-        const activeSlide = slides[currentSlideIndex];
+        const slideIntervalTime = 5000;
+        const fadeTime = 1000;
+        let currentSlideIndex = 0;
 
-        // Calculate the index of the next slide
-        currentSlideIndex++;
-        if (currentSlideIndex >= slides.length) {
-            currentSlideIndex = 0;
-        }
-        const newSlide = slides[currentSlideIndex];
+        function nextSlide() {
+            const activeSlide = slides[currentSlideIndex];
 
-        // start fade out animation
-        activeSlide.classList.remove('opacity-100');
-        activeSlide.classList.add('opacity-0');
+            currentSlideIndex++;
+            if (currentSlideIndex >= slides.length) {
+                currentSlideIndex = 0;
+            }
+            const newSlide = slides[currentSlideIndex];
 
-        // wait for the fade out to finish
-        setTimeout(() => {
-            activeSlide.classList.add('hidden');
-            activeSlide.classList.remove('active-slide');
+            activeSlide.classList.remove('opacity-100');
+            activeSlide.classList.add('opacity-0');
 
-            // prepare the next slide
-            newSlide.classList.remove('hidden');
-            newSlide.classList.add('active-slide');
-
-            // Small delay (a trick called repaint) to make sure the browser see it's there before fading in
             setTimeout(() => {
-                newSlide.classList.remove('opacity-0');
-                newSlide.classList.add('opacity-100');
-            }, 50);
-        }, fadeTime);
+                activeSlide.classList.add('hidden');
+                activeSlide.classList.remove('active-slide');
+
+                newSlide.classList.remove('hidden');
+                newSlide.classList.add('active-slide');
+
+                setTimeout(() => {
+                    newSlide.classList.remove('opacity-0');
+                    newSlide.classList.add('opacity-100');
+                }, 50);
+            }, fadeTime);
+        }
+
+        setInterval(nextSlide, slideIntervalTime);
     }
-    // Start the timer with the timer settings declared above
-    setInterval(nextSlide, slideIntervalTime);
+
+    function createSlideElement(review, isFirst) {
+        const slide = document.createElement('div');
+        slide.className = isFirst
+            ? 'testimonial-slide active-slide w-full transition-opacity duration-1000 ease-in-out opacity-100'
+            : 'testimonial-slide hidden w-full transition-opacity duration-1000 ease-in-out opacity-0';
+
+        const heading = document.createElement('h3');
+        heading.className = 'text-3xl font-playfairdisplay text-spsaccent font-bold mb-4';
+        heading.textContent = review.authorAttribution?.displayName || 'Verified Client';
+
+        const rawText = review.text?.text || '';
+        const shortText = rawText.length > 280
+            ? rawText.slice(0, 280).trimEnd() + '...'
+            : rawText;
+
+        const quote = document.createElement('p');
+        quote.className = 'font-sourcesans3 text-lg lg:text-xl italic leading-relaxed';
+        quote.textContent = `"${shortText}"`;
+
+        slide.appendChild(heading);
+        slide.appendChild(quote);
+        return slide;
+    }
+
+    fetch(API_URL)
+        .then((response) => {
+            if (!response.ok) throw new Error('Failed to load reviews');
+            return response.json();
+        })
+        .then((data) => {
+            if (data.rating && data.total_reviews && ratingSummary) {
+                ratingSummary.textContent = ` ${data.rating} ★ · Based on ${data.total_reviews} Google Reviews`;
+                ratingSummary.classList.remove('hidden');
+            }
+
+            if (Array.isArray(data.reviews) && data.reviews.length > 0 && slidesContainer) {
+                slidesContainer.innerHTML = '';
+                data.reviews.forEach((review, index) => {
+                    const slideElement = createSlideElement(review, index === 0);
+                    slidesContainer.appendChild(slideElement);
+                });
+                slides = document.querySelectorAll('.testimonial-slide');
+            }
+        })
+        .catch((error) => {
+            console.warn('Using fallback testimonials:', error);
+        })
+        .finally(() => {
+            startSlider();
+        });
 });

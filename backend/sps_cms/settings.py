@@ -18,6 +18,9 @@ load_dotenv(os.path.join(BASE_DIR, '.env'), override=True)
 # GRAB THE CLOUDFLARE SECRET KEY (blank string if none is found)
 TURNSTILE_SECRET_KEY = os.environ.get('TURNSTILE_SECRET_KEY', '')
 
+GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API")
+GOOGLE_PLACE_ID = os.environ.get("GOOGLE_PLACE_ID")
+
 
 # ==============================================================================
 # CORE SECURITY & ENVIRONMENT CHECKS
@@ -70,6 +73,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
     'https://*.run.app', 
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
     'http://localhost:8080', 
     'http://127.0.0.1:8080',
     'http://localhost:8000',
@@ -204,6 +211,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
     "https://storage.googleapis.com",
